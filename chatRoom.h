@@ -21,6 +21,9 @@ class chatRoom{
     void saveMessage(std::string message,User* fromUser);
     UserIterator* creatUserIterator();
     MessageIterator* creatMessageIterator();
+    void addUser(User* u);
+    void deleteUser(User* u);
+    void receive(std::string message,User* fromUser);
     
 };
 

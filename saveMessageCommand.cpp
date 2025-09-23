@@ -13,4 +13,3 @@ void SaveMessageCommand::execute() {
 /**
  * @brief Destructor for SaveMessageCommand.
  */
-SaveMessageCommand::~SaveMessageCommand() {}

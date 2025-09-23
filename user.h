@@ -13,6 +13,7 @@
  * in the chat application. It provides the basic functionalities
  * that all users should have.
  */
+
 class User {
 private:
     std::string name;
@@ -26,14 +27,15 @@ public:
      * @param message The message to be sent.
      */
     virtual void send(std::string message,chatRoom* room) = 0;
-    std::string getName() const;
-    void joinRoom(chatRoom* room);
-    void leaveRoom(chatRoom* room);
+    virtual std::string getName() const=0;
+    virtual void joinRoom(chatRoom* room)=0;
+    virtual void leaveRoom(chatRoom* room)=0;
     /**
      * @brief Receives a message from the chat room.
      * @param message The message received.
      */
     virtual void receive( std::string message,User* fromUser,chatRoom* room) = 0;
+
 
 
 };
