@@ -24,8 +24,6 @@ public:
      */
     void setMessage(const std::string& message);
 
-private:
-    std::string message; ///< The message to be saved.
 };
 
 #endif // SAVE_MESSAGE_COMMAND_H

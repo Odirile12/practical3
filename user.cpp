@@ -7,7 +7,8 @@
  * 
  * @param name The name of the user.
  */
-User::User(const std::string& name) : name(name) {}
+
+User::User(const std::string name) : name(name) {}
 
 /**
  * @brief Gets the name of the user.
@@ -23,7 +24,7 @@ std::string User::getName() const {
  * 
  * @param message The message to be sent.
  */
-void User::sendMessage(const std::string& message) {
+void User::send( std::string message,chatRoom* room) {
     // Implementation for sending a message
 }
 
@@ -32,6 +33,6 @@ void User::sendMessage(const std::string& message) {
  * 
  * @param message The message received.
  */
-void User::receiveMessage(const std::string& message) {
+void User::receive( std::string message,User* fromUser,chatRoom* room) {
     // Implementation for receiving a message
 }
