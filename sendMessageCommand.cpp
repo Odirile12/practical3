@@ -5,7 +5,6 @@
  * 
  * @param message The message to be sent.
  */
-SendMessageCommand::SendMessageCommand(const std::string& message) : message(message) {}
 
 /**
  * @brief Executes the command to send the message.

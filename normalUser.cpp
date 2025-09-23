@@ -1,5 +1,4 @@
 #include "normalUser.h"
-#include "command/command.h"
 #include <iostream>
 
 /**
@@ -13,10 +12,3 @@ NormalUser::NormalUser(const std::string& name) : User(name) {}
  * @brief Invokes the given command.
  * @param command The command to be executed.
  */
-void NormalUser::invokeCommand(Command* command) {
-    if (command) {
-        command->execute();
-    } else {
-        std::cerr << "Command is null!" << std::endl;
-    }
-}
