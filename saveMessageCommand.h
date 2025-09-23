@@ -13,6 +13,7 @@
  */
 class SaveMessageCommand : public Command {
 public:
+    ~SaveMessageCommand() = default;
     /**
      * @brief Executes the command to save a message.
      */

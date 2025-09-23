@@ -13,6 +13,7 @@
  * in the chat application. It provides the basic functionalities
  * that all users should have.
  */
+
 class User {
 private:
     std::string name;

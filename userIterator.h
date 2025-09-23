@@ -13,10 +13,11 @@
  * This class implements the Iterator interface to provide a way to access 
  * users in a sequential manner without exposing the underlying representation.
  */
+class User;
 class UserIterator : public myIterator<User*> {
 private:
-    std::list<User*> users; // Pointer to the collection of users
-    int posution; // Current position in the iteration
+    std::list<User*> users;
+    int position;
 
 public:
     UserIterator(std::list<User*> users);

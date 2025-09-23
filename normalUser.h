@@ -14,6 +14,7 @@
 
 #include "user.h"
 
+
 class NormalUser : public User {
 
 private:
