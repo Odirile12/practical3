@@ -1,6 +1,9 @@
 #ifndef NORMALUSER_H
 #define NORMALUSER_H
 
+#include <list>
+#include "command.h"
+
 /**
  * @class NormalUser
  * @brief Represents a normal user in the chat system.
@@ -12,20 +15,14 @@
 #include "user.h"
 
 class NormalUser : public User {
+
+private:
+    std::list<Command*> commandQueue;
 public:
     NormalUser(const std::string& name);
     
-    /**
-     * @brief Sends a message using the SendMessageCommand.
-     * @param message The message to be sent.
-     */
-    void sendMessage(const std::string& message);
-    
-    /**
-     * @brief Saves a message using the SaveMessageCommand.
-     * @param message The message to be saved.
-     */
-    void saveMessage(const std::string& message);
+    void addCommand(Command* command);
+    void executeCommands();
 };
 
 #endif // NORMAL_USER_H

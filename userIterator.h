@@ -1,6 +1,10 @@
-// user_iterator.h
 #ifndef USERITERATOR_H
 #define USERITERATOR_H
+
+#include "user.h"
+#include <list>
+#include "iterator.h"
+
 
 /**
  * @class UserIterator
@@ -9,26 +13,31 @@
  * This class implements the Iterator interface to provide a way to access 
  * users in a sequential manner without exposing the underlying representation.
  */
-class UserIterator {
+class UserIterator : public myIterator<User*> {
+private:
+    std::list<User*> users; // Pointer to the collection of users
+    int posution; // Current position in the iteration
+
 public:
+    UserIterator(std::list<User*> users);
     /**
      * @brief Advances the iterator to the next user.
      * @return true if there is a next user, false otherwise.
      */
-    virtual bool hasNext() = 0;
+    bool hasNext() override;
 
     /**
      * @brief Returns the next user in the iteration.
      * @return The next user.
      */
-    virtual User* next() = 0;
+    User* next() override;
 
     /**
      * @brief Resets the iterator to the beginning.
      */
-    virtual void reset() = 0;
+    void reset() override;
 
-    virtual ~UserIterator() = default; // Virtual destructor for proper cleanup
+    ~UserIterator() = default; // Virtual destructor for proper cleanup
 };
 
 #endif // USER_ITERATOR_H

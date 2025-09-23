@@ -1,5 +1,7 @@
 #ifndef SENDMESSAGECOMMAND_H
 #define SENDMESSAGECOMMAND_H
+#include "command.h"
+#include <string>
 
 /**
  * @class SendMessageCommand
@@ -8,23 +10,17 @@
  * This class implements the Command interface and encapsulates the
  * action of sending a message from a user to the chat room.
  */
-class SendMessageCommand {
+class SendMessageCommand : public Command {
 public:
-    /**
-     * @brief Constructs a SendMessageCommand with the specified parameters.
-     * @param user The user sending the message.
-     * @param message The message to be sent.
-     */
-    SendMessageCommand(User* user, const std::string& message);
+
 
     /**
      * @brief Executes the command to send the message.
      */
     void execute();
 
-private:
-    User* user; ///< The user sending the message.
-    std::string message; ///< The message to be sent.
+    void saveMessage(const std::string& message);
+
 };
 
 #endif // SEND_MESSAGE_COMMAND_H
