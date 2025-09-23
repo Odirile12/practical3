@@ -1,0 +1,82 @@
+\doxysection{Save\+Message\+Command Class Reference}
+\hypertarget{class_save_message_command}{}\label{class_save_message_command}\index{SaveMessageCommand@{SaveMessageCommand}}
+
+
+Concrete command for saving messages.  
+
+
+
+
+{\ttfamily \#include $<$save\+Message\+Command.\+h$>$}
+
+Inheritance diagram for Save\+Message\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_save_message_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_save_message_command_a3e4c17c1151344f72453efff696a088a}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the command to save a message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_save_message_command_aa86a93fec1893044af2f1b8ccf60aa9d}{set\+Message}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Sets the message to be saved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Command} (\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}user, const std\+::string message)
+\item 
+\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Room} () const
+\item 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} {\bfseries get\+User} () const
+\item 
+std\+::string {\bfseries get\+Message} () const
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_command}{Command} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete command for saving messages. 
+
+This class implements the \doxylink{class_command}{Command} interface to provide functionality for saving messages in the chat application. 
+
+\label{doc-func-members}
+\Hypertarget{class_save_message_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_save_message_command_a3e4c17c1151344f72453efff696a088a}\index{SaveMessageCommand@{SaveMessageCommand}!execute@{execute}}
+\index{execute@{execute}!SaveMessageCommand@{SaveMessageCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_save_message_command_a3e4c17c1151344f72453efff696a088a} 
+void Save\+Message\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the command to save a message. 
+
+Executes the command to save the message. 
+
+Implements \mbox{\hyperlink{class_command_aae19e5edcdcd17c91146454a5d26eb24}{Command}}.
+
+\Hypertarget{class_save_message_command_aa86a93fec1893044af2f1b8ccf60aa9d}\index{SaveMessageCommand@{SaveMessageCommand}!setMessage@{setMessage}}
+\index{setMessage@{setMessage}!SaveMessageCommand@{SaveMessageCommand}}
+\doxysubsubsection{\texorpdfstring{setMessage()}{setMessage()}}
+{\footnotesize\ttfamily \label{class_save_message_command_aa86a93fec1893044af2f1b8ccf60aa9d} 
+void Save\+Message\+Command\+::set\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sets the message to be saved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to save. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+save\+Message\+Command.\+h\item 
+save\+Message\+Command.\+cpp\end{DoxyCompactItemize}

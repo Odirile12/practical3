@@ -15,11 +15,15 @@ private:
     std::string message;
 
 public:
-    Command(chatRoom* room, User* user, const std::string& message);
+    Command(chatRoom* room, User* user, const std::string message);
     /**
      * @brief Executes the command.
      */
     virtual void execute() = 0;
+
+    chatRoom* getRoom() const;
+    User* getUser() const ;
+    std::string getMessage() const;
 
     /**
      * @brief Destructor for the Command class.

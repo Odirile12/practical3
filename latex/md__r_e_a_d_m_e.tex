@@ -1,0 +1,65 @@
+\chapter{Chat Mediator App }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Chat Mediator App@{Chat Mediator App}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+This project implements a chat mediator system using the Mediator design pattern. The system allows users to communicate through a chat room, with commands to send and save messages. It also includes iterators for users and messages, and an observer for notifications.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Project Structure}{Project Structure}}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{chat-\/mediator-\/app}
+\DoxyCodeLine{├──\ src}
+\DoxyCodeLine{│\ \ \ ├──\ mediator}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ chat\_room.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ chat\_room.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ ctrl\_cat.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ ctrl\_cat.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ dogorithm.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ dogorithm.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ command}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ command.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ send\_message\_command.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ send\_message\_command.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ save\_message\_command.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ save\_message\_command.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ iterator}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ user\_iterator.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ user\_iterator.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ message\_iterator.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ message\_iterator.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ observer}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ notification\_service.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ notification\_service.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ user}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ user.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ user.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ normal\_user.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ normal\_user.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ main.cpp}
+\DoxyCodeLine{│\ \ \ └──\ common.h}
+\DoxyCodeLine{├──\ CMakeLists.txt}
+\DoxyCodeLine{└──\ README.md}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Components}{Components}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\bfseries{Chat\+Room}}\+: Abstract mediator interface for managing communication between users.
+\item {\bfseries{\doxylink{class_ctrl_cat}{Ctrl\+Cat}}}\+: Concrete mediator managing user interactions in the chat room.
+\item {\bfseries{\doxylink{class_dogorithm}{Dogorithm}}}\+: Another concrete mediator facilitating communication between users.
+\item {\bfseries{\doxylink{class_send_message_command}{Send\+Message\+Command}}}\+: \doxylink{class_command}{Command} for sending messages.
+\item {\bfseries{\doxylink{class_save_message_command}{Save\+Message\+Command}}}\+: \doxylink{class_command}{Command} for saving messages.
+\item {\bfseries{\doxylink{class_normal_user}{Normal\+User}}}\+: Invoker for commands.
+\item {\bfseries{\doxylink{class_user_iterator}{User\+Iterator}}}\+: Iterator for iterating over users.
+\item {\bfseries{\doxylink{class_message_iterator}{Message\+Iterator}}}\+: Iterator for iterating over messages.
+\item {\bfseries{Notification\+Service}}\+: Observer for receiving notifications from the Chat\+Room.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Build Instructions}{Build Instructions}}\label{md__r_e_a_d_m_e_autotoc_md3}
+To build the project, use CMake\+:
+
+
+\begin{DoxyEnumerate}
+\item Navigate to the project directory.
+\item Run {\ttfamily cmake .} to configure the project.
+\item Run {\ttfamily make} to build the project.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md__r_e_a_d_m_e_autotoc_md4}
+After building the project, run the executable to start the chat mediator application. Users can send and save messages through the provided commands. 

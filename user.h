@@ -13,7 +13,7 @@
  * in the chat application. It provides the basic functionalities
  * that all users should have.
  */
-
+class chatRoom; // Forward declaration
 class User {
 private:
     std::string name;
@@ -35,6 +35,7 @@ public:
      * @param message The message received.
      */
     virtual void receive( std::string message,User* fromUser,chatRoom* room) = 0;
+    void executeAll();
 
 
 

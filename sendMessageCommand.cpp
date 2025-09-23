@@ -13,4 +13,5 @@
  */
 void SendMessageCommand::execute() {
     // Implementation for sending the message through the mediator
+    this->getRoom()->sendMessage(this->getMessage() ,this->getUser());
 }

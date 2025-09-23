@@ -1,0 +1,31 @@
+\doxysection{user\+Iterator.\+h}
+\hypertarget{user_iterator_8h_source}{}\label{user_iterator_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ USERITERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ USERITERATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}user.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}iterator.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user}{User}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }UserIterator\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_iterator}{myIterator}}<User*>\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ std::list<User*>\ users;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ position;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ UserIterator(std::list<User*>\ users);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_user_iterator_a45f9ba1340aa1c006e7535ca59fbeaba}{hasNext}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}*\ \mbox{\hyperlink{class_user_iterator_a19a509933877f5ee362c8ef5c10f1d05}{next}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_iterator_a2434f9f8d31fb5d37611893636dc16c6}{reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \string~UserIterator()\ =\ \textcolor{keywordflow}{default};\ \textcolor{comment}{//\ Virtual\ destructor\ for\ proper\ cleanup}}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ USER\_ITERATOR\_H}}
+
+\end{DoxyCode}

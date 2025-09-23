@@ -1,0 +1,93 @@
+\doxysection{User Class Reference}
+\hypertarget{class_user}{}\label{class_user}\index{User@{User}}
+
+
+Represents a user in the chat system.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+Inheritance diagram for User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_user_af9e5f33114c8330be7b91276b7377e6d}\label{class_user_af9e5f33114c8330be7b91276b7377e6d} 
+{\bfseries User} (std\+::string name)
+\item 
+virtual void \mbox{\hyperlink{class_user_a29caabba5c7e00de3780d11348eabef6}{send}} (std\+::string message, \mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Sends a message to the chat room. \end{DoxyCompactList}\item 
+\Hypertarget{class_user_a538e10150819d39d8b7ad1f90c3ef630}\label{class_user_a538e10150819d39d8b7ad1f90c3ef630} 
+virtual std\+::string {\bfseries get\+Name} () const =0
+\item 
+\Hypertarget{class_user_af89bad6bb8861cccf0c67f6d5963e2c4}\label{class_user_af89bad6bb8861cccf0c67f6d5963e2c4} 
+virtual void {\bfseries join\+Room} (\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\item 
+\Hypertarget{class_user_a157b63e31b0913fa8892faf335c01e30}\label{class_user_a157b63e31b0913fa8892faf335c01e30} 
+virtual void {\bfseries leave\+Room} (\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\item 
+virtual void \mbox{\hyperlink{class_user_a2668b3722627ce4c6340fd6fc62a9725}{receive}} (std\+::string message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Receives a message from the chat room. \end{DoxyCompactList}\item 
+\Hypertarget{class_user_a44388bdb8fb6accbe7fe143541c3d98d}\label{class_user_a44388bdb8fb6accbe7fe143541c3d98d} 
+void {\bfseries execute\+All} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a user in the chat system. 
+
+The \doxylink{class_user}{User} class serves as a base class for different types of users in the chat application. It provides the basic functionalities that all users should have. 
+
+\label{doc-func-members}
+\Hypertarget{class_user_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_a2668b3722627ce4c6340fd6fc62a9725}\index{User@{User}!receive@{receive}}
+\index{receive@{receive}!User@{User}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily \label{class_user_a2668b3722627ce4c6340fd6fc62a9725} 
+virtual void User\+::receive (\begin{DoxyParamCaption}\item[{std\+::string}]{message}{, }\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{from\+User}{, }\item[{\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Receives a message from the chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message received. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_user_name_ae59ab1336b2e33adf412b052255697ea}{User\+Name}}.
+
+\Hypertarget{class_user_a29caabba5c7e00de3780d11348eabef6}\index{User@{User}!send@{send}}
+\index{send@{send}!User@{User}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily \label{class_user_a29caabba5c7e00de3780d11348eabef6} 
+virtual void User\+::send (\begin{DoxyParamCaption}\item[{std\+::string}]{message}{, }\item[{\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sends a message to the chat room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be sent. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_user_name_a02aa85c51e8f8b6a18bc99401e6609fc}{User\+Name}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+user.\+h\item 
+user.\+cpp\end{DoxyCompactItemize}

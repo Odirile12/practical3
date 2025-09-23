@@ -1,0 +1,36 @@
+\doxysection{chat\+Room.\+h}
+\hypertarget{chat_room_8h_source}{}\label{chat_room_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CHATROOM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CHATROOM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}user.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}userIterator.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}messageIterator.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }chatRoom\{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::list\ <User*>\ \ user;}
+\DoxyCodeLine{00014\ \ \ \ \ std::list\ <std::string>\ message;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ chatRoom()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ rgisterUser(\mbox{\hyperlink{class_user}{User}}*\ u)=0;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ removeUser(\mbox{\hyperlink{class_user}{User}}*\ u)=0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ sendMessage(std::string\ message,\mbox{\hyperlink{class_user}{User}}*\ fromUser);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ saveMessage(std::string\ message,\mbox{\hyperlink{class_user}{User}}*\ fromUser);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_user_iterator}{UserIterator}}*\ creatUserIterator();}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_message_iterator}{MessageIterator}}*\ creatMessageIterator();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ addUser(\mbox{\hyperlink{class_user}{User}}*\ u);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ deleteUser(\mbox{\hyperlink{class_user}{User}}*\ u);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ receive(std::string\ message,\mbox{\hyperlink{class_user}{User}}*\ fromUser);}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
