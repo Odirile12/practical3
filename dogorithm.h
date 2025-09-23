@@ -11,7 +11,8 @@
  * interactions between users in the chat system. It handles message
  * exchanges and user registrations.
  */
-class Dogorithm : public chatRoom {
+
+ class Dogorithm : public chatRoom {
 public:
     void rgisterUser(User* u) override;
     void removeUser(User* u) override;
