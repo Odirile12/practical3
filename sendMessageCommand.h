@@ -1,4 +1,4 @@
-#ifndef SENDMESSAGECOMMAND_H
+#ifndef AGECOMMAND_H
 #define SENDMESSAGECOMMAND_H
 #include "command.h"
 #include <string>

@@ -1,0 +1,77 @@
+\doxysection{Ctrl\+Cat Class Reference}
+\hypertarget{class_ctrl_cat}{}\label{class_ctrl_cat}\index{CtrlCat@{CtrlCat}}
+
+
+Concrete mediator that manages user interactions in the chat room.  
+
+
+
+
+{\ttfamily \#include $<$ctrl\+Cat.\+h$>$}
+
+Inheritance diagram for Ctrl\+Cat\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ctrl_cat}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ctrl_cat_a8645e48d957fc9f9bc5a2c1df3ee3010}{rgister\+User}} (\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}u) override
+\item 
+void \mbox{\hyperlink{class_ctrl_cat_af0bd7793d467424f4547e4dd3e76a5f9}{remove\+User}} (\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}u) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classchat_room}{chat\+Room}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries send\+Message} (std\+::string message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User)
+\item 
+void {\bfseries save\+Message} (std\+::string message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User)
+\item 
+\mbox{\hyperlink{class_user_iterator}{User\+Iterator}} \texorpdfstring{$\ast$}{*} {\bfseries creat\+User\+Iterator} ()
+\item 
+\mbox{\hyperlink{class_message_iterator}{Message\+Iterator}} \texorpdfstring{$\ast$}{*} {\bfseries creat\+Message\+Iterator} ()
+\item 
+void {\bfseries add\+User} (\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}u)
+\item 
+void {\bfseries delete\+User} (\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}u)
+\item 
+void {\bfseries receive} (std\+::string message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete mediator that manages user interactions in the chat room. 
+
+The \doxylink{class_ctrl_cat}{Ctrl\+Cat} class implements the Chat\+Room interface and facilitates communication between users by managing their interactions and messages. 
+
+\label{doc-func-members}
+\Hypertarget{class_ctrl_cat_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ctrl_cat_af0bd7793d467424f4547e4dd3e76a5f9}\index{CtrlCat@{CtrlCat}!removeUser@{removeUser}}
+\index{removeUser@{removeUser}!CtrlCat@{CtrlCat}}
+\doxysubsubsection{\texorpdfstring{removeUser()}{removeUser()}}
+{\footnotesize\ttfamily \label{class_ctrl_cat_af0bd7793d467424f4547e4dd3e76a5f9} 
+void Ctrl\+Cat\+::remove\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classchat_room}{chat\+Room}}.
+
+\Hypertarget{class_ctrl_cat_a8645e48d957fc9f9bc5a2c1df3ee3010}\index{CtrlCat@{CtrlCat}!rgisterUser@{rgisterUser}}
+\index{rgisterUser@{rgisterUser}!CtrlCat@{CtrlCat}}
+\doxysubsubsection{\texorpdfstring{rgisterUser()}{rgisterUser()}}
+{\footnotesize\ttfamily \label{class_ctrl_cat_a8645e48d957fc9f9bc5a2c1df3ee3010} 
+void Ctrl\+Cat\+::rgister\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classchat_room}{chat\+Room}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ctrl\+Cat.\+h\item 
+ctrl\+Cat.\+cpp\end{DoxyCompactItemize}

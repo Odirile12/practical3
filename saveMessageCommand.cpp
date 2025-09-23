@@ -8,6 +8,8 @@
  */
 void SaveMessageCommand::execute() {
     // Implementation for saving the message
+    this->getRoom()->saveMessage(this->getMessage() ,this->getUser());
+
 }
 
 /**

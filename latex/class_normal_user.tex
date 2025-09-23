@@ -1,0 +1,59 @@
+\doxysection{Normal\+User Class Reference}
+\hypertarget{class_normal_user}{}\label{class_normal_user}\index{NormalUser@{NormalUser}}
+
+
+Represents a normal user in the chat system who can invoke commands.  
+
+
+
+
+{\ttfamily \#include $<$normal\+User.\+h$>$}
+
+Inheritance diagram for Normal\+User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_normal_user}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_normal_user_a662eb0017223250ad60585a398f81b97}\label{class_normal_user_a662eb0017223250ad60585a398f81b97} 
+{\bfseries Normal\+User} (const std\+::string \&name)
+\item 
+\Hypertarget{class_normal_user_a3e59dea3c91c4352b97fced52723a6bb}\label{class_normal_user_a3e59dea3c91c4352b97fced52723a6bb} 
+void {\bfseries add\+Command} (\mbox{\hyperlink{class_command}{Command}} \texorpdfstring{$\ast$}{*}command)
+\item 
+\Hypertarget{class_normal_user_aee5169244364aab92c009af814d995cd}\label{class_normal_user_aee5169244364aab92c009af814d995cd} 
+void {\bfseries execute\+Commands} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries User} (std\+::string name)
+\item 
+virtual void \mbox{\hyperlink{class_user_a29caabba5c7e00de3780d11348eabef6}{send}} (std\+::string message, \mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Sends a message to the chat room. \end{DoxyCompactList}\item 
+virtual std\+::string {\bfseries get\+Name} () const =0
+\item 
+virtual void {\bfseries join\+Room} (\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\item 
+virtual void {\bfseries leave\+Room} (\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\item 
+virtual void \mbox{\hyperlink{class_user_a2668b3722627ce4c6340fd6fc62a9725}{receive}} (std\+::string message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Receives a message from the chat room. \end{DoxyCompactList}\item 
+void {\bfseries execute\+All} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a normal user in the chat system who can invoke commands. 
+
+Represents a normal user in the chat system.
+
+The \doxylink{class_normal_user}{Normal\+User} class extends the \doxylink{class_user}{User} class and acts as the invoker for commands. It allows users to send and save messages through the command interface. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+normal\+User.\+h\item 
+normal\+User.\+cpp\end{DoxyCompactItemize}

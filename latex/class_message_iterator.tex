@@ -1,0 +1,88 @@
+\doxysection{Message\+Iterator Class Reference}
+\hypertarget{class_message_iterator}{}\label{class_message_iterator}\index{MessageIterator@{MessageIterator}}
+
+
+An iterator for iterating over messages in the chat system.  
+
+
+
+
+{\ttfamily \#include $<$message\+Iterator.\+h$>$}
+
+Inheritance diagram for Message\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_message_iterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_message_iterator_ab0ac87d923acf4fd62b324e488a12d7e}\label{class_message_iterator_ab0ac87d923acf4fd62b324e488a12d7e} 
+{\bfseries Message\+Iterator} (std\+::list$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}messages)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_message_iterator}{Message\+Iterator}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_message_iterator_a5f284cecaceb46e55bd223360a894801}{has\+Next}} () override
+\begin{DoxyCompactList}\small\item\em Moves to the next message in the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_message_iterator_a7f1f2e10fe0af3dd75ce208f35d860c1}{reset}} () override
+\item 
+std\+::string \mbox{\hyperlink{class_message_iterator_a752378f356d55c60353a6991cc0458fe}{next}} () override
+\begin{DoxyCompactList}\small\item\em Returns the current message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An iterator for iterating over messages in the chat system. 
+
+This class implements the Iterator interface and provides methods to traverse through the collection of messages. 
+
+\label{doc-func-members}
+\Hypertarget{class_message_iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_message_iterator_a5f284cecaceb46e55bd223360a894801}\index{MessageIterator@{MessageIterator}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!MessageIterator@{MessageIterator}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily \label{class_message_iterator_a5f284cecaceb46e55bd223360a894801} 
+bool Message\+Iterator\+::has\+Next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Moves to the next message in the collection. 
+
+\begin{DoxyReturn}{Returns}
+true if there is a next message, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_iterator}{my\+Iterator$<$ std\+::string $>$}}.
+
+\Hypertarget{class_message_iterator_a752378f356d55c60353a6991cc0458fe}\index{MessageIterator@{MessageIterator}!next@{next}}
+\index{next@{next}!MessageIterator@{MessageIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_message_iterator_a752378f356d55c60353a6991cc0458fe} 
+std\+::string Message\+Iterator\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the current message. 
+
+\begin{DoxyReturn}{Returns}
+The current message. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_iterator}{my\+Iterator$<$ std\+::string $>$}}.
+
+\Hypertarget{class_message_iterator_a7f1f2e10fe0af3dd75ce208f35d860c1}\index{MessageIterator@{MessageIterator}!reset@{reset}}
+\index{reset@{reset}!MessageIterator@{MessageIterator}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_message_iterator_a7f1f2e10fe0af3dd75ce208f35d860c1} 
+void Message\+Iterator\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classmy_iterator}{my\+Iterator$<$ std\+::string $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+message\+Iterator.\+h\end{DoxyCompactItemize}

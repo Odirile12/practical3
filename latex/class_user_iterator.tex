@@ -1,0 +1,92 @@
+\doxysection{User\+Iterator Class Reference}
+\hypertarget{class_user_iterator}{}\label{class_user_iterator}\index{UserIterator@{UserIterator}}
+
+
+Iterator for iterating over users in the chat system.  
+
+
+
+
+{\ttfamily \#include $<$user\+Iterator.\+h$>$}
+
+Inheritance diagram for User\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user_iterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_user_iterator_a2dc397bc82010a6bfca8297ba910ca29}\label{class_user_iterator_a2dc397bc82010a6bfca8297ba910ca29} 
+{\bfseries User\+Iterator} (std\+::list$<$ \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} $>$ users)
+\item 
+bool \mbox{\hyperlink{class_user_iterator_a45f9ba1340aa1c006e7535ca59fbeaba}{has\+Next}} () override
+\begin{DoxyCompactList}\small\item\em Advances the iterator to the next user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_iterator_a19a509933877f5ee362c8ef5c10f1d05}{next}} () override
+\begin{DoxyCompactList}\small\item\em Returns the next user in the iteration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_iterator_a2434f9f8d31fb5d37611893636dc16c6}{reset}} () override
+\begin{DoxyCompactList}\small\item\em Resets the iterator to the beginning. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Iterator for iterating over users in the chat system. 
+
+This class implements the Iterator interface to provide a way to access users in a sequential manner without exposing the underlying representation. 
+
+\label{doc-func-members}
+\Hypertarget{class_user_iterator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_iterator_a45f9ba1340aa1c006e7535ca59fbeaba}\index{UserIterator@{UserIterator}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!UserIterator@{UserIterator}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily \label{class_user_iterator_a45f9ba1340aa1c006e7535ca59fbeaba} 
+bool User\+Iterator\+::has\+Next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Advances the iterator to the next user. 
+
+\begin{DoxyReturn}{Returns}
+true if there is a next user, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_iterator}{my\+Iterator$<$ User \texorpdfstring{$\ast$}{*} $>$}}.
+
+\Hypertarget{class_user_iterator_a19a509933877f5ee362c8ef5c10f1d05}\index{UserIterator@{UserIterator}!next@{next}}
+\index{next@{next}!UserIterator@{UserIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_user_iterator_a19a509933877f5ee362c8ef5c10f1d05} 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} User\+Iterator\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the next user in the iteration. 
+
+\begin{DoxyReturn}{Returns}
+The next user. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmy_iterator}{my\+Iterator$<$ User \texorpdfstring{$\ast$}{*} $>$}}.
+
+\Hypertarget{class_user_iterator_a2434f9f8d31fb5d37611893636dc16c6}\index{UserIterator@{UserIterator}!reset@{reset}}
+\index{reset@{reset}!UserIterator@{UserIterator}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_user_iterator_a2434f9f8d31fb5d37611893636dc16c6} 
+void User\+Iterator\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resets the iterator to the beginning. 
+
+
+
+Implements \mbox{\hyperlink{classmy_iterator}{my\+Iterator$<$ User \texorpdfstring{$\ast$}{*} $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+user\+Iterator.\+h\end{DoxyCompactItemize}
