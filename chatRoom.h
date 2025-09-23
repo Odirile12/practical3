@@ -7,7 +7,7 @@
 #include "userIterator.h"
 #include "messageIterator.h"
 
-#include <list>;
+#include <list>
 class chatRoom{
     private:
     std::list <User*>  user;
@@ -15,8 +15,8 @@ class chatRoom{
 
     public:
     chatRoom()=default;
-    void rgisterUser(User* u);
-    void removeUser(User* u);
+    virtual void rgisterUser(User* u)=0;
+    virtual void removeUser(User* u)=0;
     void sendMessage(std::string message,User* fromUser);
     void saveMessage(std::string message,User* fromUser);
     UserIterator* creatUserIterator();
