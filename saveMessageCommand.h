@@ -13,17 +13,15 @@
  */
 class SaveMessageCommand : public Command {
 public:
+
+    SaveMessageCommand(chatRoom* room, User* user, const std::string message)
+        : Command(room, user, message) {};
     ~SaveMessageCommand() = default;
     /**
      * @brief Executes the command to save a message.
      */
     void execute() override;
 
-    /**
-     * @brief Sets the message to be saved.
-     * @param message The message to save.
-     */
-    void setMessage(const std::string& message);
 
 };
 

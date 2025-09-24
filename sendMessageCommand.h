@@ -13,13 +13,15 @@
 class SendMessageCommand : public Command {
 public:
 
+    SendMessageCommand(chatRoom* room, User* user, const std::string message)
+        : Command(room, user, message) {};
+        
+    ~SendMessageCommand() = default;
 
     /**
      * @brief Executes the command to send the message.
      */
-    void execute();
-
-    void saveMessage(const std::string& message);
+    void execute() override;
 
 };
 

@@ -6,6 +6,7 @@
  * @param message The message to be sent.
  */
 
+
 /**
  * @brief Executes the command to send the message.
  * 
@@ -13,5 +14,8 @@
  */
 void SendMessageCommand::execute() {
     // Implementation for sending the message through the mediator
-    this->getRoom()->sendMessage(this->getMessage() ,this->getUser());
+    if(room == nullptr || user == nullptr) {
+        return; // Safety check
+    }
+    room->sendMessage(message, user);
 }

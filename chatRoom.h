@@ -9,22 +9,20 @@
 
 #include <list>
 class chatRoom{
-    private:
-    std::list <User*>  user;
-    std::list <std::string> message;
+
+    protected:
+    std::list <std::string> chatHistrory;
+    std::list <User*>  users;
 
     public:
     chatRoom()=default;
-    virtual void rgisterUser(User* u)=0;
-    virtual void removeUser(User* u)=0;
-    void sendMessage(std::string message,User* fromUser);
-    void saveMessage(std::string message,User* fromUser);
-    UserIterator* creatUserIterator();
-    MessageIterator* creatMessageIterator();
-    void addUser(User* u);
-    void deleteUser(User* u);
-    void receive(std::string message,User* fromUser);
-    
+    virtual ~chatRoom()=default;
+
+    virtual void registerUser(User* user) = 0;
+    virtual void removeUser(User* user) = 0;
+    virtual void sendMessage(const std::string& message, User* fromUser) = 0;
+    virtual void saveMessage(const std::string& message, User* fromUser) = 0;
+
 };
 
 

@@ -9,7 +9,7 @@
  * @brief Abstract Command class that defines the interface for command objects.
  */
 class Command {
-private:
+protected:
     chatRoom* room;
     User* user;
     std::string message;
@@ -21,14 +21,10 @@ public:
      */
     virtual void execute() = 0;
 
-    chatRoom* getRoom() const;
-    User* getUser() const ;
-    std::string getMessage() const;
-
     /**
      * @brief Destructor for the Command class.
      */
-    virtual ~Command() {}
+    virtual ~Command() = default; 
 };
 
 #endif // COMMAND_H

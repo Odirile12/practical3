@@ -8,10 +8,9 @@
  */
 void SaveMessageCommand::execute() {
     // Implementation for saving the message
-    this->getRoom()->saveMessage(this->getMessage() ,this->getUser());
-
+    if(room == nullptr || user == nullptr) {
+        return; // Safety check
+    }
+   room->saveMessage(message, user);
 }
 
-/**
- * @brief Destructor for SaveMessageCommand.
- */
