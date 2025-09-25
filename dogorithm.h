@@ -1,13 +1,13 @@
 // #ifndef DOGORITHM_H
 // #define DOGORITHM_H
 
-// #include "ChatRoom.h" // Add this line to include the definition of ChatRoom
+// #include "chatRoom.h" // Add this line to include the definition of chatRoom
 
 // /**
 //  * @class Dogorithm
 //  * @brief Concrete mediator that facilitates communication between users.
 //  *
-//  * The Dogorithm class implements the ChatRoom interface and manages the
+//  * The Dogorithm class implements the chatRoom interface and manages the
 //  * interactions between users in the chat system. It handles message
 //  * exchanges and user registrations.
 //  */

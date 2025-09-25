@@ -5,7 +5,7 @@
 
 #include <string>
 class User;
-class ChatRoom;
+class chatRoom;
 
 class Observer {
 public:

@@ -1,15 +1,14 @@
-#include "Name3.h"
+#include "Name1.h"
 #include "SendMessageCommand.h"
 #include "SaveMessageCommand.h"
 #include "chatRoom.h"
 #include <iostream>
-#include <iomanip>
 
-Name3::Name3() : User("Charlie"), messageCount(0) {
-    std::cout << "Name3 user created: Charlie" << std::endl;
+Name1::Name1() : User("Alice") {
+    std::cout << "Name1 user created: Alice" << std::endl;
 }
 
-void Name3::send(const std::string& message, chatRoom* room) {
+void Name1::send(const std::string& message, chatRoom* room) {
     if (!isInRoom(room)) {
         std::cout << "Error: " << name << " is not in " << room->getName() << "!" << std::endl;
         return;
@@ -20,9 +19,7 @@ void Name3::send(const std::string& message, chatRoom* room) {
         return;
     }
     
-    messageCount++;
-    std::cout << "📝 " << name << " (message #" << messageCount << ") sending to " 
-              << room->getName() << ": " << message << std::endl;
+    std::cout << name << " is sending message to " << room->getName() << ": " << message << std::endl;
     
     // Create commands for sending and saving (Command Pattern)
     Command* sendCmd = new SendMessageCommand(room, this, message);
@@ -33,16 +30,14 @@ void Name3::send(const std::string& message, chatRoom* room) {
     executeCommands();
 }
 
-void Name3::receive(const std::string& message, User* fromUser, chatRoom* room) {
+void Name1::receive(const std::string& message, User* fromUser, chatRoom* room) {
     std::cout << "💬 [" << room->getName() << "] " << name << " received from " 
               << fromUser->getName() << ": " << message << std::endl;
 }
 
-int Name3::getMessageCount() const {
-    return messageCount;
-}
-
-void Name3::sendFormattedMessage(const std::string& message, chatRoom* room) {
-    std::string formattedMessage = "✨ [" + std::to_string(messageCount + 1) + "] " + message + " ✨";
-    send(formattedMessage, room);
+void Name1::broadcastToAllRooms(const std::string& message) {
+    std::cout << "\n📢 " << name << " broadcasting to all " << chatRooms.size() << " rooms: " << message << std::endl;
+    for (chatRoom* room : chatRooms) {
+        send(message, room);
+    }
 }
