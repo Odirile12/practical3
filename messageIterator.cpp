@@ -1,30 +1,21 @@
-// // message_iterator.cpp
-// #include "messageIterator.h"
+#include "messageIterator.h"
 
-// // Constructor
-// MessageIterator::MessageIterator(MessageCollection* collection) 
-//     : collection(collection), index(0) {}
+MessageIterator::MessageIterator(const std::list<std::string>& messageList) 
+    : messages(messageList), currentPosition(messages.begin()) {}
 
-// // Returns the current message
-// Message* MessageIterator::current() {
-//     return collection->getMessage(index);
-// }
+bool MessageIterator::hasNext()   {
+    return currentPosition != messages.end();
+}
 
-// // Moves to the next message
-// bool MessageIterator::next() {
-//     if (index < collection->count() - 1) {
-//         index++;
-//         return true;
-//     }
-//     return false;
-// }
+std::string MessageIterator::next()  {
+    if (!hasNext()) {
+        return "";
+    }
+    std::string message = *currentPosition;
+    ++currentPosition;
+    return message;
+}
 
-// // Checks if there are more messages
-// bool MessageIterator::hasNext() {
-//     return index < collection->count() - 1;
-// }
-
-// // Resets the iterator to the beginning
-// void MessageIterator::reset() {
-//     index = 0;
-// }
+void MessageIterator::reset()  {
+    currentPosition = messages.begin();
+}

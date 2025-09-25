@@ -2,12 +2,12 @@
 #define NoTIFICATION_H
 #include "Observer.h"
 
-class Notification:public observer{
-    public:
-    Notification()=default;
-    void update(std::string message,User* fromUser,chatRoom* room) override;
-    ~Notification()=default;
-
+#include <iostream>
+#include <string>
+class Notification : public Observer {
+public:
+    Notification() = default;
+    void update(const std::string& message, User* fromUser, chatRoom* room) override;
 };
 
 #endif // NoTIFICATION_H

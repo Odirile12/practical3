@@ -1,14 +1,16 @@
-#ifndef ObSERVER_H
-#define ObSERVER_H
-#include <string>
+#ifndef OBSERVER_H
+#define OBSERVER_H
 #include "user.h"
-#include "chatRoom.h"
+#include "chatroom.h"
 
-class observer{
-    public:
-    virtual ~observer()=default;
-    virtual void update(std::string message,User* fromUser,chatRoom* room)=0;
+#include <string>
+class User;
+class ChatRoom;
 
+class Observer {
+public:
+    virtual ~Observer() = default;
+    virtual void update(const std::string& message, User* fromUser, chatRoom* room) = 0;
 };
 
 #endif
