@@ -15,14 +15,15 @@
  */
 class MessageIterator: public myIterator<std::string> {
 private:
-    std::list<std::string>* messages; // Pointer to the collection of messages
-    int position;
+private:
+    std::list<std::string> messages;
+    typename std::list<std::string>::const_iterator currentPosition;
 
 public:
     /**
      * @brief Constructs a MessageIterator.
      */
-    MessageIterator(std::list<std::string>* messages);
+    MessageIterator(const std::list<std::string>& messageList);
 
     /**
      * @brief Moves to the next message in the collection.

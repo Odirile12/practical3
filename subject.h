@@ -5,11 +5,13 @@
 #include "Observer.h"
 
 class subject{
+    protected:
+    std::vector<Observer*> observers;
     public:
     virtual ~subject()=default;
-    virtual void registerObserver(observer* o)=0;
-    virtual void removeObserver(observer* o)=0;
-    virtual void notifyObserver(std::string message,class User* fromUser,class chatRoom* room)=0;
+    void attach(Observer* observer);
+    void detach(Observer* observer);
+    void notify(const std::string& message, User* fromUser, chatRoom* room);
 
 };
 

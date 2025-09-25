@@ -2,7 +2,7 @@
 #define USERITERATOR_H
 
 #include "user.h"
-#include <list>
+#include <vector>
 #include "iterator.h"
 
 
@@ -13,14 +13,14 @@
  * This class implements the Iterator interface to provide a way to access 
  * users in a sequential manner without exposing the underlying representation.
  */
-class User;
+
 class UserIterator : public myIterator<User*> {
 private:
-    std::list<User*> users;
-    int position;
+    std::vector<User*> users;
+    size_t currentPosition;
 
 public:
-    UserIterator(std::list<User*> users);
+    UserIterator(const std::vector<User*>& userList);
     /**
      * @brief Advances the iterator to the next user.
      * @return true if there is a next user, false otherwise.

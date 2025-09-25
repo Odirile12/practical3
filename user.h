@@ -4,6 +4,7 @@
 #include "command.h"
 #include "chatRoom.h"
 #include <vector>
+#include "Observer.h"
 
 /**
  * @class User
@@ -13,6 +14,7 @@
  * in the chat application. It provides the basic functionalities
  * that all users should have.
  */
+
 class User {
 public:
     ~User() = default;
