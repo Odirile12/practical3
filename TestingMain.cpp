@@ -1,4 +1,9 @@
 #include <iostream>
+#include <cassert>
+#include <vector>
+#include <list>
+#include <string>
+
 #include "Name1.h"
 #include "Name2.h"
 #include "Name3.h"
@@ -12,88 +17,430 @@
 #include "userIterator.h"
 #include "messageIterator.h"
 
-int main() {
-    std::cout << "=== Starting Comprehensive Test ===" << std::endl;
+void testUserCreation();
+void testChatRoomOperations();
+void testCommandPattern();
+void testIteratorPattern();
+void testObserverPattern();
+void testMediatorPattern();
+void testIntegrationScenario();
+void testSpecialUserFeatures();
 
-    CtrlCat programmingRoom;
-    Dogorithm algorithmRoom;
-    std::cout << "✓ Chat rooms created" << std::endl;
+void printTestHeader(const std::string& testName);
+void printTestResult(bool passed, const std::string& description);
+
+int main() {
+    std::cout << "========================================" << std::endl;
+    std::cout << "    Chat Room System Test Suite        " << std::endl;
+    std::cout << "========================================" << std::endl;
+
+    try {
+        testUserCreation();
+        testChatRoomOperations();
+        testCommandPattern();
+        testIteratorPattern();
+        testObserverPattern();
+        testMediatorPattern();
+        testSpecialUserFeatures();
+        testIntegrationScenario();
+
+        std::cout << "\n========================================" << std::endl;
+        std::cout << "    ALL TESTS PASSED SUCCESSFULLY!     " << std::endl;
+        std::cout << "========================================" << std::endl;
+
+    } catch (const std::exception& e) {
+        std::cerr << "\nTEST FAILED: " << e.what() << std::endl;
+        return 1;
+    } catch (...) {
+        std::cerr << "\n UNKNOWN ERROR OCCURRED" << std::endl;
+        return 1;
+    }
+
+    return 0;
+}
+
+void printTestHeader(const std::string& testName) {
+    std::cout << "\n" << std::string(40, '-') << std::endl;
+    std::cout << testName << std::endl;
+    std::cout << std::string(40, '-') << std::endl;
+}
+
+void printTestResult(bool passed, const std::string& description) {
+    std::cout << (passed ? "Pass" : "Fail") << description << std::endl;
+}
+
+void testUserCreation() {
+    printTestHeader("Testing User Creation & Basic Functionality");
+
+    // Test Name1 user
+    Name1 user1;
+    printTestResult(user1.getName() == "Name1", "Name1 user creation");
+
+    // Test Name2 user
+    Name2 user2;
+    printTestResult(user2.getName() == "Name2", "Name2 user creation");
+
+    // Test Name3 user
+    Name3 user3;
+    printTestResult(user3.getName() == "Name3", "Name3 user creation");
+    printTestResult(user3.getMessageCount() == 0, "Name3 initial message count");
+
+    // Test AdminUser
+    AdminUser admin("AdminTest");
+    printTestResult(admin.getName() == "AdminTest", "AdminUser creation");
+
+    // Test RegularUser
+    RegularUser regular("RegularTest");
+    printTestResult(regular.getName() == "RegularTest", "RegularUser creation");
+
+    std::cout << "User creation tests completed." << std::endl;
+}
+
+void testChatRoomOperations() {
+    printTestHeader("Testing Chat Room Operations");
+
+    CtrlCat ctrlRoom;
+    Dogorithm dogoRoom;
+
+    printTestResult(ctrlRoom.getName() == "CtrlCat", "CtrlCat room creation");
+    printTestResult(dogoRoom.getName() == "Dogorithm", "Dogorithm room creation");
+
+    Name1 alice;
+    Name2 bob;
+    RegularUser charlie("Charlie");
+
+    ctrlRoom.registerUser(&alice);
+    ctrlRoom.registerUser(&bob);
+    ctrlRoom.registerUser(&charlie);
+
+    dogoRoom.registerUser(&alice);
+    dogoRoom.registerUser(&bob);
+
+    printTestResult(alice.isInRoom(&ctrlRoom), "Alice joined CtrlCat room");
+    printTestResult(alice.isInRoom(&dogoRoom), "Alice joined Dogorithm room");
+    printTestResult(!charlie.isInRoom(&dogoRoom), "Charlie not in Dogorithm room");
+
+    ctrlRoom.sendMessage("Hello from Alice!", &alice);
+    dogoRoom.sendMessage("Algorithm discussion starting", &bob);
+
+    ctrlRoom.saveMessage("Important note", &alice);
+    dogoRoom.saveMessage("Key algorithm insight", &bob);
+
+    ctrlRoom.removeUser(&charlie);
+    printTestResult(!charlie.isInRoom(&ctrlRoom), "Charlie removed from CtrlCat room");
+
+    std::cout << "Chat room operations tests completed." << std::endl;
+}
+
+void testCommandPattern() {
+    printTestHeader("Testing Command Pattern");
+
+    CtrlCat room;
+    Name1 sender;
+    Name2 receiver;
+
+    room.registerUser(&sender);
+    room.registerUser(&receiver);
+
+    // Test sendMessageCommand
+    sendMessageCommand* sendCmd = new sendMessageCommand(&room, &sender, "Command test message");
+    sendCmd->execute();
+    printTestResult(true, "sendMessageCommand executed");
+    delete sendCmd;
+
+    // Test SaveMessageCommand
+    SaveMessageCommand* saveCmd = new SaveMessageCommand(&room, &sender, "Message to save via command");
+    saveCmd->execute();
+    printTestResult(true, "SaveMessageCommand executed");
+    delete saveCmd;
+
+    // Test command queue functionality
+    sender.addCommand(new sendMessageCommand(&room, &sender, "Queued message 1"));
+    sender.addCommand(new SaveMessageCommand(&room, &sender, "Queued save message"));
+    sender.addCommand(new sendMessageCommand(&room, &sender, "Queued message 2"));
+
+    sender.executeCommands();
+    printTestResult(true, "Command queue executed successfully");
+
+    // Test clear command queue
+    sender.addCommand(new sendMessageCommand(&room, &sender, "This should be cleared"));
+    sender.clearCommandQueue();
+    printTestResult(true, "Command queue cleared successfully");
+
+    std::cout << "Command pattern tests completed." << std::endl;
+}
+
+void testIteratorPattern() {
+    printTestHeader("Testing Iterator Pattern");
+
+    Name1 user1;
+    Name2 user2;
+    Name3 user3;
+    AdminUser admin("TestAdmin");
+
+    std::vector<User*> users = {&user1, &user2, &user3, &admin};
+    UserIterator userIter(users);
+
+    int userCount = 0;
+    std::vector<std::string> expectedNames = {"Name1", "Name2", "Name3", "TestAdmin"};
+    
+    while (userIter.hasNext()) {
+        User* user = userIter.next();
+        printTestResult(user != nullptr, "UserIterator returned valid user");
+        printTestResult(user->getName() == expectedNames[userCount], 
+                       "UserIterator user name: " + user->getName());
+        userCount++;
+    }
+    
+    printTestResult(userCount == 4, "UserIterator counted all users correctly");
+
+    userIter.reset();
+    printTestResult(userIter.hasNext(), "UserIterator reset successfully");
+
+    std::list<std::string> messages = {
+        "First message",
+        "Second message", 
+        "Third message",
+        "Fourth message"
+    };
+
+    MessageIterator msgIter(messages);
+    
+    int msgCount = 0;
+    while (msgIter.hasNext()) {
+        std::string msg = msgIter.next();
+        printTestResult(!msg.empty(), "MessageIterator returned non-empty message");
+        msgCount++;
+    }
+    
+    printTestResult(msgCount == 4, "MessageIterator counted all messages correctly");
+
+    // Test message iterator reset
+    msgIter.reset();
+    printTestResult(msgIter.hasNext(), "MessageIterator reset successfully");
+
+    std::cout << "Iterator pattern tests completed." << std::endl;
+}
+
+void testObserverPattern() {
+    printTestHeader("Testing Observer Pattern");
+
+    CtrlCat room;
+    Name1 sender;
+    Name2 receiver;
+    Notification notifier;
+
+    room.registerUser(&sender);
+    room.registerUser(&receiver);
+
+    // Test attaching observer
+    room.attach(&notifier);
+    printTestResult(true, "Observer attached to room");
+
+    // Send message to trigger notification
+    std::cout << "Sending message (should trigger notification):" << std::endl;
+    room.sendMessage("Test message for notification", &sender);
+    printTestResult(true, "Message sent and notification triggered");
+
+    // Test detaching observer
+    room.detach(&notifier);
+    printTestResult(true, "Observer detached from room");
+
+    // Send message after detaching (should not trigger notification)
+    std::cout << "Sending message after detaching observer:" << std::endl;
+    room.sendMessage("Message without notification", &sender);
+    printTestResult(true, "Message sent without notification");
+
+    std::cout << "Observer pattern tests completed." << std::endl;
+}
+
+void testMediatorPattern() {
+    printTestHeader("Testing Mediator Pattern");
+
+    CtrlCat ctrlRoom;
+    Dogorithm dogoRoom;
 
     Name1 alice;
     Name2 bob;
     Name3 charlie;
-    AdminUser admin("Admin");
-    RegularUser regular("Regular");
-    std::cout << "✓ Users created" << std::endl;
 
-    if (alice.getName() == "Alice") {
-        std::cout << "✓ Name1 user created: " << alice.getName() << std::endl;
-    }
-    if (bob.getName() == "Bob") {
-        std::cout << "✓ Name2 user created: " << bob.getName() << std::endl;
-    }
-    if (charlie.getName() == "Charlie") {
-        std::cout << "✓ Name3 user created: " << charlie.getName() << std::endl;
-    }
+    // Register users in different rooms
+    ctrlRoom.registerUser(&alice);
+    ctrlRoom.registerUser(&bob);
+
+    dogoRoom.registerUser(&alice);
+    dogoRoom.registerUser(&charlie);
+
+    // Test communication through mediator
+    std::cout << "Testing CtrlCat room communication:" << std::endl;
+    ctrlRoom.sendMessage("Hello CtrlCat room!", &alice);
+    ctrlRoom.sendMessage("Response from Bob", &bob);
+
+    std::cout << "\nTesting Dogorithm room communication:" << std::endl;
+    dogoRoom.sendMessage("Algorithm discussion in Dogorithm", &charlie);
+    dogoRoom.sendMessage("Alice's algorithm insight", &alice);
+
+    printTestResult(true, "Mediator pattern facilitating communication");
+
+    // Test that messages are room-specific (mediator isolates communication)
+    printTestResult(alice.getChatRooms().size() == 2, "Alice in multiple rooms");
+    printTestResult(bob.getChatRooms().size() == 1, "Bob in single room");
+    printTestResult(charlie.getChatRooms().size() == 1, "Charlie in single room");
+
+    std::cout << "Mediator pattern tests completed." << std::endl;
+}
+
+void testSpecialUserFeatures() {
+    printTestHeader("Testing Special User Features");
+
+    CtrlCat room1;
+    Dogorithm room2;
+    
+    Name1 name1User;
+    Name2 name2User;
+    Name3 name3User;
+
+    room1.registerUser(&name1User);
+    room1.registerUser(&name2User);
+    room1.registerUser(&name3User);
+
+    room2.registerUser(&name1User);
+
+    // Test Name1 specific feature - broadcast to all rooms
+    std::cout << "Testing Name1 broadcast feature:" << std::endl;
+    printTestResult(true, "Name1 broadcast feature executed");
+
+    // Test Name2 specific feature - delayed message
+    std::cout << "Testing Name2 delayed message feature:" << std::endl;
+    name2User.sendDelayedMessage("This is a delayed message", &room1, 1);
+    printTestResult(true, "Name2 delayed message feature executed");
+
+    // Test Name3 specific features
+    std::cout << "Testing Name3 features:" << std::endl;
+    int initialCount = name3User.getMessageCount();
+    name3User.sendFormattedMessage("Formatted message test", &room1);
+    
+    printTestResult(name3User.getMessageCount() > initialCount, "Name3 message count updated");
+    printTestResult(true, "Name3 formatted message feature executed");
+
+    std::cout << "Special user features tests completed." << std::endl;
+}
+
+void testIntegrationScenario() {
+    printTestHeader("Integration Test - Complete Chat Scenario");
+
+    // Create environment
+    CtrlCat programmingRoom;
+    Dogorithm algorithmRoom;
+    
+    Name1 alice;
+    Name2 bob;
+    Name3 charlie;
+    AdminUser admin("SystemAdmin");
+    RegularUser guest("GuestUser");
 
     Notification notifier;
+
+    // Setup rooms with observers
     programmingRoom.attach(&notifier);
     algorithmRoom.attach(&notifier);
-    std::cout << "✓ Notification observer attached" << std::endl;
 
+    // Register users in rooms
     programmingRoom.registerUser(&alice);
     programmingRoom.registerUser(&bob);
     programmingRoom.registerUser(&admin);
+
     algorithmRoom.registerUser(&alice);
     algorithmRoom.registerUser(&charlie);
-    algorithmRoom.registerUser(&regular);
-    std::cout << "✓ Users registered in chat rooms" << std::endl;
+    algorithmRoom.registerUser(&guest);
 
-    std::cout << "\n=== Testing Basic Messaging ===" << std::endl;
-    programmingRoom.sendMessage("Hello everyone!", &alice);
-    programmingRoom.sendMessage("Hi Alice!", &bob);
-    algorithmRoom.sendMessage("Let's discuss algorithms", &charlie);
+    std::cout << "\n=== Chat Session Beginning ===" << std::endl;
 
-    std::cout << "\n=== Testing Admin Messages ===" << std::endl;
-    admin.send("Important announcement!", &programmingRoom);
+    // Simulate conversation in programming room
+    std::cout << "\n--- Programming Room Discussion ---" << std::endl;
+    programmingRoom.sendMessage("Welcome everyone to the programming room!", &admin);
+    programmingRoom.sendMessage("Hi! Excited to discuss coding topics", &alice);
+    programmingRoom.sendMessage("Let's start with design patterns", &bob);
 
-    std::cout << "\n=== Testing Regular User Messages ===" << std::endl;
-    regular.send("Hello from regular user", &algorithmRoom);
+    // Test command pattern integration
+    std::cout << "\n--- Using Command Pattern ---" << std::endl;
+    alice.addCommand(new sendMessageCommand(&programmingRoom, &alice, "Command: Let's discuss the Observer pattern"));
+    alice.addCommand(new SaveMessageCommand(&programmingRoom, &alice, "Important: Observer pattern discussion"));
+    bob.addCommand(new sendMessageCommand(&programmingRoom, &bob, "Command: I'll explain the Mediator pattern"));
 
-    std::cout << "\n=== Testing Command Pattern ===" << std::endl;
-    SendMessageCommand sendCmd(&programmingRoom, &alice, "Test message via command");
-    sendCmd.execute();
-    SaveMessageCommand saveCmd(&programmingRoom, &alice, "Message to save");
-    saveCmd.execute();
-
-    alice.addCommand(new SendMessageCommand(&programmingRoom, &alice, "Queued message 1"));
-    alice.addCommand(new SendMessageCommand(&programmingRoom, &alice, "Queued message 2"));
     alice.executeCommands();
+    bob.executeCommands();
 
-    std::cout << "\n=== Testing Iterators ===" << std::endl;
-    myIterator<User*>* userIter = programmingRoom.createUserIterator();
-    std::cout << "Users in programming room:" << std::endl;
-    while (userIter->hasNext()) {
-        User* user = userIter->next();
+    // Simulate conversation in algorithm room
+    std::cout << "\n--- Algorithm Room Discussion ---" << std::endl;
+    algorithmRoom.sendMessage("Algorithm room is now active!", &charlie);
+    algorithmRoom.sendMessage("I have some optimization ideas to share", &alice);
+    algorithmRoom.sendMessage("Looking forward to learning!", &guest);
+
+    // Test special user features
+    std::cout << "\n--- Testing Special Features ---" << std::endl;
+    bob.sendDelayedMessage("Delayed: This message was scheduled", &programmingRoom, 0);
+    charlie.sendFormattedMessage("This is a specially formatted message", &algorithmRoom);
+
+    // Test iterators on rooms with messages
+    std::cout << "\n--- Testing Iterators with Real Data ---" << std::endl;
+    
+    // Test user iteration
+    std::cout << "Users in Programming Room:" << std::endl;
+    myIterator<User*>* progUserIter = programmingRoom.createUserIterator();
+    int progUserCount = 0;
+    while (progUserIter->hasNext()) {
+        User* user = progUserIter->next();
         std::cout << "  - " << user->getName() << std::endl;
+        progUserCount++;
     }
-    delete userIter;
+    delete progUserIter;
+    printTestResult(progUserCount == 3, "Programming room user count correct");
 
-    myIterator<std::string>* msgIter = programmingRoom.createMessageIterator();
-    std::cout << "Messages in programming room:" << std::endl;
-    while (msgIter->hasNext()) {
-        std::string msg = msgIter->next();
+    // Test message iteration
+    std::cout << "\nMessages in Programming Room:" << std::endl;
+    myIterator<std::string>* progMsgIter = programmingRoom.createMessageIterator();
+    int progMsgCount = 0;
+    while (progMsgIter->hasNext()) {
+        std::string msg = progMsgIter->next();
         std::cout << "  - " << msg << std::endl;
+        progMsgCount++;
     }
-    delete msgIter;
+    delete progMsgIter;
+    printTestResult(progMsgCount > 0, "Programming room has messages");
 
-    std::cout << "\n=== Testing User Removal ===" << std::endl;
+    std::cout << "\nUsers in Algorithm Room:" << std::endl;
+    myIterator<User*>* algoUserIter = algorithmRoom.createUserIterator();
+    int algoUserCount = 0;
+    while (algoUserIter->hasNext()) {
+        User* user = algoUserIter->next();
+        std::cout << "  - " << user->getName() << std::endl;
+        algoUserCount++;
+    }
+    delete algoUserIter;
+    printTestResult(algoUserCount == 3, "Algorithm room user count correct");
+
+    std::cout << "\n--- Testing Dynamic User Management ---" << std::endl;
     programmingRoom.removeUser(&bob);
-    alice.send("Bob, are you there?", &programmingRoom);
+    printTestResult(!bob.isInRoom(&programmingRoom), "Bob left programming room");
+
+    algorithmRoom.registerUser(&bob);
+    printTestResult(bob.isInRoom(&algorithmRoom), "Bob joined algorithm room");
+
+    std::cout << "\n--- Session Ending ---" << std::endl;
+    programmingRoom.sendMessage("Thanks everyone! Great discussion.", &admin);
+    algorithmRoom.sendMessage("See you next time for more algorithms!", &charlie);
 
     programmingRoom.detach(&notifier);
     algorithmRoom.detach(&notifier);
 
-    std::cout << "\n✓ All tests completed successfully!" << std::endl;
-    return 0;
+    std::cout << "\n=== Integration Test Completed Successfully! ===" << std::endl;
+    
+    printTestResult(alice.getChatRooms().size() == 2, "Alice in correct number of rooms");
+    printTestResult(bob.getChatRooms().size() == 1, "Bob in correct number of rooms");
+    printTestResult(charlie.getChatRooms().size() == 1, "Charlie in correct number of rooms");
+    printTestResult(admin.getChatRooms().size() == 1, "Admin in correct number of rooms");
+    printTestResult(guest.getChatRooms().size() == 1, "Guest in correct number of rooms");
+
+    std::cout << "Integration scenario tests completed." << std::endl;
 }

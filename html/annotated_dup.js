@@ -10,7 +10,7 @@ var annotated_dup =
     [ "Notification", "class_notification.html", null ],
     [ "observer", "classobserver.html", null ],
     [ "SaveMessageCommand", "class_save_message_command.html", "class_save_message_command" ],
-    [ "SendMessageCommand", "class_send_message_command.html", "class_send_message_command" ],
+    [ "sendMessageCommand", "class_send_message_command.html", "class_send_message_command" ],
     [ "Subject", "classsubject.html", null ],
     [ "User", "class_user.html", "class_user" ],
     [ "UserIterator", "class_user_iterator.html", "class_user_iterator" ],

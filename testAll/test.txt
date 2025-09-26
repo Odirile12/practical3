@@ -142,10 +142,10 @@ void testCommandPattern() {
     room.registerUser(&sender);
     room.registerUser(&receiver);
 
-    // Test SendMessageCommand
-    SendMessageCommand* sendCmd = new SendMessageCommand(&room, &sender, "Command test message");
+    // Test sendMessageCommand
+    sendMessageCommand* sendCmd = new sendMessageCommand(&room, &sender, "Command test message");
     sendCmd->execute();
-    printTestResult(true, "SendMessageCommand executed");
+    printTestResult(true, "sendMessageCommand executed");
     delete sendCmd;
 
     // Test SaveMessageCommand
@@ -155,15 +155,15 @@ void testCommandPattern() {
     delete saveCmd;
 
     // Test command queue functionality
-    sender.addCommand(new SendMessageCommand(&room, &sender, "Queued message 1"));
+    sender.addCommand(new sendMessageCommand(&room, &sender, "Queued message 1"));
     sender.addCommand(new SaveMessageCommand(&room, &sender, "Queued save message"));
-    sender.addCommand(new SendMessageCommand(&room, &sender, "Queued message 2"));
+    sender.addCommand(new sendMessageCommand(&room, &sender, "Queued message 2"));
 
     sender.executeCommands();
     printTestResult(true, "Command queue executed successfully");
 
     // Test clear command queue
-    sender.addCommand(new SendMessageCommand(&room, &sender, "This should be cleared"));
+    sender.addCommand(new sendMessageCommand(&room, &sender, "This should be cleared"));
     sender.clearCommandQueue();
     printTestResult(true, "Command queue cleared successfully");
 
@@ -365,9 +365,9 @@ void testIntegrationScenario() {
 
     // Test command pattern integration
     std::cout << "\n--- Using Command Pattern ---" << std::endl;
-    alice.addCommand(new SendMessageCommand(&programmingRoom, &alice, "Command: Let's discuss the Observer pattern"));
+    alice.addCommand(new sendMessageCommand(&programmingRoom, &alice, "Command: Let's discuss the Observer pattern"));
     alice.addCommand(new SaveMessageCommand(&programmingRoom, &alice, "Important: Observer pattern discussion"));
-    bob.addCommand(new SendMessageCommand(&programmingRoom, &bob, "Command: I'll explain the Mediator pattern"));
+    bob.addCommand(new sendMessageCommand(&programmingRoom, &bob, "Command: I'll explain the Mediator pattern"));
 
     alice.executeCommands();
     bob.executeCommands();
