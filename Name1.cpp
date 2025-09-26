@@ -21,7 +21,6 @@ void Name1::send(const std::string& message, ChatRoom* room) {
     
     std::cout << name << " is sending message to " << room->getName() << ": " << message << std::endl;
     
-    // Create commands for sending and saving (Command Pattern)
     Command* sendCmd = new SendMessageCommand(room, this, message);
     Command* saveCmd = new SaveMessageCommand(room, this, message);
     
@@ -35,9 +34,3 @@ void Name1::receive(const std::string& message, User* fromUser, ChatRoom* room) 
               << fromUser->getName() << ": " << message << std::endl;
 }
 
-void Name1::broadcastToAllRooms(const std::string& message) {
-    std::cout << "\n📢 " << name << " broadcasting to all " << chatRooms.size() << " rooms: " << message << std::endl;
-    for (ChatRoom* room : chatRooms) {
-        send(message, room);
-    }
-}

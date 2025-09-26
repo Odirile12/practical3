@@ -9,7 +9,6 @@ public:
     void send(const std::string& message, ChatRoom* room) override;
     void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
     
-    // Name2 specific methods (optional)
     void sendDelayedMessage(const std::string& message, ChatRoom* room, int delaySeconds = 0);
 };
 

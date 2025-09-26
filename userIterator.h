@@ -1,7 +1,7 @@
 #ifndef USERITERATOR_H
 #define USERITERATOR_H
 
-#include "user.h"
+#include "User.h"
 #include <vector>
 #include "iterator.h"
 

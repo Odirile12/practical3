@@ -4,7 +4,7 @@
 template <typename T>
 class myIterator {
 public:
-    virtual ~myIterator() = default;
+    virtual ~myIterator() =default;
     virtual bool hasNext() = 0;
     virtual T next() = 0;
     virtual void reset() = 0;

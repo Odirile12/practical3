@@ -8,9 +8,7 @@ public:
     Name1();
     void send(const std::string& message, ChatRoom* room) override;
     void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
-    
-    // Name1 specific methods (optional)
-    void broadcastToAllRooms(const std::string& message);
+
 };
 
 #endif

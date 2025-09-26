@@ -23,7 +23,6 @@ void Name2::send(const std::string& message, ChatRoom* room) {
     
     std::cout << name << " is sending message to " << room->getName() << ": " << message << std::endl;
     
-    // Create commands for sending and saving (Command Pattern)
     Command* sendCmd = new SendMessageCommand(room, this, message);
     Command* saveCmd = new SaveMessageCommand(room, this, message);
     

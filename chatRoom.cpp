@@ -6,14 +6,12 @@
 ChatRoom::ChatRoom(const std::string& roomName) : name(roomName) {}
 
 void ChatRoom::sendMessage(const std::string& message, User* fromUser) {
-    // Deliver message to all users (Mediator pattern)
     for (User* user : users) {
-        if (user != fromUser) {  // Don't send back to sender
+        if (user != fromUser) {
             user->receive(message, fromUser, this);
         }
     }
     
-    // Notify observers (Observer pattern)
     notify(message, fromUser, this);
     
     std::cout << "Message delivered to " << users.size() << " users in " << name << std::endl;

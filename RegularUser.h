@@ -5,9 +5,13 @@
 
 class RegularUser : public User {
 public:
-    RegularUser(const std::string& name) : User(name) {}
-
-    // Uses default receive behavior from User
+    RegularUser(const std::string& name);
+    
+    void send(const std::string& message, ChatRoom* room) override;
+    void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
+    
+private:
+    std::string userStatus;
 };
 
-#endif
+#endif // REGULAR_USER_H

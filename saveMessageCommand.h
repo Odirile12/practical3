@@ -4,13 +4,6 @@
 #include "command.h"
 #include <string>
 
-/**
- * @class SaveMessageCommand
- * @brief Concrete command for saving messages.
- *
- * This class implements the Command interface to provide functionality
- * for saving messages in the chat application.
- */
 class SaveMessageCommand : public Command {
 public:
 

@@ -1,6 +1,6 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
-#include "user.h"
+#include "User.h"
 #include "ChatRoom.h"
 
 #include <string>

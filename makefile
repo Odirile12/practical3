@@ -1,20 +1,20 @@
 all:
-	rm -f main
-	g++ -std=c++11 -g *.cpp -o main
-	./main
+	rm -f TestingMain
+	g++ -std=c++11 -g *.cpp -o TestingMain
+	./TestingMain
 
 build:
-	rm -f main
-	g++ -std=c++11 -g *.cpp -o main
+	rm -f TestingMain
+	g++ -std=c++11 -g *.cpp -o TestingMain
 
 clean:
-	rm -f main
+	rm -f TestingMain
 
 run:
-	./main
+	./TestingMain
 
 debug:
-	gdb ./main
+	gdb ./TestingMain
 
 valgrind: build
-	valgrind --leak-check=full --show-leak-kinds=all ./main
+	valgrind --leak-check=full --show-leak-kinds=all ./TestingMain

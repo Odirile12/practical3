@@ -12,7 +12,6 @@ public:
     void send(const std::string& message, ChatRoom* room) override;
     void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
     
-    // Name3 specific methods (optional)
     int getMessageCount() const;
     void sendFormattedMessage(const std::string& message, ChatRoom* room);
 };

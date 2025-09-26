@@ -12,7 +12,7 @@ var files_dup =
     [ "saveMessageCommand.h", "save_message_command_8h_source.html", null ],
     [ "sendMessageCommand.h", "send_message_command_8h_source.html", null ],
     [ "Subject.h", "subject_8h_source.html", null ],
-    [ "user.h", "user_8h_source.html", null ],
+    [ "User.h", "user_8h_source.html", null ],
     [ "userIterator.h", "user_iterator_8h_source.html", null ],
     [ "userName.h", "user_name_8h_source.html", null ]
 ];

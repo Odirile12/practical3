@@ -23,17 +23,14 @@ public:
     
     std::string getName() const { return name; }
     
-    // Mediator pattern methods
     virtual void registerUser(User* user) = 0;
     virtual void removeUser(User* user) = 0;
     virtual void sendMessage(const std::string& message, User* fromUser) = 0;
     virtual void saveMessage(const std::string& message, User* fromUser) = 0;
     
-    // Iterator pattern methods
     virtual myIterator<User*>* createUserIterator() = 0;
     virtual myIterator<std::string>* createMessageIterator() = 0;
     
-    // Getters for iterators - make pure virtual since implementation depends on derived classes
     virtual const std::vector<User*>& getUsers() const = 0;
     virtual const std::list<std::string>& getChatHistory() const = 0;
 };
