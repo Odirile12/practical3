@@ -1,7 +1,7 @@
 #include "Name2.h"
 #include "SendMessageCommand.h"
 #include "SaveMessageCommand.h"
-#include "chatRoom.h"
+#include "ChatRoom.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -10,7 +10,7 @@ Name2::Name2() : User("Bob") {
     std::cout << "Name2 user created: Bob" << std::endl;
 }
 
-void Name2::send(const std::string& message, chatRoom* room) {
+void Name2::send(const std::string& message, ChatRoom* room) {
     if (!isInRoom(room)) {
         std::cout << "Error: " << name << " is not in " << room->getName() << "!" << std::endl;
         return;
@@ -32,12 +32,12 @@ void Name2::send(const std::string& message, chatRoom* room) {
     executeCommands();
 }
 
-void Name2::receive(const std::string& message, User* fromUser, chatRoom* room) {
+void Name2::receive(const std::string& message, User* fromUser, ChatRoom* room) {
     std::cout << "💬 [" << room->getName() << "] " << name << " received from " 
               << fromUser->getName() << ": " << message << std::endl;
 }
 
-void Name2::sendDelayedMessage(const std::string& message, chatRoom* room, int delaySeconds) {
+void Name2::sendDelayedMessage(const std::string& message, ChatRoom* room, int delaySeconds) {
     std::cout << "⏰ " << name << " scheduling message in " << delaySeconds << " seconds..." << std::endl;
     
     // Simulate delay (in real implementation, you'd use proper scheduling)

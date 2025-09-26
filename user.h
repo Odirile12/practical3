@@ -4,7 +4,7 @@
 #include <vector>
 #include <list>
 
-class chatRoom;
+class ChatRoom;
 class Command;
 
 // /**
@@ -30,13 +30,13 @@ class Command;
 //      * @brief Sends a message to the chat room.
 //      * @param message The message to be sent.
 //      */
-//     void send(const std::string& message, chatRoom* room);
+//     void send(const std::string& message, ChatRoom* room);
 
 //     /**
 //      * @brief Receives a message from the chat room.
 //      * @param message The message received.
 //      */
-//     virtual void receive(const std::string& message, User* fromUser, chatRoom* room);
+//     virtual void receive(const std::string& message, User* fromUser, ChatRoom* room);
 
 //     /**
 //      * @brief Adds a command to the user's command queue.
@@ -57,14 +57,14 @@ class Command;
 
 //     protected:
 //         std::string name; ///< The name of the user.
-//         std::vector<chatRoom*> chatRooms; ///< List of joined chat rooms.
+//         std::vector<ChatRoom*> chatRooms; ///< List of joined chat rooms.
 //         std::vector<Command*> commandQueue; ///< Pointer to the command associated with the user.
 // };
 
 class User {
 protected:
     std::string name;
-    std::vector<chatRoom*> chatRooms;
+    std::vector<ChatRoom*> chatRooms;
     std::list<Command*> commandQueue;
 
 public:
@@ -73,12 +73,12 @@ public:
     
     // Getters
     std::string getName() const;
-    const std::vector<chatRoom*>& getChatRooms() const;
+    const std::vector<ChatRoom*>& getChatRooms() const;
     
     // Room management
-    void joinRoom(chatRoom* room);
-    void leaveRoom(chatRoom* room);
-    bool isInRoom(chatRoom* room) const;
+    void joinRoom(ChatRoom* room);
+    void leaveRoom(ChatRoom* room);
+    bool isInRoom(ChatRoom* room) const;
     
     // Command pattern methods
     void addCommand(Command* cmd);
@@ -86,8 +86,8 @@ public:
     void clearCommandQueue();
     
     // Pure virtual methods - must be implemented by child classes
-    virtual void send(const std::string& message, chatRoom* room) = 0;
-    virtual void receive(const std::string& message, User* fromUser, chatRoom* room) = 0;
+    virtual void send(const std::string& message, ChatRoom* room) = 0;
+    virtual void receive(const std::string& message, User* fromUser, ChatRoom* room) = 0;
 };
 
 #endif // USER_H

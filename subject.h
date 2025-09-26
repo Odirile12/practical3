@@ -1,18 +1,22 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
+
 #include <string>
+#include <vector>
 
-#include "Observer.h"
+class Observer;
+class User;
+class ChatRoom;
 
-class subject{
-    protected:
+class Subject {
+protected:
     std::vector<Observer*> observers;
-    public:
-    virtual ~subject()=default;
+public:
+    Subject() = default;
+    virtual ~Subject() = default;
     void attach(Observer* observer);
     void detach(Observer* observer);
-    void notify(const std::string& message, User* fromUser, chatRoom* room);
-
+    void notify(const std::string& message, User* fromUser, ChatRoom* room);
 };
 
 #endif

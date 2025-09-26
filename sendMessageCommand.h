@@ -13,7 +13,7 @@
 class SendMessageCommand : public Command {
 public:
 
-    SendMessageCommand(chatRoom* room, User* user, const std::string message)
+    SendMessageCommand(ChatRoom* room, User* user, const std::string message)
         : Command(room, user, message) {};
         
     ~SendMessageCommand() = default;

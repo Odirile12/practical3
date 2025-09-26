@@ -6,11 +6,11 @@
 class Name2 : public User {
 public:
     Name2();
-    void send(const std::string& message, chatRoom* room) override;
-    void receive(const std::string& message, User* fromUser, chatRoom* room) override;
+    void send(const std::string& message, ChatRoom* room) override;
+    void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
     
     // Name2 specific methods (optional)
-    void sendDelayedMessage(const std::string& message, chatRoom* room, int delaySeconds = 0);
+    void sendDelayedMessage(const std::string& message, ChatRoom* room, int delaySeconds = 0);
 };
 
 #endif

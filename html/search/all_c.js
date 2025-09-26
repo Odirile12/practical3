@@ -5,5 +5,5 @@ var searchData=
   ['sendmessagecommand_2',['SendMessageCommand',['../class_send_message_command.html',1,'']]],
   ['setmessage_3',['setMessage',['../class_save_message_command.html#aa86a93fec1893044af2f1b8ccf60aa9d',1,'SaveMessageCommand']]],
   ['structure_4',['Project Structure',['../md__r_e_a_d_m_e.html#autotoc_md1',1,'']]],
-  ['subject_5',['subject',['../classsubject.html',1,'']]]
+  ['subject_5',['Subject',['../classsubject.html',1,'']]]
 ];

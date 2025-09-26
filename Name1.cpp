@@ -1,14 +1,14 @@
 #include "Name1.h"
 #include "SendMessageCommand.h"
 #include "SaveMessageCommand.h"
-#include "chatRoom.h"
+#include "ChatRoom.h"
 #include <iostream>
 
 Name1::Name1() : User("Alice") {
     std::cout << "Name1 user created: Alice" << std::endl;
 }
 
-void Name1::send(const std::string& message, chatRoom* room) {
+void Name1::send(const std::string& message, ChatRoom* room) {
     if (!isInRoom(room)) {
         std::cout << "Error: " << name << " is not in " << room->getName() << "!" << std::endl;
         return;
@@ -30,14 +30,14 @@ void Name1::send(const std::string& message, chatRoom* room) {
     executeCommands();
 }
 
-void Name1::receive(const std::string& message, User* fromUser, chatRoom* room) {
+void Name1::receive(const std::string& message, User* fromUser, ChatRoom* room) {
     std::cout << "💬 [" << room->getName() << "] " << name << " received from " 
               << fromUser->getName() << ": " << message << std::endl;
 }
 
 void Name1::broadcastToAllRooms(const std::string& message) {
     std::cout << "\n📢 " << name << " broadcasting to all " << chatRooms.size() << " rooms: " << message << std::endl;
-    for (chatRoom* room : chatRooms) {
+    for (ChatRoom* room : chatRooms) {
         send(message, room);
     }
 }

@@ -67,7 +67,7 @@
 #include "messageIterator.h"
 #include "userIterator.h"
 
-Dogorithm::Dogorithm() : chatRoom("Dogorithm") {}
+Dogorithm::Dogorithm() : ChatRoom("Dogorithm") {}
 
 void Dogorithm::registerUser(User* user)  {
     users.push_back(user);

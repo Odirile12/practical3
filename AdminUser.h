@@ -9,7 +9,7 @@ public:
     AdminUser(const std::string& name) : User(name) {}
 
     // Override receive to add "[ADMIN]" prefix for clarity
-    void receive(const std::string& message, User* fromUser, chatRoom* room) override;
+    void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
 };
 
 #endif

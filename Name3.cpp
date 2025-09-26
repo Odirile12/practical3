@@ -1,7 +1,7 @@
 #include "Name3.h"
 #include "SendMessageCommand.h"
 #include "SaveMessageCommand.h"
-#include "chatRoom.h"
+#include "ChatRoom.h"
 #include <iostream>
 #include <iomanip>
 
@@ -9,7 +9,7 @@ Name3::Name3() : User("Charlie"), messageCount(0) {
     std::cout << "Name3 user created: Charlie" << std::endl;
 }
 
-void Name3::send(const std::string& message, chatRoom* room) {
+void Name3::send(const std::string& message, ChatRoom* room) {
     if (!isInRoom(room)) {
         std::cout << "Error: " << name << " is not in " << room->getName() << "!" << std::endl;
         return;
@@ -33,7 +33,7 @@ void Name3::send(const std::string& message, chatRoom* room) {
     executeCommands();
 }
 
-void Name3::receive(const std::string& message, User* fromUser, chatRoom* room) {
+void Name3::receive(const std::string& message, User* fromUser, ChatRoom* room) {
     std::cout << "💬 [" << room->getName() << "] " << name << " received from " 
               << fromUser->getName() << ": " << message << std::endl;
 }
@@ -42,7 +42,7 @@ int Name3::getMessageCount() const {
     return messageCount;
 }
 
-void Name3::sendFormattedMessage(const std::string& message, chatRoom* room) {
+void Name3::sendFormattedMessage(const std::string& message, ChatRoom* room) {
     std::string formattedMessage = "✨ [" + std::to_string(messageCount + 1) + "] " + message + " ✨";
     send(formattedMessage, room);
 }

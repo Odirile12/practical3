@@ -9,12 +9,12 @@ private:
     
 public:
     Name3();
-    void send(const std::string& message, chatRoom* room) override;
-    void receive(const std::string& message, User* fromUser, chatRoom* room) override;
+    void send(const std::string& message, ChatRoom* room) override;
+    void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
     
     // Name3 specific methods (optional)
     int getMessageCount() const;
-    void sendFormattedMessage(const std::string& message, chatRoom* room);
+    void sendFormattedMessage(const std::string& message, ChatRoom* room);
 };
 
 #endif

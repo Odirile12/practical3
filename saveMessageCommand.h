@@ -14,7 +14,7 @@
 class SaveMessageCommand : public Command {
 public:
 
-    SaveMessageCommand(chatRoom* room, User* user, const std::string message)
+    SaveMessageCommand(ChatRoom* room, User* user, const std::string message)
         : Command(room, user, message) {};
     ~SaveMessageCommand() = default;
     /**

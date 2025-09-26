@@ -1,5 +1,5 @@
 #include "User.h"
-#include "chatRoom.h"
+#include "ChatRoom.h"
 #include "command.h"
 #include <algorithm>
 #include <iostream>
@@ -14,11 +14,11 @@ std::string User::getName() const {
     return name; 
 }
 
-const std::vector<chatRoom*>& User::getChatRooms() const { 
+const std::vector<ChatRoom*>& User::getChatRooms() const { 
     return chatRooms; 
 }
 
-void User::joinRoom(chatRoom* room) {
+void User::joinRoom(ChatRoom* room) {
     if (!isInRoom(room)) {
         chatRooms.push_back(room);
         room->registerUser(this);
@@ -26,7 +26,7 @@ void User::joinRoom(chatRoom* room) {
     }
 }
 
-void User::leaveRoom(chatRoom* room) {
+void User::leaveRoom(ChatRoom* room) {
     auto it = std::find(chatRooms.begin(), chatRooms.end(), room);
     if (it != chatRooms.end()) {
         chatRooms.erase(it);
@@ -35,7 +35,7 @@ void User::leaveRoom(chatRoom* room) {
     }
 }
 
-bool User::isInRoom(chatRoom* room) const {
+bool User::isInRoom(ChatRoom* room) const {
     return std::find(chatRooms.begin(), chatRooms.end(), room) != chatRooms.end();
 }
 

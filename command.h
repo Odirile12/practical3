@@ -3,19 +3,19 @@
 
 #include <string>
 #include "user.h"
-#include "chatRoom.h"
+#include "ChatRoom.h"
 
 /**
  * @brief Abstract Command class that defines the interface for command objects.
  */
 class Command {
 protected:
-    chatRoom* room;
+    ChatRoom* room;
     User* user;
     std::string message;
 
 public:
-    Command(chatRoom* room, User* user, const std::string message);
+    Command(ChatRoom* room, User* user, const std::string message);
     /**
      * @brief Executes the command.
      */

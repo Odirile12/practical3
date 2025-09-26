@@ -1,17 +1,17 @@
 // #ifndef CTRLCAT_H
 // #define CTRLCAT_H
 
-// #include "chatRoom.h" // Add this line to include the definition of chatRoom
+// #include "ChatRoom.h" // Add this line to include the definition of ChatRoom
 // #include <vector>
 
 // /**
 //  * @class CtrlCat
 //  * @brief Concrete mediator that manages user interactions in the chat room.
 //  *
-//  * The CtrlCat a implements the chatRoom interface and facilitates communication
+//  * The CtrlCat a implements the ChatRoom interface and facilitates communication
 //  * between users by managing their interactions and messages.
 //  */
-// class CtrlCat : public chatRoom {
+// class CtrlCat : public ChatRoom {
 // public:
 //     /**
 //      * @brief Default constructor for CtrlCat.
@@ -55,11 +55,11 @@
 #ifndef CTRLCAT_H
 #define CTRLCAT_H
 
-#include "chatRoom.h"
+#include "ChatRoom.h"
 #include "userIterator.h"
 #include "messageIterator.h"
 
-class CtrlCat : public chatRoom {
+class CtrlCat : public ChatRoom {
 public:
     CtrlCat();
     void registerUser(User* user) override;

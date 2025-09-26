@@ -67,7 +67,7 @@
 
 
 
-CtrlCat::CtrlCat() : chatRoom("CtrlCat") {}
+CtrlCat::CtrlCat() : ChatRoom("CtrlCat") {}
 
 void CtrlCat::registerUser(User* user)  {
     users.push_back(user);

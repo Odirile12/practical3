@@ -1,17 +1,17 @@
 // #ifndef DOGORITHM_H
 // #define DOGORITHM_H
 
-// #include "chatRoom.h" // Add this line to include the definition of chatRoom
+// #include "ChatRoom.h" // Add this line to include the definition of ChatRoom
 
 // /**
 //  * @class Dogorithm
 //  * @brief Concrete mediator that facilitates communication between users.
 //  *
-//  * The Dogorithm class implements the chatRoom interface and manages the
+//  * The Dogorithm class implements the ChatRoom interface and manages the
 //  * interactions between users in the chat system. It handles message
 //  * exchanges and user registrations.
 //  */
-// class Dogorithm : public chatRoom {
+// class Dogorithm : public ChatRoom {
 // public:
 
 //     /**
@@ -55,10 +55,10 @@
 #ifndef DOGORITHM_H
 #define DOGORITHM_H
 
-#include "chatRoom.h" 
+#include "ChatRoom.h" 
 #include "userIterator.h"
 
-class Dogorithm : public chatRoom {
+class Dogorithm : public ChatRoom {
 public:
     Dogorithm();
     void registerUser(User* user) override ;
