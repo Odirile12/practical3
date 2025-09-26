@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: user.h Source File</title>
+<title>My Project: User.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,7 +88,7 @@ $(function(){initNavTree('user_8h_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">user.h</div></div>
+  <div class="headertitle"><div class="title">User.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef USER_H</span></div>
@@ -96,23 +96,23 @@ $(function(){initNavTree('user_8h_source.html','',''); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;chatRoom.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;ChatRoom.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="classchat_room.html">chatRoom</a>; <span class="comment">// Forward declaration</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="classchat_room.html">ChatRoom</a>; <span class="comment">// Forward declaration</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_user.html">   17</a></span><span class="keyword">class </span>User {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::string name;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector  &lt;chatRoom*&gt; chat;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector  &lt;ChatRoom*&gt; chat;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">virtual</span> ~User() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    User(std::string name);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_user.html#a29caabba5c7e00de3780d11348eabef6">   29</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a29caabba5c7e00de3780d11348eabef6">send</a>(std::string message,<a class="code hl_class" href="classchat_room.html">chatRoom</a>* room) = 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_user.html#a29caabba5c7e00de3780d11348eabef6">   29</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a29caabba5c7e00de3780d11348eabef6">send</a>(std::string message,<a class="code hl_class" href="classchat_room.html">ChatRoom</a>* room) = 0;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> std::string getName() <span class="keyword">const</span>=0;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> joinRoom(<a class="code hl_class" href="classchat_room.html">chatRoom</a>* room)=0;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> leaveRoom(<a class="code hl_class" href="classchat_room.html">chatRoom</a>* room)=0;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_user.html#a2668b3722627ce4c6340fd6fc62a9725">   37</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a2668b3722627ce4c6340fd6fc62a9725">receive</a>( std::string message,User* fromUser,<a class="code hl_class" href="classchat_room.html">chatRoom</a>* room) = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> joinRoom(<a class="code hl_class" href="classchat_room.html">ChatRoom</a>* room)=0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> leaveRoom(<a class="code hl_class" href="classchat_room.html">ChatRoom</a>* room)=0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_user.html#a2668b3722627ce4c6340fd6fc62a9725">   37</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a2668b3722627ce4c6340fd6fc62a9725">receive</a>( std::string message,User* fromUser,<a class="code hl_class" href="classchat_room.html">ChatRoom</a>* room) = 0;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> executeAll();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
@@ -121,16 +121,16 @@ $(function(){initNavTree('user_8h_source.html','',''); });
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// USER_H</span></div>
-<div class="ttc" id="aclass_user_html_a2668b3722627ce4c6340fd6fc62a9725"><div class="ttname"><a href="class_user.html#a2668b3722627ce4c6340fd6fc62a9725">User::receive</a></div><div class="ttdeci">virtual void receive(std::string message, User *fromUser, chatRoom *room)=0</div><div class="ttdoc">Receives a message from the chat room.</div></div>
-<div class="ttc" id="aclass_user_html_a29caabba5c7e00de3780d11348eabef6"><div class="ttname"><a href="class_user.html#a29caabba5c7e00de3780d11348eabef6">User::send</a></div><div class="ttdeci">virtual void send(std::string message, chatRoom *room)=0</div><div class="ttdoc">Sends a message to the chat room.</div></div>
-<div class="ttc" id="aclasschat_room_html"><div class="ttname"><a href="classchat_room.html">chatRoom</a></div><div class="ttdef"><b>Definition</b> chatRoom.h:11</div></div>
+<div class="ttc" id="aclass_user_html_a2668b3722627ce4c6340fd6fc62a9725"><div class="ttname"><a href="class_user.html#a2668b3722627ce4c6340fd6fc62a9725">User::receive</a></div><div class="ttdeci">virtual void receive(std::string message, User *fromUser, ChatRoom *room)=0</div><div class="ttdoc">Receives a message from the chat room.</div></div>
+<div class="ttc" id="aclass_user_html_a29caabba5c7e00de3780d11348eabef6"><div class="ttname"><a href="class_user.html#a29caabba5c7e00de3780d11348eabef6">User::send</a></div><div class="ttdeci">virtual void send(std::string message, ChatRoom *room)=0</div><div class="ttdoc">Sends a message to the chat room.</div></div>
+<div class="ttc" id="aclasschat_room_html"><div class="ttname"><a href="classchat_room.html">ChatRoom</a></div><div class="ttdef"><b>Definition</b> ChatRoom.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>user.h</b></li>
+    <li class="navelem"><b>User.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

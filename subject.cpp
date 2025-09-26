@@ -1,10 +1,12 @@
-#include "subject.h"
+#include "Subject.h"
+#include "Observer.h"
 
-    void subject::attach(Observer* observer) {
+
+    void Subject::attach(Observer* observer) {
         observers.push_back(observer);
     }
     
-    void subject::detach(Observer* observer) {
+    void Subject::detach(Observer* observer) {
         for (auto it = observers.begin(); it != observers.end(); ++it) {
             if (*it == observer) {
                 observers.erase(it);
@@ -13,7 +15,7 @@
         }
     }
     
-    void subject::notify(const std::string& message, User* fromUser, chatRoom* room) {
+    void Subject::notify(const std::string& message, User* fromUser, ChatRoom* room) {
         for (Observer* observer : observers) {
             observer->update(message, fromUser, room);
         }

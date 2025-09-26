@@ -1410,7 +1410,7 @@ HTML_FILE_EXTENSION    = .html
 # and then modify the file new_header.html. See also section "Doxygen usage"
 # for information on how to generate the default header that Doxygen normally
 # uses.
-# Note: The header is subject to change so you typically have to regenerate the
+# Note: The header is Subject to change so you typically have to regenerate the
 # default header when upgrading to a newer version of Doxygen. For a description
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
@@ -2141,7 +2141,7 @@ EXTRA_PACKAGES         =
 # information on how to generate the default header that Doxygen normally uses.
 #
 # Note: Only use a user-defined header if you know what you are doing!
-# Note: The header is subject to change so you typically have to regenerate the
+# Note: The header is Subject to change so you typically have to regenerate the
 # default header when upgrading to a newer version of Doxygen. The following
 # commands have a special meaning inside the header (and footer): For a
 # description of the possible markers and block names see the documentation.

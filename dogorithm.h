@@ -11,7 +11,7 @@
 //  * interactions between users in the chat system. It handles message
 //  * exchanges and user registrations.
 //  */
-// class Dogorithm : public chatRoom {
+// class Dogorithm : public ChatRoom {
 // public:
 
 //     /**
@@ -52,21 +52,52 @@
 
 // #endif // DOGORITHM_H
 
+// #ifndef DOGORITHM_H
+// #define DOGORITHM_H
+
+// #include "ChatRoom.h" 
+// #include "userIterator.h"
+
+// class Dogorithm : public ChatRoom {
+// public:
+//     Dogorithm();
+//     void registerUser(User* user) override ;
+//     void removeUser(User* user) override;
+//     myIterator<User*>* createUserIterator() override;
+//     myIterator<std::string>* createMessageIterator() override;
+
+
+// };
+
+// #endif
+
 #ifndef DOGORITHM_H
 #define DOGORITHM_H
 
-#include "chatRoom.h" 
+#include "ChatRoom.h" 
 #include "userIterator.h"
+#include "messageIterator.h"
 
-class Dogorithm : public chatRoom {
+class Dogorithm : public ChatRoom {
 public:
     Dogorithm();
-    void registerUser(User* user) override ;
+    virtual ~Dogorithm() = default;
+    
+    void registerUser(User* user) override;
     void removeUser(User* user) override;
+    void sendMessage(const std::string& message, User* fromUser) override;
+    void saveMessage(const std::string& message, User* fromUser) override;
+    
     myIterator<User*>* createUserIterator() override;
     myIterator<std::string>* createMessageIterator() override;
+    
+    const std::vector<User*>& getUsers() const override;
+    const std::list<std::string>& getChatHistory() const override;
+    
 
-
+private:
+    std::string algorithmFocus;
+    std::vector<std::string> scheduledSessions;
 };
 
-#endif
+#endif // DOGORITHM_H

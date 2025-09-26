@@ -11,7 +11,7 @@
 //  * The CtrlCat a implements the ChatRoom interface and facilitates communication
 //  * between users by managing their interactions and messages.
 //  */
-// class CtrlCat : public chatRoom {
+// class CtrlCat : public ChatRoom {
 // public:
 //     /**
 //      * @brief Default constructor for CtrlCat.
@@ -52,22 +52,53 @@
 
 // #endif // CTRL_CAT_H
 
+// #ifndef CTRLCAT_H
+// #define CTRLCAT_H
+
+// #include "ChatRoom.h"
+// #include "userIterator.h"
+// #include "messageIterator.h"
+
+// class CtrlCat : public ChatRoom {
+// public:
+//     CtrlCat();
+//     void registerUser(User* user) override;
+//     void removeUser(User* user) override;
+//     myIterator<User*>* createUserIterator() override;
+//     myIterator<std::string>* createMessageIterator() override;
+// };
+
+
+// #endif // CTRL_CAT_H
+
 #ifndef CTRLCAT_H
 #define CTRLCAT_H
 
-#include "chatRoom.h"
+#include "ChatRoom.h"
 #include "userIterator.h"
 #include "messageIterator.h"
 
-class CtrlCat : public chatRoom {
+class CtrlCat : public ChatRoom {
 public:
     CtrlCat();
+    virtual ~CtrlCat() = default;
+    
     void registerUser(User* user) override;
     void removeUser(User* user) override;
+    void sendMessage(const std::string& message, User* fromUser) override;
+    void saveMessage(const std::string& message, User* fromUser) override;
+    
     myIterator<User*>* createUserIterator() override;
     myIterator<std::string>* createMessageIterator() override;
+    
+    const std::vector<User*>& getUsers() const override;
+    const std::list<std::string>& getChatHistory() const override;
+
+    
+private:
+    bool moderationEnabled;
+    std::string roomTopic;
 };
 
-
-#endif // CTRL_CAT_H
+#endif // CTRLCAT_H
 

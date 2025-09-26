@@ -1,0 +1,14 @@
+#ifndef NAME1_H
+#define NAME1_H
+
+#include "User.h"
+
+class Name1 : public User {
+public:
+    Name1();
+    void send(const std::string& message, ChatRoom* room) override;
+    void receive(const std::string& message, User* fromUser, ChatRoom* room) override;
+
+};
+
+#endif

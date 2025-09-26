@@ -7,7 +7,7 @@
 class Notification : public Observer {
 public:
     Notification() = default;
-    void update(const std::string& message, User* fromUser, chatRoom* room) override;
+    void update(const std::string& message, User* fromUser, ChatRoom* room) override;
 };
 
 #endif // NoTIFICATION_H

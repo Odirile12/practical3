@@ -6,22 +6,22 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}chatRoom.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ChatRoom.h"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classchat_room}{chatRoom}};\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classchat_room}{ChatRoom}};\ \textcolor{comment}{//\ Forward\ declaration}}
 \DoxyCodeLine{00017\ \textcolor{keyword}{class\ }User\ \{}
 \DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00019\ \ \ \ \ std::string\ name;}
-\DoxyCodeLine{00020\ \ \ \ \ std::vector\ \ <chatRoom*>\ chat;}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector\ \ <ChatRoom*>\ chat;}
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~User()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00024\ \ \ \ \ User(std::string\ name);}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a29caabba5c7e00de3780d11348eabef6}{send}}(std::string\ message,\mbox{\hyperlink{classchat_room}{chatRoom}}*\ room)\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a29caabba5c7e00de3780d11348eabef6}{send}}(std::string\ message,\mbox{\hyperlink{classchat_room}{ChatRoom}}*\ room)\ =\ 0;}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getName()\ \textcolor{keyword}{const}=0;}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ joinRoom(\mbox{\hyperlink{classchat_room}{chatRoom}}*\ room)=0;}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ leaveRoom(\mbox{\hyperlink{classchat_room}{chatRoom}}*\ room)=0;}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a2668b3722627ce4c6340fd6fc62a9725}{receive}}(\ std::string\ message,User*\ fromUser,\mbox{\hyperlink{classchat_room}{chatRoom}}*\ room)\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ joinRoom(\mbox{\hyperlink{classchat_room}{ChatRoom}}*\ room)=0;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ leaveRoom(\mbox{\hyperlink{classchat_room}{ChatRoom}}*\ room)=0;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a2668b3722627ce4c6340fd6fc62a9725}{receive}}(\ std::string\ message,User*\ fromUser,\mbox{\hyperlink{classchat_room}{ChatRoom}}*\ room)\ =\ 0;}
 \DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ executeAll();}
 \DoxyCodeLine{00039\ }
 \DoxyCodeLine{00040\ }

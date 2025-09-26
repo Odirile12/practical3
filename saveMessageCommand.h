@@ -4,17 +4,10 @@
 #include "command.h"
 #include <string>
 
-/**
- * @class SaveMessageCommand
- * @brief Concrete command for saving messages.
- *
- * This class implements the Command interface to provide functionality
- * for saving messages in the chat application.
- */
 class SaveMessageCommand : public Command {
 public:
 
-    SaveMessageCommand(chatRoom* room, User* user, const std::string message)
+    SaveMessageCommand(ChatRoom* room, User* user, const std::string message)
         : Command(room, user, message) {};
     ~SaveMessageCommand() = default;
     /**

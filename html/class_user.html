@@ -95,7 +95,7 @@ $(function(){initNavTree('class_user.html','','class_user-members'); });
 <p>Represents a user in the chat system.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="user_8h_source.html">user.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="user_8h_source.html">User.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for User:</div>
 <div class="dyncontent">
@@ -111,15 +111,15 @@ Inheritance diagram for User:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af9e5f33114c8330be7b91276b7377e6d" id="r_af9e5f33114c8330be7b91276b7377e6d"><td class="memItemLeft" align="right" valign="top"><a id="af9e5f33114c8330be7b91276b7377e6d" name="af9e5f33114c8330be7b91276b7377e6d"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>User</b> (std::string name)</td></tr>
-<tr class="memitem:a29caabba5c7e00de3780d11348eabef6" id="r_a29caabba5c7e00de3780d11348eabef6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29caabba5c7e00de3780d11348eabef6">send</a> (std::string message, <a class="el" href="classchat_room.html">chatRoom</a> *room)=0</td></tr>
+<tr class="memitem:a29caabba5c7e00de3780d11348eabef6" id="r_a29caabba5c7e00de3780d11348eabef6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29caabba5c7e00de3780d11348eabef6">send</a> (std::string message, <a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
 <tr class="memdesc:a29caabba5c7e00de3780d11348eabef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the chat room.  <br /></td></tr>
 <tr class="memitem:a538e10150819d39d8b7ad1f90c3ef630" id="r_a538e10150819d39d8b7ad1f90c3ef630"><td class="memItemLeft" align="right" valign="top"><a id="a538e10150819d39d8b7ad1f90c3ef630" name="a538e10150819d39d8b7ad1f90c3ef630"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const =0</td></tr>
 <tr class="memitem:af89bad6bb8861cccf0c67f6d5963e2c4" id="r_af89bad6bb8861cccf0c67f6d5963e2c4"><td class="memItemLeft" align="right" valign="top"><a id="af89bad6bb8861cccf0c67f6d5963e2c4" name="af89bad6bb8861cccf0c67f6d5963e2c4"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>joinRoom</b> (<a class="el" href="classchat_room.html">chatRoom</a> *room)=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>joinRoom</b> (<a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
 <tr class="memitem:a157b63e31b0913fa8892faf335c01e30" id="r_a157b63e31b0913fa8892faf335c01e30"><td class="memItemLeft" align="right" valign="top"><a id="a157b63e31b0913fa8892faf335c01e30" name="a157b63e31b0913fa8892faf335c01e30"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>leaveRoom</b> (<a class="el" href="classchat_room.html">chatRoom</a> *room)=0</td></tr>
-<tr class="memitem:a2668b3722627ce4c6340fd6fc62a9725" id="r_a2668b3722627ce4c6340fd6fc62a9725"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2668b3722627ce4c6340fd6fc62a9725">receive</a> (std::string message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="classchat_room.html">chatRoom</a> *room)=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>leaveRoom</b> (<a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
+<tr class="memitem:a2668b3722627ce4c6340fd6fc62a9725" id="r_a2668b3722627ce4c6340fd6fc62a9725"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2668b3722627ce4c6340fd6fc62a9725">receive</a> (std::string message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
 <tr class="memdesc:a2668b3722627ce4c6340fd6fc62a9725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from the chat room.  <br /></td></tr>
 <tr class="memitem:a44388bdb8fb6accbe7fe143541c3d98d" id="r_a44388bdb8fb6accbe7fe143541c3d98d"><td class="memItemLeft" align="right" valign="top"><a id="a44388bdb8fb6accbe7fe143541c3d98d" name="a44388bdb8fb6accbe7fe143541c3d98d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td></tr>
@@ -150,7 +150,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classchat_room.html">chatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classchat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -189,7 +189,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classchat_room.html">chatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classchat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -212,7 +212,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="user_8h_source.html">user.h</a></li>
+<li><a class="el" href="user_8h_source.html">User.h</a></li>
 <li><b>user.cpp</b></li>
 </ul>
 </div><!-- contents -->

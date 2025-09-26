@@ -1,56 +1,59 @@
-// user.cpp
-
-#include "user.h"
-#include "SendMessageCommand.h"
-#include "SaveMessageCommand.h"
+#include "User.h"
+#include "ChatRoom.h"
+#include "command.h"
+#include <algorithm>
 #include <iostream>
 
-/**
- * @brief Constructs a User object with the given name.
- * @param name The name of the user.
- */
-User::User(std::string name) : 
-name(name) {};
+User::User(const std::string& userName) : name(userName) {}
 
-/**
- * @brief Sends a message to the chat room.
- * @param message The message to be sent.
- */
-void User::send(const std::string &message, chatRoom* room){
-
-    std::cout << name << " sends: " << message << std::endl;
-    room->sendMessage(message, this);
-
-    addCommand(new SendMessageCommand(room, this, message));
-    addCommand(new SaveMessageCommand(room, this, message));
-
-    executeAll();
+User::~User() {
+    clearCommandQueue();
 }
-/**
- * @brief Receives a message from the chat room.
- * @param message The message received.
- */
-void User::receive(const std::string &message, User* fromUser, chatRoom* room){
 
-    std::cout << name << " received from " << fromUser->name << ": " << message << std::endl;
+std::string User::getName() const { 
+    return name; 
 }
-/**
- * @brief Adds a command to the user's command queue.
- * @param command The command to be added.
- */
-void User::addCommand(Command *command)
-{
-    commandQueue.push_back(command);
-};
 
-/**
- * @brief Executes all commands in the user's command queue.
- */
-void User::executeAll(){
-    for (Command* command : commandQueue) {
-        if(command) {
-            command->execute();
-        }
+const std::vector<ChatRoom*>& User::getChatRooms() const { 
+    return chatRooms; 
+}
+
+void User::joinRoom(ChatRoom* room) {
+    if (!isInRoom(room)) {
+        chatRooms.push_back(room);
+        room->registerUser(this);
+        std::cout << name << " joined " << room->getName() << std::endl;
     }
-    commandQueue.clear(); // Clear the queue after executing all commands
-};
+}
+
+void User::leaveRoom(ChatRoom* room) {
+    auto it = std::find(chatRooms.begin(), chatRooms.end(), room);
+    if (it != chatRooms.end()) {
+        chatRooms.erase(it);
+        room->removeUser(this);
+        std::cout << name << " left " << room->getName() << std::endl;
+    }
+}
+
+bool User::isInRoom(ChatRoom* room) const {
+    return std::find(chatRooms.begin(), chatRooms.end(), room) != chatRooms.end();
+}
+
+void User::addCommand(Command* cmd) {
+    commandQueue.push_back(cmd);
+}
+
+void User::executeCommands() {
+    for (Command* cmd : commandQueue) {
+        cmd->execute();
+        delete cmd;
+    }
+    commandQueue.clear();
+}
+
+void User::clearCommandQueue() {
+    for (Command* cmd : commandQueue) {
+        delete cmd;
+    }
+    commandQueue.clear();
+}

@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "chatRoom", "classchat_room.html", [
+    [ "ChatRoom", "classchat_room.html", [
       [ "CtrlCat", "class_ctrl_cat.html", null ],
       [ "Dogorithm", "class_dogorithm.html", null ]
     ] ],
@@ -18,7 +18,7 @@ var hierarchy =
     [ "observer", "classobserver.html", [
       [ "Notification", "class_notification.html", null ]
     ] ],
-    [ "subject", "classsubject.html", null ],
+    [ "Subject", "classsubject.html", null ],
     [ "User", "class_user.html", [
       [ "NormalUser", "class_normal_user.html", null ],
       [ "UserName", "class_user_name.html", null ]
