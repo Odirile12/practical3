@@ -1,19 +1,14 @@
 #include "sendMessageCommand.h"
 
 /**
- * @brief Constructs a sendMessageCommand with the specified message.
+ * @brief Executes the command to send a message to a chat room.
  * 
- * @param message The message to be sent.
- */
-
-
-/**
- * @brief Executes the command to send the message.
- * 
- * This method will interact with the mediator to send the message to the appropriate users.
+ * Performs a safety check to ensure both the room and user are valid.
+ * Then delegates the message dispatch to the ChatRoom's sendMessage method.
+ * This encapsulates the sending logic using the Command design pattern.
  */
 void sendMessageCommand::execute() {
-    if(room == nullptr || user == nullptr) {
+    if (room == nullptr || user == nullptr) {
         return;
     }
     room->sendMessage(message, user);
