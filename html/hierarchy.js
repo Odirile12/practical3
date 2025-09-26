@@ -6,7 +6,7 @@ var hierarchy =
     ] ],
     [ "Command", "class_command.html", [
       [ "SaveMessageCommand", "class_save_message_command.html", null ],
-      [ "SendMessageCommand", "class_send_message_command.html", null ]
+      [ "sendMessageCommand", "class_send_message_command.html", null ]
     ] ],
     [ "myIterator< T >", "classmy_iterator.html", null ],
     [ "myIterator< std::string >", "classmy_iterator.html", [

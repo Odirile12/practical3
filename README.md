@@ -7,7 +7,7 @@ This project implements a chat mediator system using the Mediator design pattern
 - **ChatRoom**: Abstract mediator interface for managing communication between users.
 - **CtrlCat**: Concrete mediator managing user interactions in the chat room.
 - **Dogorithm**: Another concrete mediator facilitating communication between users.
-- **SendMessageCommand**: Command for sending messages.
+- **sendMessageCommand**: Command for sending messages.
 - **SaveMessageCommand**: Command for saving messages.
 - **NormalUser**: Invoker for commands.
 - **UserIterator**: Iterator for iterating over users.

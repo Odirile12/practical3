@@ -1,6 +1,6 @@
 #include "Name1.h"
-#include "SendMessageCommand.h"
-#include "SaveMessageCommand.h"
+#include "sendMessageCommand.h"
+#include "saveMessageCommand.h"
 #include "ChatRoom.h"
 #include <iostream>
 
@@ -21,7 +21,7 @@ void Name1::send(const std::string& message, ChatRoom* room) {
     
     std::cout << name << " is sending message to " << room->getName() << ": " << message << std::endl;
     
-    Command* sendCmd = new SendMessageCommand(room, this, message);
+    Command* sendCmd = new sendMessageCommand(room, this, message);
     Command* saveCmd = new SaveMessageCommand(room, this, message);
     
     addCommand(sendCmd);
