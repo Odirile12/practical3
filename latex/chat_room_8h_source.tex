@@ -19,31 +19,36 @@
 \DoxyCodeLine{00029\ \ \ \ \ std::vector<User*>\ \mbox{\hyperlink{class_chat_room_a8ab528a7f3fbc7506e9bf1aec140ea48}{users}};}
 \DoxyCodeLine{00030\ }
 \DoxyCodeLine{00034\ \ \ \ \ std::list<std::string>\ \mbox{\hyperlink{class_chat_room_adf0d07887a9081bbc2a0a4d57e73f06c}{chatHistory}};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_chat_room_a5bb9f56c76f242d135102fb2980ab100}{ChatRoom}}(\textcolor{keyword}{const}\ std::string\&\ roomName);}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_chat_room_a69f31b242d9c652f1d7cbecdd408a27a}{\string~ChatRoom}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<Observer*>\ observers;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_chat_room_a5bb9f56c76f242d135102fb2980ab100}{ChatRoom}}(\textcolor{keyword}{const}\ std::string\&\ roomName);}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ addObserver(\mbox{\hyperlink{class_observer}{Observer}}*\ observer);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ removeObserver(\mbox{\hyperlink{class_observer}{Observer}}*\ observer);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ notify(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser,\ \mbox{\hyperlink{class_chat_room_a5bb9f56c76f242d135102fb2980ab100}{ChatRoom}}*\ room);}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00052\ \ \ \ \ std::string\ \mbox{\hyperlink{class_chat_room_a8e1f3b4f5ebc9ee213d10996f1caf105}{getName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_chat_room_af74dc43070cb8b206c50be9dd045464e}{name}};\ \}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_ad7d4fe63622992ee74913a0c04c1b840}{registerUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ =\ 0;}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_a01c7ea1d26aefc886c0f8b2bc63ade28}{removeUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ =\ 0;}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_ae6e6f96fd9fa01e343142f918d74470d}{sendMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ =\ 0;}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_add14a38c78e80d05a7deb0780d9b8d3c}{saveMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ =\ 0;}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_iterator}{myIterator<User*>}}*\ \mbox{\hyperlink{class_chat_room_aebabcf191e1f10a9707cd790f3b48304}{createUserIterator}}()\ =\ 0;}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_iterator}{myIterator<std::string>}}*\ \mbox{\hyperlink{class_chat_room_aa20899ffe373d5e3fb53c70e5d09eec3}{createMessageIterator}}()\ =\ 0;}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<User*>\&\ \mbox{\hyperlink{class_chat_room_a8ab53963236d67c35756d879a02ec292}{getUsers}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::list<std::string>\&\ \mbox{\hyperlink{class_chat_room_a342e4e82fd04f9dc37beb5785984f677}{getChatHistory}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00103\ \};}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHATROOM\_H}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_chat_room_a69f31b242d9c652f1d7cbecdd408a27a}{\string~ChatRoom}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ std::string\ \mbox{\hyperlink{class_chat_room_a8e1f3b4f5ebc9ee213d10996f1caf105}{getName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_chat_room_af74dc43070cb8b206c50be9dd045464e}{name}};\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_ad7d4fe63622992ee74913a0c04c1b840}{registerUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_a01c7ea1d26aefc886c0f8b2bc63ade28}{removeUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ =\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_ae6e6f96fd9fa01e343142f918d74470d}{sendMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_room_add14a38c78e80d05a7deb0780d9b8d3c}{saveMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_iterator}{myIterator<User*>}}*\ \mbox{\hyperlink{class_chat_room_aebabcf191e1f10a9707cd790f3b48304}{createUserIterator}}()\ =\ 0;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmy_iterator}{myIterator<std::string>}}*\ \mbox{\hyperlink{class_chat_room_aa20899ffe373d5e3fb53c70e5d09eec3}{createMessageIterator}}()\ =\ 0;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<User*>\&\ \mbox{\hyperlink{class_chat_room_a8ab53963236d67c35756d879a02ec292}{getUsers}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::list<std::string>\&\ \mbox{\hyperlink{class_chat_room_a342e4e82fd04f9dc37beb5785984f677}{getChatHistory}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHATROOM\_H}}
 
 \end{DoxyCode}

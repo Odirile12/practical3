@@ -44,6 +44,12 @@ const std\+::list$<$ std\+::string $>$ \& \mbox{\hyperlink{class_dogorithm_a9664
 \item 
 \mbox{\hyperlink{class_chat_room_a5bb9f56c76f242d135102fb2980ab100}{Chat\+Room}} (const std\+::string \&room\+Name)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_chat_room}{Chat\+Room} with a given name. \end{DoxyCompactList}\item 
+void {\bfseries add\+Observer} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void {\bfseries remove\+Observer} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void {\bfseries notify} (const std\+::string \&message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chat\+Room} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_chat_room_a8e1f3b4f5ebc9ee213d10996f1caf105}{get\+Name}} () const
@@ -70,7 +76,9 @@ std\+::string {\bfseries name}
 std\+::vector$<$ \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries users}
 \begin{DoxyCompactList}\small\item\em List of users currently in the chat room. \end{DoxyCompactList}\item 
 std\+::list$<$ std\+::string $>$ {\bfseries chat\+History}
-\begin{DoxyCompactList}\small\item\em History of messages exchanged in the chat room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em History of messages exchanged in the chat room. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
 \begin{DoxyCompactItemize}
 \item 

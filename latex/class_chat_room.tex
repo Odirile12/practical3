@@ -20,6 +20,15 @@ Inheritance diagram for Chat\+Room\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_chat_room_a5bb9f56c76f242d135102fb2980ab100}{Chat\+Room}} (const std\+::string \&room\+Name)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_chat_room}{Chat\+Room} with a given name. \end{DoxyCompactList}\item 
+\Hypertarget{class_chat_room_a1027797dcf64c16741f9055448d2c0ee}\label{class_chat_room_a1027797dcf64c16741f9055448d2c0ee} 
+void {\bfseries add\+Observer} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\Hypertarget{class_chat_room_a50d2f29078125feaf37d31cc9ab3fa9e}\label{class_chat_room_a50d2f29078125feaf37d31cc9ab3fa9e} 
+void {\bfseries remove\+Observer} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+\Hypertarget{class_chat_room_a0449fafe08918944a220b9b7e7bca07a}\label{class_chat_room_a0449fafe08918944a220b9b7e7bca07a} 
+void {\bfseries notify} (const std\+::string \&message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\item 
 \Hypertarget{class_chat_room_a69f31b242d9c652f1d7cbecdd408a27a}\label{class_chat_room_a69f31b242d9c652f1d7cbecdd408a27a} 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chat\+Room} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\item 
@@ -65,7 +74,10 @@ std\+::vector$<$ \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} 
 \begin{DoxyCompactList}\small\item\em List of users currently in the chat room. \end{DoxyCompactList}\item 
 \Hypertarget{class_chat_room_adf0d07887a9081bbc2a0a4d57e73f06c}\label{class_chat_room_adf0d07887a9081bbc2a0a4d57e73f06c} 
 std\+::list$<$ std\+::string $>$ {\bfseries chat\+History}
-\begin{DoxyCompactList}\small\item\em History of messages exchanged in the chat room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em History of messages exchanged in the chat room. \end{DoxyCompactList}\item 
+\Hypertarget{class_chat_room_a80efe9192abaebd3e49f4de536cfa9ad}\label{class_chat_room_a80efe9192abaebd3e49f4de536cfa9ad} 
+std\+::vector$<$ \mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_subject}{Subject}}}
 \begin{DoxyCompactItemize}
 \item 

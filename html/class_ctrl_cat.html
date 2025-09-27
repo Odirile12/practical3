@@ -133,6 +133,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~CtrlCat</b> ()=de
 <tr class="inherit_header pub_methods_class_chat_room"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_chat_room')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_chat_room.html">ChatRoom</a></td></tr>
 <tr class="memitem:a5bb9f56c76f242d135102fb2980ab100 inherit pub_methods_class_chat_room" id="r_a5bb9f56c76f242d135102fb2980ab100"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chat_room.html#a5bb9f56c76f242d135102fb2980ab100">ChatRoom</a> (const std::string &amp;roomName)</td></tr>
 <tr class="memdesc:a5bb9f56c76f242d135102fb2980ab100 inherit pub_methods_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> with a given name.  <br /></td></tr>
+<tr class="memitem:a1027797dcf64c16741f9055448d2c0ee inherit pub_methods_class_chat_room" id="r_a1027797dcf64c16741f9055448d2c0ee"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addObserver</b> (<a class="el" href="class_observer.html">Observer</a> *observer)</td></tr>
+<tr class="memitem:a50d2f29078125feaf37d31cc9ab3fa9e inherit pub_methods_class_chat_room" id="r_a50d2f29078125feaf37d31cc9ab3fa9e"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeObserver</b> (<a class="el" href="class_observer.html">Observer</a> *observer)</td></tr>
+<tr class="memitem:a0449fafe08918944a220b9b7e7bca07a inherit pub_methods_class_chat_room" id="r_a0449fafe08918944a220b9b7e7bca07a"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (const std::string &amp;message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="class_chat_room.html">ChatRoom</a> *room)</td></tr>
 <tr class="memitem:a69f31b242d9c652f1d7cbecdd408a27a inherit pub_methods_class_chat_room" id="r_a69f31b242d9c652f1d7cbecdd408a27a"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ChatRoom</b> ()=default</td></tr>
 <tr class="memdesc:a69f31b242d9c652f1d7cbecdd408a27a inherit pub_methods_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
@@ -164,6 +170,8 @@ std::vector&lt; <a class="el" href="class_user.html">User</a> * &gt;&#160;</td><
 <tr class="memitem:adf0d07887a9081bbc2a0a4d57e73f06c inherit pro_attribs_class_chat_room" id="r_adf0d07887a9081bbc2a0a4d57e73f06c"><td class="memItemLeft" align="right" valign="top">
 std::list&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>chatHistory</b></td></tr>
 <tr class="memdesc:adf0d07887a9081bbc2a0a4d57e73f06c inherit pro_attribs_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">History of messages exchanged in the chat room. <br /></td></tr>
+<tr class="memitem:a80efe9192abaebd3e49f4de536cfa9ad inherit pro_attribs_class_chat_room" id="r_a80efe9192abaebd3e49f4de536cfa9ad"><td class="memItemLeft" align="right" valign="top">
+std::vector&lt; <a class="el" href="class_observer.html">Observer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
 <tr class="inherit_header pro_attribs_class_subject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_subject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_subject.html">Subject</a></td></tr>
 <tr class="memitem:a39d24e695db0a792799b351dbebde992 inherit pro_attribs_class_subject" id="r_a39d24e695db0a792799b351dbebde992"><td class="memItemLeft" align="right" valign="top">
 std::vector&lt; <a class="el" href="class_observer.html">Observer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
