@@ -1,4 +1,5 @@
 #include "ChatRoom.h"
+#include "Observer.h"
 #include "User.h"
 #include <algorithm>
 #include <iostream>
@@ -51,6 +52,25 @@ void ChatRoom::saveMessage(const std::string& message, User* fromUser) {
  */
 const std::vector<User*>& ChatRoom::getUsers() const {
     return users;
+}
+
+void ChatRoom::addObserver(Observer* observer) {
+    if (observer && std::find(observers.begin(), observers.end(), observer) == observers.end()) {
+        observers.push_back(observer);
+    }
+}
+
+void ChatRoom::removeObserver(Observer* observer) {
+    auto it = std::find(observers.begin(), observers.end(), observer);
+    if (it != observers.end()) {
+        observers.erase(it);
+    }
+}
+
+void ChatRoom::notify(const std::string& message, User* fromUser, ChatRoom* room) {
+    for (Observer* observer : observers) {
+        observer->update(message, fromUser, room);
+    }
 }
 
 /**

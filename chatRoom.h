@@ -32,6 +32,7 @@ protected:
      * @brief History of messages exchanged in the chat room.
      */
     std::list<std::string> chatHistory;
+    std::vector<Observer*> observers;
 
 public:
     /**
@@ -39,6 +40,10 @@ public:
      * @param roomName The name assigned to the chat room.
      */
     ChatRoom(const std::string& roomName);
+    
+    void addObserver(Observer* observer);
+    void removeObserver(Observer* observer);
+    void notify(const std::string& message, User* fromUser, ChatRoom* room);
 
     /**
      * @brief Virtual destructor for safe polymorphic cleanup.

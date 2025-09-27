@@ -92,7 +92,7 @@ $(function(){initNavTree('class_ctrl_cat.html','','class_ctrl_cat-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Concrete mediator that manages user interactions in the chat room.  
+<p>Concrete implementation of a <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> named "CtrlCat".  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ctrl_cat_8h_source.html">ctrlCat.h</a>&gt;</code></p>
@@ -102,36 +102,271 @@ Inheritance diagram for CtrlCat:</div>
  <div class="center">
   <img src="class_ctrl_cat.png" usemap="#CtrlCat_map" alt=""/>
   <map id="CtrlCat_map" name="CtrlCat_map">
-<area href="classchat_room.html" alt="ChatRoom" shape="rect" coords="0,0,67,24"/>
+<area href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history." alt="ChatRoom" shape="rect" coords="0,56,69,80"/>
+<area href="class_subject.html" title="Abstract base class for managing observers in the chat system." alt="Subject" shape="rect" coords="0,0,69,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8645e48d957fc9f9bc5a2c1df3ee3010" id="r_a8645e48d957fc9f9bc5a2c1df3ee3010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8645e48d957fc9f9bc5a2c1df3ee3010">rgisterUser</a> (<a class="el" href="class_user.html">User</a> *u) override</td></tr>
-<tr class="memitem:af0bd7793d467424f4547e4dd3e76a5f9" id="r_af0bd7793d467424f4547e4dd3e76a5f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0bd7793d467424f4547e4dd3e76a5f9">removeUser</a> (<a class="el" href="class_user.html">User</a> *u) override</td></tr>
-<tr class="inherit_header pub_methods_classchat_room"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classchat_room')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classchat_room.html">ChatRoom</a></td></tr>
-<tr class="memitem:aa6749ffd6e18a1cc23ce1aefcc64caa8 inherit pub_methods_classchat_room" id="r_aa6749ffd6e18a1cc23ce1aefcc64caa8"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendMessage</b> (std::string message, <a class="el" href="class_user.html">User</a> *fromUser)</td></tr>
-<tr class="memitem:ac49f4a7aa6346693c02bcb0b880d3a9d inherit pub_methods_classchat_room" id="r_ac49f4a7aa6346693c02bcb0b880d3a9d"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>saveMessage</b> (std::string message, <a class="el" href="class_user.html">User</a> *fromUser)</td></tr>
-<tr class="memitem:a71e91bd3a7fb129af5c4a29cafd43936 inherit pub_methods_classchat_room" id="r_a71e91bd3a7fb129af5c4a29cafd43936"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="class_user_iterator.html">UserIterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>creatUserIterator</b> ()</td></tr>
-<tr class="memitem:a48986dd9b9e9b6de35f9085ebd4d1c84 inherit pub_methods_classchat_room" id="r_a48986dd9b9e9b6de35f9085ebd4d1c84"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="class_message_iterator.html">MessageIterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>creatMessageIterator</b> ()</td></tr>
-<tr class="memitem:ac2f8bf8d8fc4b3a017d8cd5f1f99beed inherit pub_methods_classchat_room" id="r_ac2f8bf8d8fc4b3a017d8cd5f1f99beed"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addUser</b> (<a class="el" href="class_user.html">User</a> *u)</td></tr>
-<tr class="memitem:ad3e988125db4122bc819a7ebb9d55721 inherit pub_methods_classchat_room" id="r_ad3e988125db4122bc819a7ebb9d55721"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteUser</b> (<a class="el" href="class_user.html">User</a> *u)</td></tr>
-<tr class="memitem:a29909ed961ed30c394f6efeec54f5b3c inherit pub_methods_classchat_room" id="r_a29909ed961ed30c394f6efeec54f5b3c"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>receive</b> (std::string message, <a class="el" href="class_user.html">User</a> *fromUser)</td></tr>
+<tr class="memitem:a16e99f79549b50b234a7c7febf68c950" id="r_a16e99f79549b50b234a7c7febf68c950"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16e99f79549b50b234a7c7febf68c950">CtrlCat</a> ()</td></tr>
+<tr class="memdesc:a16e99f79549b50b234a7c7febf68c950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> chat room with default settings.  <br /></td></tr>
+<tr class="memitem:a8ec763e03a8e12fa8e5652c27508aa80" id="r_a8ec763e03a8e12fa8e5652c27508aa80"><td class="memItemLeft" align="right" valign="top"><a id="a8ec763e03a8e12fa8e5652c27508aa80" name="a8ec763e03a8e12fa8e5652c27508aa80"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~CtrlCat</b> ()=default</td></tr>
+<tr class="memdesc:a8ec763e03a8e12fa8e5652c27508aa80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
+<tr class="memitem:a43428ea63ace414c9d846b55646e621b" id="r_a43428ea63ace414c9d846b55646e621b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43428ea63ace414c9d846b55646e621b">registerUser</a> (<a class="el" href="class_user.html">User</a> *user) override</td></tr>
+<tr class="memdesc:a43428ea63ace414c9d846b55646e621b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a user to the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room.  <br /></td></tr>
+<tr class="memitem:a061a5c44a8d8984ed1b39c24caa2ee10" id="r_a061a5c44a8d8984ed1b39c24caa2ee10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a061a5c44a8d8984ed1b39c24caa2ee10">removeUser</a> (<a class="el" href="class_user.html">User</a> *user) override</td></tr>
+<tr class="memdesc:a061a5c44a8d8984ed1b39c24caa2ee10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a user from the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room.  <br /></td></tr>
+<tr class="memitem:a112e641e37ce4f8847e86caae7430a24" id="r_a112e641e37ce4f8847e86caae7430a24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a112e641e37ce4f8847e86caae7430a24">sendMessage</a> (const std::string &amp;message, <a class="el" href="class_user.html">User</a> *fromUser) override</td></tr>
+<tr class="memdesc:a112e641e37ce4f8847e86caae7430a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message from a user to all other users in the room.  <br /></td></tr>
+<tr class="memitem:a6977915f1c9f4c6a3e40a02969f69a2a" id="r_a6977915f1c9f4c6a3e40a02969f69a2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6977915f1c9f4c6a3e40a02969f69a2a">saveMessage</a> (const std::string &amp;message, <a class="el" href="class_user.html">User</a> *fromUser) override</td></tr>
+<tr class="memdesc:a6977915f1c9f4c6a3e40a02969f69a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves a message to the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room's history.  <br /></td></tr>
+<tr class="memitem:a8bd5b616dc2fa59b532b989adef24cfb" id="r_a8bd5b616dc2fa59b532b989adef24cfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmy_iterator.html">myIterator</a>&lt; <a class="el" href="class_user.html">User</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bd5b616dc2fa59b532b989adef24cfb">createUserIterator</a> () override</td></tr>
+<tr class="memdesc:a8bd5b616dc2fa59b532b989adef24cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an iterator for traversing users in the room.  <br /></td></tr>
+<tr class="memitem:ac06dd63242dd867f5761d8a32958a2da" id="r_ac06dd63242dd867f5761d8a32958a2da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmy_iterator.html">myIterator</a>&lt; std::string &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06dd63242dd867f5761d8a32958a2da">createMessageIterator</a> () override</td></tr>
+<tr class="memdesc:ac06dd63242dd867f5761d8a32958a2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an iterator for traversing messages in the room's history.  <br /></td></tr>
+<tr class="memitem:a6ca11b321d471746200dac5d343993f7" id="r_a6ca11b321d471746200dac5d343993f7"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="class_user.html">User</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ca11b321d471746200dac5d343993f7">getUsers</a> () const override</td></tr>
+<tr class="memdesc:a6ca11b321d471746200dac5d343993f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of users currently in the room.  <br /></td></tr>
+<tr class="memitem:a1a2c26b86159018a1bf589bfa9ae1453" id="r_a1a2c26b86159018a1bf589bfa9ae1453"><td class="memItemLeft" align="right" valign="top">const std::list&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a2c26b86159018a1bf589bfa9ae1453">getChatHistory</a> () const override</td></tr>
+<tr class="memdesc:a1a2c26b86159018a1bf589bfa9ae1453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the chat history of the room.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_chat_room"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_chat_room')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_chat_room.html">ChatRoom</a></td></tr>
+<tr class="memitem:a5bb9f56c76f242d135102fb2980ab100 inherit pub_methods_class_chat_room" id="r_a5bb9f56c76f242d135102fb2980ab100"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chat_room.html#a5bb9f56c76f242d135102fb2980ab100">ChatRoom</a> (const std::string &amp;roomName)</td></tr>
+<tr class="memdesc:a5bb9f56c76f242d135102fb2980ab100 inherit pub_methods_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> with a given name.  <br /></td></tr>
+<tr class="memitem:a69f31b242d9c652f1d7cbecdd408a27a inherit pub_methods_class_chat_room" id="r_a69f31b242d9c652f1d7cbecdd408a27a"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ChatRoom</b> ()=default</td></tr>
+<tr class="memdesc:a69f31b242d9c652f1d7cbecdd408a27a inherit pub_methods_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
+<tr class="memitem:a8e1f3b4f5ebc9ee213d10996f1caf105 inherit pub_methods_class_chat_room" id="r_a8e1f3b4f5ebc9ee213d10996f1caf105"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_chat_room.html#a8e1f3b4f5ebc9ee213d10996f1caf105">getName</a> () const</td></tr>
+<tr class="memdesc:a8e1f3b4f5ebc9ee213d10996f1caf105 inherit pub_methods_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the name of the chat room.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_subject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_subject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_subject.html">Subject</a></td></tr>
+<tr class="memitem:ab4f33719b83034be37c7f8223f1a5e63 inherit pub_methods_class_subject" id="r_ab4f33719b83034be37c7f8223f1a5e63"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>Subject</b> ()=default</td></tr>
+<tr class="memdesc:ab4f33719b83034be37c7f8223f1a5e63 inherit pub_methods_class_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memitem:af9723476c61afcceeb91bee3211258c7 inherit pub_methods_class_subject" id="r_af9723476c61afcceeb91bee3211258c7"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Subject</b> ()=default</td></tr>
+<tr class="memdesc:af9723476c61afcceeb91bee3211258c7 inherit pub_methods_class_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
+<tr class="memitem:a0884bfe374d352c6488a1e40c84246c8 inherit pub_methods_class_subject" id="r_a0884bfe374d352c6488a1e40c84246c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subject.html#a0884bfe374d352c6488a1e40c84246c8">attach</a> (<a class="el" href="class_observer.html">Observer</a> *observer)</td></tr>
+<tr class="memdesc:a0884bfe374d352c6488a1e40c84246c8 inherit pub_methods_class_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to the subject.  <br /></td></tr>
+<tr class="memitem:a752a7596d52ab986539232f8377ca92c inherit pub_methods_class_subject" id="r_a752a7596d52ab986539232f8377ca92c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subject.html#a752a7596d52ab986539232f8377ca92c">detach</a> (<a class="el" href="class_observer.html">Observer</a> *observer)</td></tr>
+<tr class="memdesc:a752a7596d52ab986539232f8377ca92c inherit pub_methods_class_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer from the subject.  <br /></td></tr>
+<tr class="memitem:a2adb80fe6455540ed91e046cd55eb572 inherit pub_methods_class_subject" id="r_a2adb80fe6455540ed91e046cd55eb572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_subject.html#a2adb80fe6455540ed91e046cd55eb572">notify</a> (const std::string &amp;message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="class_chat_room.html">ChatRoom</a> *room)</td></tr>
+<tr class="memdesc:a2adb80fe6455540ed91e046cd55eb572 inherit pub_methods_class_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers of a new message.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_chat_room"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_chat_room')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_chat_room.html">ChatRoom</a></td></tr>
+<tr class="memitem:af74dc43070cb8b206c50be9dd045464e inherit pro_attribs_class_chat_room" id="r_af74dc43070cb8b206c50be9dd045464e"><td class="memItemLeft" align="right" valign="top">
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memdesc:af74dc43070cb8b206c50be9dd045464e inherit pro_attribs_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the chat room. <br /></td></tr>
+<tr class="memitem:a8ab528a7f3fbc7506e9bf1aec140ea48 inherit pro_attribs_class_chat_room" id="r_a8ab528a7f3fbc7506e9bf1aec140ea48"><td class="memItemLeft" align="right" valign="top">
+std::vector&lt; <a class="el" href="class_user.html">User</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>users</b></td></tr>
+<tr class="memdesc:a8ab528a7f3fbc7506e9bf1aec140ea48 inherit pro_attribs_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of users currently in the chat room. <br /></td></tr>
+<tr class="memitem:adf0d07887a9081bbc2a0a4d57e73f06c inherit pro_attribs_class_chat_room" id="r_adf0d07887a9081bbc2a0a4d57e73f06c"><td class="memItemLeft" align="right" valign="top">
+std::list&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>chatHistory</b></td></tr>
+<tr class="memdesc:adf0d07887a9081bbc2a0a4d57e73f06c inherit pro_attribs_class_chat_room"><td class="mdescLeft">&#160;</td><td class="mdescRight">History of messages exchanged in the chat room. <br /></td></tr>
+<tr class="inherit_header pro_attribs_class_subject"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_subject')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_subject.html">Subject</a></td></tr>
+<tr class="memitem:a39d24e695db0a792799b351dbebde992 inherit pro_attribs_class_subject" id="r_a39d24e695db0a792799b351dbebde992"><td class="memItemLeft" align="right" valign="top">
+std::vector&lt; <a class="el" href="class_observer.html">Observer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
+<tr class="memdesc:a39d24e695db0a792799b351dbebde992 inherit pro_attribs_class_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of observers subscribed to this subject. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Concrete mediator that manages user interactions in the chat room. </p>
-<p>The <a class="el" href="class_ctrl_cat.html" title="Concrete mediator that manages user interactions in the chat room.">CtrlCat</a> class implements the ChatRoom interface and facilitates communication between users by managing their interactions and messages. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="af0bd7793d467424f4547e4dd3e76a5f9" name="af0bd7793d467424f4547e4dd3e76a5f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0bd7793d467424f4547e4dd3e76a5f9">&#9670;&#160;</a></span>removeUser()</h2>
+<div class="textblock"><p>Concrete implementation of a <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> named "CtrlCat". </p>
+<p>Manages user registration, message delivery, and chat history. Supports iteration over users and messages via custom iterators. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a16e99f79549b50b234a7c7febf68c950" name="a16e99f79549b50b234a7c7febf68c950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e99f79549b50b234a7c7febf68c950">&#9670;&#160;</a></span>CtrlCat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CtrlCat::CtrlCat </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> chat room with default settings. </p>
+<p>Constructs the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> chat room with a predefined name. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ac06dd63242dd867f5761d8a32958a2da" name="ac06dd63242dd867f5761d8a32958a2da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06dd63242dd867f5761d8a32958a2da">&#9670;&#160;</a></span>createMessageIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmy_iterator.html">myIterator</a>&lt; std::string &gt; * CtrlCat::createMessageIterator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an iterator for traversing messages in the room's history. </p>
+<p>Creates an iterator for traversing messages in the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room's history.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a <a class="el" href="classmy_iterator.html" title="Generic iterator interface for traversing collections of type T.">myIterator</a> object for message strings.</dd>
+<dd>
+Pointer to a <a class="el" href="class_message_iterator.html" title="Concrete iterator for traversing a list of chat messages.">MessageIterator</a> object. </dd></dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#aa20899ffe373d5e3fb53c70e5d09eec3">ChatRoom</a>.</p>
+
+</div>
+</div>
+<a id="a8bd5b616dc2fa59b532b989adef24cfb" name="a8bd5b616dc2fa59b532b989adef24cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd5b616dc2fa59b532b989adef24cfb">&#9670;&#160;</a></span>createUserIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmy_iterator.html">myIterator</a>&lt; <a class="el" href="class_user.html">User</a> * &gt; * CtrlCat::createUserIterator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an iterator for traversing users in the room. </p>
+<p>Creates an iterator for traversing users in the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a <a class="el" href="classmy_iterator.html" title="Generic iterator interface for traversing collections of type T.">myIterator</a> object for <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> pointers.</dd>
+<dd>
+Pointer to a <a class="el" href="class_user_iterator.html" title="Concrete iterator for traversing a collection of User pointers.">UserIterator</a> object. </dd></dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#aebabcf191e1f10a9707cd790f3b48304">ChatRoom</a>.</p>
+
+</div>
+</div>
+<a id="a1a2c26b86159018a1bf589bfa9ae1453" name="a1a2c26b86159018a1bf589bfa9ae1453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2c26b86159018a1bf589bfa9ae1453">&#9670;&#160;</a></span>getChatHistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::list&lt; std::string &gt; &amp; CtrlCat::getChatHistory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the chat history of the room. </p>
+<p>Retrieves the chat history of the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room.</p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the list of message strings. </dd></dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#a342e4e82fd04f9dc37beb5785984f677">ChatRoom</a>.</p>
+
+</div>
+</div>
+<a id="a6ca11b321d471746200dac5d343993f7" name="a6ca11b321d471746200dac5d343993f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca11b321d471746200dac5d343993f7">&#9670;&#160;</a></span>getUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="class_user.html">User</a> * &gt; &amp; CtrlCat::getUsers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the list of users currently in the room. </p>
+<p>Retrieves the list of users currently in the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room.</p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the vector of <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> pointers. </dd></dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#a8ab53963236d67c35756d879a02ec292">ChatRoom</a>.</p>
+
+</div>
+</div>
+<a id="a43428ea63ace414c9d846b55646e621b" name="a43428ea63ace414c9d846b55646e621b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43428ea63ace414c9d846b55646e621b">&#9670;&#160;</a></span>registerUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CtrlCat::registerUser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registers a user to the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room. </p>
+<p>Registers a user to the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> chat room.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> to be added.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Adds the user to the room if they are not already present, and notifies the user of the join event.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> to be registered. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#ad7d4fe63622992ee74913a0c04c1b840">ChatRoom</a>.</p>
+
+</div>
+</div>
+<a id="a061a5c44a8d8984ed1b39c24caa2ee10" name="a061a5c44a8d8984ed1b39c24caa2ee10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a061a5c44a8d8984ed1b39c24caa2ee10">&#9670;&#160;</a></span>removeUser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +377,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>receive</b> (std::str
         <tr>
           <td class="memname">void CtrlCat::removeUser </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -153,12 +388,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>receive</b> (std::str
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classchat_room.html">ChatRoom</a>.</p>
+<p>Removes a user from the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room. </p>
+<p>Removes a user from the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> chat room.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> to be removed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Erases the user from the room's user list and notifies them of the departure.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#a01c7ea1d26aefc886c0f8b2bc63ade28">ChatRoom</a>.</p>
 
 </div>
 </div>
-<a id="a8645e48d957fc9f9bc5a2c1df3ee3010" name="a8645e48d957fc9f9bc5a2c1df3ee3010"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8645e48d957fc9f9bc5a2c1df3ee3010">&#9670;&#160;</a></span>rgisterUser()</h2>
+<a id="a6977915f1c9f4c6a3e40a02969f69a2a" name="a6977915f1c9f4c6a3e40a02969f69a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6977915f1c9f4c6a3e40a02969f69a2a">&#9670;&#160;</a></span>saveMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,10 +418,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>receive</b> (std::str
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CtrlCat::rgisterUser </td>
+          <td class="memname">void CtrlCat::saveMessage </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>fromUser</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -180,7 +435,74 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>receive</b> (std::str
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classchat_room.html">ChatRoom</a>.</p>
+<p>Saves a message to the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room's history. </p>
+<p>Saves a message to the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room's history with a [SAVED] tag.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message content. </td></tr>
+    <tr><td class="paramname">fromUser</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> who sent the message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Only saves messages from users currently in the room.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message content to be saved. </td></tr>
+    <tr><td class="paramname">fromUser</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> who sent the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#add14a38c78e80d05a7deb0780d9b8d3c">ChatRoom</a>.</p>
+
+</div>
+</div>
+<a id="a112e641e37ce4f8847e86caae7430a24" name="a112e641e37ce4f8847e86caae7430a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112e641e37ce4f8847e86caae7430a24">&#9670;&#160;</a></span>sendMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CtrlCat::sendMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>fromUser</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends a message from a user to all other users in the room. </p>
+<p>Sends a message from a user to all other users in the <a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a> room.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message content. </td></tr>
+    <tr><td class="paramname">fromUser</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> sending the message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Displays the message, saves it to history, and notifies all other users.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message content to be sent. </td></tr>
+    <tr><td class="paramname">fromUser</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> sending the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_chat_room.html#ae6e6f96fd9fa01e343142f918d74470d">ChatRoom</a>.</p>
 
 </div>
 </div>

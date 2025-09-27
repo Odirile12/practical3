@@ -8,23 +8,22 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}User.h"{}}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ChatRoom.h"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }Command\ \{}
-\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classchat_room}{ChatRoom}}*\ room;}
-\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}*\ user;}
-\DoxyCodeLine{00015\ \ \ \ \ std::string\ message;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ Command(\mbox{\hyperlink{classchat_room}{ChatRoom}}*\ room,\ \mbox{\hyperlink{class_user}{User}}*\ user,\ \textcolor{keyword}{const}\ std::string\ message);}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_command_aae19e5edcdcd17c91146454a5d26eb24}{execute}}()\ =\ 0;}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classchat_room}{ChatRoom}}*\ getRoom()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}*\ getUser()\ \textcolor{keyword}{const}\ ;}
-\DoxyCodeLine{00026\ \ \ \ \ std::string\ getMessage()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_command_a641c23ef533dd6f77d0a4ef0311598b2}{\string~Command}}()\ \{\}}
-\DoxyCodeLine{00032\ \};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMAND\_H}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8}{Command}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_chat_room}{ChatRoom}}*\ \mbox{\hyperlink{class_command_ac38d7713bb9660a23a752a2a2c938dd5}{room}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}*\ \mbox{\hyperlink{class_command_a089ce52cd25f12842ae99692039ab6b9}{user}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{class_command_aefb89941a5b2b0b0648cf7b98bb37762}{message}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8}{Command}}(\mbox{\hyperlink{class_chat_room}{ChatRoom}}*\ \mbox{\hyperlink{class_command_ac38d7713bb9660a23a752a2a2c938dd5}{room}},\ \mbox{\hyperlink{class_user}{User}}*\ \mbox{\hyperlink{class_command_a089ce52cd25f12842ae99692039ab6b9}{user}},\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_command_aefb89941a5b2b0b0648cf7b98bb37762}{message}});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_command_aae19e5edcdcd17c91146454a5d26eb24}{execute}}()\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_command_aa545a53d35818f9efb936daf3fa16c61}{\string~Command}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMAND\_H}}
 
 \end{DoxyCode}

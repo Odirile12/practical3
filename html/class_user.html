@@ -92,44 +92,325 @@ $(function(){initNavTree('class_user.html','','class_user-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a user in the chat system.  
+<p>Abstract base class representing a participant in the chat system.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="user_8h_source.html">User.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="user_8h_source.html">user.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for User:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_user.png" usemap="#User_map" alt=""/>
   <map id="User_map" name="User_map">
-<area href="class_normal_user.html" title="Represents a normal user in the chat system who can invoke commands." alt="NormalUser" shape="rect" coords="0,56,78,80"/>
-<area href="class_user_name.html" alt="UserName" shape="rect" coords="88,56,166,80"/>
+<area href="class_admin_user.html" title="Represents an administrative user with elevated privileges in a chat room." alt="AdminUser" shape="rect" coords="0,56,82,80"/>
+<area href="class_name1.html" title="A concrete implementation of User representing a specific participant named &quot;Alice&quot;." alt="Name1" shape="rect" coords="92,56,174,80"/>
+<area href="class_name2.html" title="A concrete implementation of User representing a participant named &quot;Bob&quot;." alt="Name2" shape="rect" coords="184,56,266,80"/>
+<area href="class_name3.html" title="A concrete implementation of User representing a participant named &quot;Charlie&quot;." alt="Name3" shape="rect" coords="276,56,358,80"/>
+<area href="class_regular_user.html" title="A basic implementation of the User class representing a standard chat participant." alt="RegularUser" shape="rect" coords="368,56,450,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af9e5f33114c8330be7b91276b7377e6d" id="r_af9e5f33114c8330be7b91276b7377e6d"><td class="memItemLeft" align="right" valign="top"><a id="af9e5f33114c8330be7b91276b7377e6d" name="af9e5f33114c8330be7b91276b7377e6d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>User</b> (std::string name)</td></tr>
-<tr class="memitem:a29caabba5c7e00de3780d11348eabef6" id="r_a29caabba5c7e00de3780d11348eabef6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29caabba5c7e00de3780d11348eabef6">send</a> (std::string message, <a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
-<tr class="memdesc:a29caabba5c7e00de3780d11348eabef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the chat room.  <br /></td></tr>
-<tr class="memitem:a538e10150819d39d8b7ad1f90c3ef630" id="r_a538e10150819d39d8b7ad1f90c3ef630"><td class="memItemLeft" align="right" valign="top"><a id="a538e10150819d39d8b7ad1f90c3ef630" name="a538e10150819d39d8b7ad1f90c3ef630"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const =0</td></tr>
-<tr class="memitem:af89bad6bb8861cccf0c67f6d5963e2c4" id="r_af89bad6bb8861cccf0c67f6d5963e2c4"><td class="memItemLeft" align="right" valign="top"><a id="af89bad6bb8861cccf0c67f6d5963e2c4" name="af89bad6bb8861cccf0c67f6d5963e2c4"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>joinRoom</b> (<a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
-<tr class="memitem:a157b63e31b0913fa8892faf335c01e30" id="r_a157b63e31b0913fa8892faf335c01e30"><td class="memItemLeft" align="right" valign="top"><a id="a157b63e31b0913fa8892faf335c01e30" name="a157b63e31b0913fa8892faf335c01e30"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>leaveRoom</b> (<a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
-<tr class="memitem:a2668b3722627ce4c6340fd6fc62a9725" id="r_a2668b3722627ce4c6340fd6fc62a9725"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2668b3722627ce4c6340fd6fc62a9725">receive</a> (std::string message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="classchat_room.html">ChatRoom</a> *room)=0</td></tr>
-<tr class="memdesc:a2668b3722627ce4c6340fd6fc62a9725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from the chat room.  <br /></td></tr>
-<tr class="memitem:a44388bdb8fb6accbe7fe143541c3d98d" id="r_a44388bdb8fb6accbe7fe143541c3d98d"><td class="memItemLeft" align="right" valign="top"><a id="a44388bdb8fb6accbe7fe143541c3d98d" name="a44388bdb8fb6accbe7fe143541c3d98d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td></tr>
+<tr class="memitem:aa07d4a3ff7450c7e7ab0ceee7d463fb6" id="r_aa07d4a3ff7450c7e7ab0ceee7d463fb6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa07d4a3ff7450c7e7ab0ceee7d463fb6">User</a> (const std::string &amp;userName)</td></tr>
+<tr class="memdesc:aa07d4a3ff7450c7e7ab0ceee7d463fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> with a given name.  <br /></td></tr>
+<tr class="memitem:ac00b72ad64eb4149f7b21b9f5468c2b2" id="r_ac00b72ad64eb4149f7b21b9f5468c2b2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac00b72ad64eb4149f7b21b9f5468c2b2">~User</a> ()</td></tr>
+<tr class="memdesc:ac00b72ad64eb4149f7b21b9f5468c2b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup.  <br /></td></tr>
+<tr class="memitem:a446a64e63adafbc2e1428532275ad6a1" id="r_a446a64e63adafbc2e1428532275ad6a1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a446a64e63adafbc2e1428532275ad6a1">getName</a> () const</td></tr>
+<tr class="memdesc:a446a64e63adafbc2e1428532275ad6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the user's name.  <br /></td></tr>
+<tr class="memitem:af7d091a9bbca513f309b90e83c2c6461" id="r_af7d091a9bbca513f309b90e83c2c6461"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="class_chat_room.html">ChatRoom</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7d091a9bbca513f309b90e83c2c6461">getChatRooms</a> () const</td></tr>
+<tr class="memdesc:af7d091a9bbca513f309b90e83c2c6461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of chat rooms the user has joined.  <br /></td></tr>
+<tr class="memitem:a884c0841b76a96c33383d2166e0207ad" id="r_a884c0841b76a96c33383d2166e0207ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a884c0841b76a96c33383d2166e0207ad">joinRoom</a> (<a class="el" href="class_chat_room.html">ChatRoom</a> *room)</td></tr>
+<tr class="memdesc:a884c0841b76a96c33383d2166e0207ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the user to a chat room.  <br /></td></tr>
+<tr class="memitem:aeff3ae2cbf7464d007c2e1537dde9eb9" id="r_aeff3ae2cbf7464d007c2e1537dde9eb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeff3ae2cbf7464d007c2e1537dde9eb9">leaveRoom</a> (<a class="el" href="class_chat_room.html">ChatRoom</a> *room)</td></tr>
+<tr class="memdesc:aeff3ae2cbf7464d007c2e1537dde9eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the user from a chat room.  <br /></td></tr>
+<tr class="memitem:a2aab3b7fcb129eec0cb5dc9502c5f38d" id="r_a2aab3b7fcb129eec0cb5dc9502c5f38d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aab3b7fcb129eec0cb5dc9502c5f38d">isInRoom</a> (<a class="el" href="class_chat_room.html">ChatRoom</a> *room) const</td></tr>
+<tr class="memdesc:a2aab3b7fcb129eec0cb5dc9502c5f38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the user is currently in a given chat room.  <br /></td></tr>
+<tr class="memitem:a41ae2c22cb659f0e01260fffa9389088" id="r_a41ae2c22cb659f0e01260fffa9389088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41ae2c22cb659f0e01260fffa9389088">addCommand</a> (<a class="el" href="class_command.html">Command</a> *cmd)</td></tr>
+<tr class="memdesc:a41ae2c22cb659f0e01260fffa9389088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a command to the user's command queue.  <br /></td></tr>
+<tr class="memitem:a55634b63429cc51f0bb102c08981ae86" id="r_a55634b63429cc51f0bb102c08981ae86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55634b63429cc51f0bb102c08981ae86">executeCommands</a> ()</td></tr>
+<tr class="memdesc:a55634b63429cc51f0bb102c08981ae86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes all commands in the user's command queue.  <br /></td></tr>
+<tr class="memitem:a189b1d458d42013b1fe9cf9107bd1301" id="r_a189b1d458d42013b1fe9cf9107bd1301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a189b1d458d42013b1fe9cf9107bd1301">clearCommandQueue</a> ()</td></tr>
+<tr class="memdesc:a189b1d458d42013b1fe9cf9107bd1301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the user's command queue without executing.  <br /></td></tr>
+<tr class="memitem:a101f9af483b19a039a99b4e2d791fe37" id="r_a101f9af483b19a039a99b4e2d791fe37"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a101f9af483b19a039a99b4e2d791fe37">send</a> (const std::string &amp;message, <a class="el" href="class_chat_room.html">ChatRoom</a> *room)=0</td></tr>
+<tr class="memdesc:a101f9af483b19a039a99b4e2d791fe37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to a chat room.  <br /></td></tr>
+<tr class="memitem:a0c568218381c6bf432c4ca348e6e1042" id="r_a0c568218381c6bf432c4ca348e6e1042"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c568218381c6bf432c4ca348e6e1042">receive</a> (const std::string &amp;message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="class_chat_room.html">ChatRoom</a> *room)=0</td></tr>
+<tr class="memdesc:a0c568218381c6bf432c4ca348e6e1042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from another user in a chat room.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a085d8d69282b6298964eab8351584536" id="r_a085d8d69282b6298964eab8351584536"><td class="memItemLeft" align="right" valign="top"><a id="a085d8d69282b6298964eab8351584536" name="a085d8d69282b6298964eab8351584536"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memdesc:a085d8d69282b6298964eab8351584536"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the user. <br /></td></tr>
+<tr class="memitem:a58505cd2204f4e0876a076631c0fd287" id="r_a58505cd2204f4e0876a076631c0fd287"><td class="memItemLeft" align="right" valign="top"><a id="a58505cd2204f4e0876a076631c0fd287" name="a58505cd2204f4e0876a076631c0fd287"></a>
+std::vector&lt; <a class="el" href="class_chat_room.html">ChatRoom</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>chatRooms</b></td></tr>
+<tr class="memdesc:a58505cd2204f4e0876a076631c0fd287"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of chat rooms the user has joined. <br /></td></tr>
+<tr class="memitem:a389cd730b5b91eafd51a26f992db4684" id="r_a389cd730b5b91eafd51a26f992db4684"><td class="memItemLeft" align="right" valign="top"><a id="a389cd730b5b91eafd51a26f992db4684" name="a389cd730b5b91eafd51a26f992db4684"></a>
+std::list&lt; <a class="el" href="class_command.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commandQueue</b></td></tr>
+<tr class="memdesc:a389cd730b5b91eafd51a26f992db4684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue of commands to be executed by the user. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a user in the chat system. </p>
-<p>The <a class="el" href="class_user.html" title="Represents a user in the chat system.">User</a> class serves as a base class for different types of users in the chat application. It provides the basic functionalities that all users should have. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a2668b3722627ce4c6340fd6fc62a9725" name="a2668b3722627ce4c6340fd6fc62a9725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2668b3722627ce4c6340fd6fc62a9725">&#9670;&#160;</a></span>receive()</h2>
+<div class="textblock"><p>Abstract base class representing a participant in the chat system. </p>
+<p>Defines core user behavior including room membership management and command execution. Subclasses must implement message sending and receiving logic. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa07d4a3ff7450c7e7ab0ceee7d463fb6" name="aa07d4a3ff7450c7e7ab0ceee7d463fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07d4a3ff7450c7e7ab0ceee7d463fb6">&#9670;&#160;</a></span>User()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">User::User </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>userName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> with a given name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userName</td><td>The name of the user. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac00b72ad64eb4149f7b21b9f5468c2b2" name="ac00b72ad64eb4149f7b21b9f5468c2b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00b72ad64eb4149f7b21b9f5468c2b2">&#9670;&#160;</a></span>~User()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">User::~User </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual destructor for safe polymorphic cleanup. </p>
+<p>Destructor for <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a>.</p>
+<p>Clears the command queue to release memory and clean up pending commands. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a41ae2c22cb659f0e01260fffa9389088" name="a41ae2c22cb659f0e01260fffa9389088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ae2c22cb659f0e01260fffa9389088">&#9670;&#160;</a></span>addCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::addCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_command.html">Command</a> *</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a command to the user's command queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>Pointer to the <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> to be queued. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a189b1d458d42013b1fe9cf9107bd1301" name="a189b1d458d42013b1fe9cf9107bd1301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189b1d458d42013b1fe9cf9107bd1301">&#9670;&#160;</a></span>clearCommandQueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::clearCommandQueue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears the user's command queue without executing. </p>
+<p>Deletes all queued commands and empties the queue. </p>
+
+</div>
+</div>
+<a id="a55634b63429cc51f0bb102c08981ae86" name="a55634b63429cc51f0bb102c08981ae86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55634b63429cc51f0bb102c08981ae86">&#9670;&#160;</a></span>executeCommands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::executeCommands </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes all commands in the user's command queue. </p>
+<p>Runs each command and clears the queue.</p>
+<p>Runs each command and deletes it afterward. Clears the queue. </p>
+
+</div>
+</div>
+<a id="af7d091a9bbca513f309b90e83c2c6461" name="af7d091a9bbca513f309b90e83c2c6461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7d091a9bbca513f309b90e83c2c6461">&#9670;&#160;</a></span>getChatRooms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="class_chat_room.html">ChatRoom</a> * &gt; &amp; User::getChatRooms </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the list of chat rooms the user has joined. </p>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the vector of <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> pointers. </dd></dl>
+
+</div>
+</div>
+<a id="a446a64e63adafbc2e1428532275ad6a1" name="a446a64e63adafbc2e1428532275ad6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446a64e63adafbc2e1428532275ad6a1">&#9670;&#160;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string User::getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the user's name. </p>
+<p>Retrieves the name of the user.</p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the user.</dd>
+<dd>
+The user's name. </dd></dl>
+
+</div>
+</div>
+<a id="a2aab3b7fcb129eec0cb5dc9502c5f38d" name="a2aab3b7fcb129eec0cb5dc9502c5f38d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aab3b7fcb129eec0cb5dc9502c5f38d">&#9670;&#160;</a></span>isInRoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool User::isInRoom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the user is currently in a given chat room. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the user is in the room, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a884c0841b76a96c33383d2166e0207ad" name="a884c0841b76a96c33383d2166e0207ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884c0841b76a96c33383d2166e0207ad">&#9670;&#160;</a></span>joinRoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::joinRoom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joins the user to a chat room. </p>
+<p>Registers the user with the room and adds it to the user's list. Prevents duplicate entries.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> to join.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Adds the room to the user's list and registers the user with the room. Prevents duplicate entries.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> to join. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeff3ae2cbf7464d007c2e1537dde9eb9" name="aeff3ae2cbf7464d007c2e1537dde9eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff3ae2cbf7464d007c2e1537dde9eb9">&#9670;&#160;</a></span>leaveRoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void User::leaveRoom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes the user from a chat room. </p>
+<p>Unregisters the user and removes the room from the user's list.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> to leave.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Erases the room from the user's list and unregisters the user from the room.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> to leave. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c568218381c6bf432c4ca348e6e1042" name="a0c568218381c6bf432c4ca348e6e1042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c568218381c6bf432c4ca348e6e1042">&#9670;&#160;</a></span>receive()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +421,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
         <tr>
           <td class="memname">virtual void User::receive </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -150,7 +431,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classchat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -160,20 +441,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
 </table>
 </div><div class="memdoc">
 
-<p>Receives a message from the chat room. </p>
+<p>Receives a message from another user in a chat room. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>The message received. </td></tr>
+    <tr><td class="paramname">message</td><td>The message content received. </td></tr>
+    <tr><td class="paramname">fromUser</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> who sent the message. </td></tr>
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> where the message was received. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_user_name.html#ae59ab1336b2e33adf412b052255697ea">UserName</a>.</p>
+<p>Implemented in <a class="el" href="class_admin_user.html#a2e485a4820e8c5bbb72cae81a311f175">AdminUser</a>, <a class="el" href="class_name1.html#af5841f15708551f53013489629794722">Name1</a>, <a class="el" href="class_name2.html#a70080950576e358b923470ac356d1d8f">Name2</a>, <a class="el" href="class_name3.html#a9c815bcab8751fd8b6b74b2ba051ca2d">Name3</a>, and <a class="el" href="class_regular_user.html#abf98879fde51fe44ddd537a2752c9615">RegularUser</a>.</p>
 
 </div>
 </div>
-<a id="a29caabba5c7e00de3780d11348eabef6" name="a29caabba5c7e00de3780d11348eabef6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29caabba5c7e00de3780d11348eabef6">&#9670;&#160;</a></span>send()</h2>
+<a id="a101f9af483b19a039a99b4e2d791fe37" name="a101f9af483b19a039a99b4e2d791fe37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101f9af483b19a039a99b4e2d791fe37">&#9670;&#160;</a></span>send()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,12 +467,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
         <tr>
           <td class="memname">virtual void User::send </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classchat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -199,20 +482,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeAll</b> ()</td
 </table>
 </div><div class="memdoc">
 
-<p>Sends a message to the chat room. </p>
+<p>Sends a message to a chat room. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>The message to be sent. </td></tr>
+    <tr><td class="paramname">message</td><td>The message content to be sent. </td></tr>
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> where the message should be sent. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_user_name.html#a02aa85c51e8f8b6a18bc99401e6609fc">UserName</a>.</p>
+<p>Implemented in <a class="el" href="class_admin_user.html#a325db5ca90ba4783f0f5202d072599a2">AdminUser</a>, <a class="el" href="class_name1.html#a060b953265b9d598e21fbf33509a3c41">Name1</a>, <a class="el" href="class_name2.html#ad41228e0b3c5847d976faa7bef21951b">Name2</a>, <a class="el" href="class_name3.html#aac82fd80fc0202c9616730e4ffb6176c">Name3</a>, and <a class="el" href="class_regular_user.html#a2646347e61280850bb8e23a48033d480">RegularUser</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="user_8h_source.html">User.h</a></li>
+<li><a class="el" href="user_8h_source.html">user.h</a></li>
 <li><b>user.cpp</b></li>
 </ul>
 </div><!-- contents -->

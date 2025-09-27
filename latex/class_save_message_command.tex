@@ -2,7 +2,7 @@
 \hypertarget{class_save_message_command}{}\label{class_save_message_command}\index{SaveMessageCommand@{SaveMessageCommand}}
 
 
-Concrete command for saving messages.  
+A concrete \doxylink{class_command}{Command} that saves a message to a chat room\textquotesingle{}s history.  
 
 
 
@@ -18,29 +18,60 @@ Inheritance diagram for Save\+Message\+Command\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_save_message_command_a8974fe28b6fafaa41ef49c8e9db00abc}{Save\+Message\+Command}} (\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_command_ac38d7713bb9660a23a752a2a2c938dd5}{room}}, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_command_a089ce52cd25f12842ae99692039ab6b9}{user}}, const std\+::string \mbox{\hyperlink{class_command_aefb89941a5b2b0b0648cf7b98bb37762}{message}})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_save_message_command}{Save\+Message\+Command} with the target room, user, and message. \end{DoxyCompactList}\item 
+\Hypertarget{class_save_message_command_a5e45f24527bdd4c93f695d820c17020e}\label{class_save_message_command_a5e45f24527bdd4c93f695d820c17020e} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Save\+Message\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_save_message_command_a3e4c17c1151344f72453efff696a088a}{execute}} () override
-\begin{DoxyCompactList}\small\item\em Executes the command to save a message. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_save_message_command_aa86a93fec1893044af2f1b8ccf60aa9d}{set\+Message}} (const std\+::string \&message)
-\begin{DoxyCompactList}\small\item\em Sets the message to be saved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Executes the command to save a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_command}{Command}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Command} (\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}user, const std\+::string message)
+\mbox{\hyperlink{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8}{Command}} (\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_command_ac38d7713bb9660a23a752a2a2c938dd5}{room}}, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_command_a089ce52cd25f12842ae99692039ab6b9}{user}}, const std\+::string \mbox{\hyperlink{class_command_aefb89941a5b2b0b0648cf7b98bb37762}{message}})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_command}{Command} object with the given room, user, and message. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_command}{Command}}}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Room} () const
-\item 
-\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} {\bfseries get\+User} () const
-\item 
-std\+::string {\bfseries get\+Message} () const
-\item 
-virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
-\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_command}{Command} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries room}
+\begin{DoxyCompactList}\small\item\em Pointer to the chat room where the command will be executed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} {\bfseries user}
+\begin{DoxyCompactList}\small\item\em Pointer to the user who issued the command. \end{DoxyCompactList}\item 
+std\+::string {\bfseries message}
+\begin{DoxyCompactList}\small\item\em The message content associated with the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Concrete command for saving messages. 
+A concrete \doxylink{class_command}{Command} that saves a message to a chat room\textquotesingle{}s history. 
 
-This class implements the \doxylink{class_command}{Command} interface to provide functionality for saving messages in the chat application. 
+Implements the \doxylink{class_command}{Command} interface to encapsulate the action of persisting a message sent by a user into the chat room\textquotesingle{}s message log. 
+
+\label{doc-constructors}
+\Hypertarget{class_save_message_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_save_message_command_a8974fe28b6fafaa41ef49c8e9db00abc}\index{SaveMessageCommand@{SaveMessageCommand}!SaveMessageCommand@{SaveMessageCommand}}
+\index{SaveMessageCommand@{SaveMessageCommand}!SaveMessageCommand@{SaveMessageCommand}}
+\doxysubsubsection{\texorpdfstring{SaveMessageCommand()}{SaveMessageCommand()}}
+{\footnotesize\ttfamily \label{class_save_message_command_a8974fe28b6fafaa41ef49c8e9db00abc} 
+Save\+Message\+Command\+::\+Save\+Message\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{, }\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{user}{, }\item[{const std\+::string}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_save_message_command}{Save\+Message\+Command} with the target room, user, and message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the message should be saved. \\
+\hline
+{\em user} & Pointer to the \doxylink{class_user}{User} who sent the message. \\
+\hline
+{\em message} & The message content to be saved. \\
+\hline
+\end{DoxyParams}
+
 
 \label{doc-func-members}
 \Hypertarget{class_save_message_command_doc-func-members}
@@ -55,25 +86,14 @@ void Save\+Message\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 Executes the command to save a message. 
 
-Executes the command to save the message. 
+Executes the command to save a message in the chat room.
+
+Delegates the saving operation to the \doxylink{class_chat_room}{Chat\+Room}\textquotesingle{}s save\+Message method.
+
+Performs a safety check to ensure both the room and user are valid. Then delegates the message saving to the \doxylink{class_chat_room}{Chat\+Room}\textquotesingle{}s save\+Message method. 
 
 Implements \mbox{\hyperlink{class_command_aae19e5edcdcd17c91146454a5d26eb24}{Command}}.
 
-\Hypertarget{class_save_message_command_aa86a93fec1893044af2f1b8ccf60aa9d}\index{SaveMessageCommand@{SaveMessageCommand}!setMessage@{setMessage}}
-\index{setMessage@{setMessage}!SaveMessageCommand@{SaveMessageCommand}}
-\doxysubsubsection{\texorpdfstring{setMessage()}{setMessage()}}
-{\footnotesize\ttfamily \label{class_save_message_command_aa86a93fec1893044af2f1b8ccf60aa9d} 
-void Save\+Message\+Command\+::set\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
-
-
-
-Sets the message to be saved. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em message} & The message to save. \\
-\hline
-\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

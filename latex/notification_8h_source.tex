@@ -1,18 +1,20 @@
 \doxysection{notification.\+h}
 \hypertarget{notification_8h_source}{}\label{notification_8h_source}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NoTIFICATION\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NoTIFICATION\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Observer.h"{}}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }Notification:\textcolor{keyword}{public}\ \mbox{\hyperlink{classobserver}{observer}}\{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00007\ \ \ \ \ Notification()=\textcolor{keywordflow}{default};}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{void}\ update(std::string\ message,\mbox{\hyperlink{class_user}{User}}*\ fromUser,\mbox{\hyperlink{classchat_room}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00009\ \ \ \ \ \string~Notification()=\textcolor{keywordflow}{default};}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \};}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NoTIFICATION\_H}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NOTIFICATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NOTIFICATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Observer.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notification_a7882fa37719a223d21c1bbf01134ccab}{Notification}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observer}{Observer}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_notification_a7882fa37719a223d21c1bbf01134ccab}{Notification}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notification_a3b3b5ddebc392e07a4c3051b0f942dbf}{update}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser,\ \mbox{\hyperlink{class_chat_room}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NOTIFICATION\_H}}
 
 \end{DoxyCode}

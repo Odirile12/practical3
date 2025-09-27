@@ -1,0 +1,20 @@
+\doxysection{Admin\+User.\+h}
+\hypertarget{_admin_user_8h_source}{}\label{_admin_user_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ADMIN\_USER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADMIN\_USER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}User.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_admin_user_adb95c7123d5d34d68e2fd3d1d52ae71d}{AdminUser}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_aa07d4a3ff7450c7e7ab0ceee7d463fb6}{User}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_admin_user_adb95c7123d5d34d68e2fd3d1d52ae71d}{AdminUser}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_user_a085d8d69282b6298964eab8351584536}{name}});}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_user_a325db5ca90ba4783f0f5202d072599a2}{send}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_chat_room}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_user_a2e485a4820e8c5bbb72cae81a311f175}{receive}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user_aa07d4a3ff7450c7e7ab0ceee7d463fb6}{User}}*\ fromUser,\ \mbox{\hyperlink{class_chat_room}{ChatRoom}}*\ room)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ADMIN\_USER\_H}}
+
+\end{DoxyCode}

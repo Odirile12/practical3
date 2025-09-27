@@ -24,6 +24,10 @@ Name1::Name1() : User("Alice") {
  * @param room Pointer to the ChatRoom where the message should be sent.
  */
 void Name1::send(const std::string& message, ChatRoom* room) {
+    if(room == nullptr) {
+        std::cout << "Error: " << name << " cannot send message to a null room!" << std::endl;
+        return;
+    }
     if (!isInRoom(room)) {
         std::cout << "Error: " << name << " is not in " << room->getName() << "!" << std::endl;
         return;

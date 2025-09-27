@@ -1,0 +1,79 @@
+\doxysection{Observer Class Reference}
+\hypertarget{class_observer}{}\label{class_observer}\index{Observer@{Observer}}
+
+
+Abstract base class for implementing the \doxylink{class_observer}{Observer} pattern in chat rooms.  
+
+
+
+
+{\ttfamily \#include $<$Observer.\+h$>$}
+
+Inheritance diagram for Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_observer_a37824643eeaef086de17bba2717d865a}\label{class_observer_a37824643eeaef086de17bba2717d865a} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observer_ab6ca103235b10ac51e7c9c2b4f8a146a}{update}} (const std\+::string \&message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)=0
+\begin{DoxyCompactList}\small\item\em Called when a new message is sent in a chat room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for implementing the \doxylink{class_observer}{Observer} pattern in chat rooms. 
+
+Observers are notified when a new message is sent in a chat room. Concrete subclasses must implement the update method to define custom behavior. 
+
+\label{doc-func-members}
+\Hypertarget{class_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_observer_ab6ca103235b10ac51e7c9c2b4f8a146a}\index{Observer@{Observer}!update@{update}}
+\index{update@{update}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_observer_ab6ca103235b10ac51e7c9c2b4f8a146a} 
+void Observer\+::update (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{from\+User}{, }\item[{\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when a new message is sent in a chat room. 
+
+Default implementation of the \doxylink{class_observer}{Observer} update method.
+
+Allows observers to react to message events, such as displaying notifications or logging activity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content that triggered the update. \\
+\hline
+{\em from\+User} & Pointer to the \doxylink{class_user}{User} who sent the message. \\
+\hline
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the message was sent.\\
+\hline
+\end{DoxyParams}
+This method is intended to be overridden by concrete observer classes to react to message events in a chat room. The base implementation does nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content that triggered the update. \\
+\hline
+{\em from\+User} & Pointer to the \doxylink{class_user}{User} who sent the message. \\
+\hline
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the message was sent. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_notification_a3b3b5ddebc392e07a4c3051b0f942dbf}{Notification}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Observer.\+h\item 
+Observer.\+cpp\end{DoxyCompactItemize}

@@ -9,7 +9,7 @@
  and associated documentation files (the "Software"), to deal in the Software without restriction,
  including without limitation the rights to use, copy, modify, merge, publish, distribute,
  sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
- furnished to do so, Subject to the following conditions:
+ furnished to do so, subject to the following conditions:
 
  The above copyright notice and this permission notice shall be included in all copies or
  substantial portions of the Software.
@@ -26,10 +26,9 @@ var NAVTREE =
 [
   [ "My Project", "index.html", [
     [ "Chat Mediator App", "md__r_e_a_d_m_e.html", [
-      [ "Project Structure", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Components", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Build Instructions", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "Usage", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
+      [ "Components", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Build Instructions", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Usage", "md__r_e_a_d_m_e.html#autotoc_md3", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -37,7 +36,8 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -48,7 +48,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_observer_8h_source.html"
+"_admin_user_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

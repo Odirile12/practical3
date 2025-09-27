@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['messageiterator_0',['MessageIterator',['../class_message_iterator.html#ab0ac87d923acf4fd62b324e488a12d7e',1,'MessageIterator']]]
+  ['detach_0',['detach',['../class_subject.html#a752a7596d52ab986539232f8377ca92c',1,'Subject']]],
+  ['dogorithm_1',['Dogorithm',['../class_dogorithm.html#a75a033b9aaab1ab32dc56cbcc9531e60',1,'Dogorithm']]]
 ];

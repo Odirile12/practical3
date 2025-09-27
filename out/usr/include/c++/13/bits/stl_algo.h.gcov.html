@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-09-26 14:37:53</td>
+            <td class="headerValue">2025-09-27 11:23:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">4</td>
           </tr>
                   <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -3948,7 +3948,7 @@
 <span id="L3886"><span class="lineNum">    3886</span>              :   template&lt;typename _InputIterator, typename _Tp&gt;</span>
 <span id="L3887"><span class="lineNum">    3887</span>              :     _GLIBCXX20_CONSTEXPR</span>
 <span id="L3888"><span class="lineNum">    3888</span>              :     inline _InputIterator</span>
-<span id="L3889"><span class="lineNum">    3889</span> <span class="tlaGNC tlaBgGNC">         122 :     find(_InputIterator __first, _InputIterator __last,</span></span>
+<span id="L3889"><span class="lineNum">    3889</span> <span class="tlaGNC tlaBgGNC">         540 :     find(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L3890"><span class="lineNum">    3890</span>              :          const _Tp&amp; __val)</span>
 <span id="L3891"><span class="lineNum">    3891</span>              :     {</span>
 <span id="L3892"><span class="lineNum">    3892</span>              :       // concept requirements</span>
@@ -3956,8 +3956,8 @@
 <span id="L3894"><span class="lineNum">    3894</span>              :       __glibcxx_function_requires(_EqualOpConcept&lt;</span>
 <span id="L3895"><span class="lineNum">    3895</span>              :                 typename iterator_traits&lt;_InputIterator&gt;::value_type, _Tp&gt;)</span>
 <span id="L3896"><span class="lineNum">    3896</span>              :       __glibcxx_requires_valid_range(__first, __last);</span>
-<span id="L3897"><span class="lineNum">    3897</span> <span class="tlaGNC">         122 :       return std::__find_if(__first, __last,</span></span>
-<span id="L3898"><span class="lineNum">    3898</span> <span class="tlaGNC">         122 :                             __gnu_cxx::__ops::__iter_equals_val(__val));</span></span>
+<span id="L3897"><span class="lineNum">    3897</span> <span class="tlaGNC">         540 :       return std::__find_if(__first, __last,</span></span>
+<span id="L3898"><span class="lineNum">    3898</span> <span class="tlaGNC">         540 :                             __gnu_cxx::__ops::__iter_equals_val(__val));</span></span>
 <span id="L3899"><span class="lineNum">    3899</span>              :     }</span>
 <span id="L3900"><span class="lineNum">    3900</span>              : </span>
 <span id="L3901"><span class="lineNum">    3901</span>              :   /**</span>

@@ -1,39 +1,242 @@
 #include <iostream>
-#include <cassert>
-#include <vector>
-#include <list>
-#include <string>
-
+#include <memory>
+#include "AdminUser.h"
+#include "RegularUser.h"
 #include "Name1.h"
 #include "Name2.h"
 #include "Name3.h"
-#include "AdminUser.h"
-#include "RegularUser.h"
 #include "ctrlCat.h"
 #include "dogorithm.h"
 #include "notification.h"
-#include "sendMessageCommand.h"
-#include "saveMessageCommand.h"
 #include "userIterator.h"
 #include "messageIterator.h"
+#include "sendMessageCommand.h"
+#include "saveMessageCommand.h"
 
 void testUserCreation();
 void testChatRoomOperations();
 void testCommandPattern();
 void testIteratorPattern();
-void testObserverPattern();
+void testObserverPattern2();
 void testMediatorPattern();
 void testIntegrationScenario();
 void testSpecialUserFeatures();
 
-void printTestHeader(const std::string& testName);
-void printTestResult(bool passed, const std::string& description);
+void testBasicChatFunctionality() {
+    std::cout << "=== TEST 1: Basic Chat Functionality ===" << std::endl;
+    
+    // Create chat rooms
+    CtrlCat ctrlCatRoom;
+    Dogorithm dogorithmRoom;
+    
+    // Create users
+    Name1 alice;
+    Name2 bob;
+    RegularUser regularCharlie("Regular Charlie");
+    AdminUser adminDave("Admin Dave");
+    
+    // Add notification observers
+    Notification notification1, notification2;
+    ctrlCatRoom.addObserver(&notification1);
+    dogorithmRoom.addObserver(&notification2);
+    
+    // Join rooms
+    alice.joinRoom(&ctrlCatRoom);
+    bob.joinRoom(&ctrlCatRoom);
+    regularCharlie.joinRoom(&ctrlCatRoom);
+    adminDave.joinRoom(&ctrlCatRoom);
+    
+    alice.joinRoom(&dogorithmRoom);
+    bob.joinRoom(&dogorithmRoom);
+    
+    // Test messaging
+    std::cout << "\n--- Testing CtrlCat Room ---" << std::endl;
+    alice.send("Hello everyone in CtrlCat!", &ctrlCatRoom);
+    bob.send("Hi Alice!", &ctrlCatRoom);
+    regularCharlie.send("I'm a regular user", &ctrlCatRoom);
+    adminDave.send("I'm an admin user", &ctrlCatRoom);
+    
+    std::cout << "\n--- Testing Dogorithm Room ---" << std::endl;
+    alice.send("Algorithm discussion anyone?", &dogorithmRoom);
+    bob.send("Sure, let's talk about sorting!", &dogorithmRoom);
+}
+
+void testIterators() {
+    std::cout << "\n\n=== TEST 2: Iterator Pattern ===" << std::endl;
+    
+    CtrlCat room;
+    Name1 alice;
+    Name2 bob;
+    Name3 charlie;
+    
+    alice.joinRoom(&room);
+    bob.joinRoom(&room);
+    charlie.joinRoom(&room);
+    
+    // Send some messages to create history
+    alice.send("First message", &room);
+    bob.send("Second message", &room);
+    charlie.send("Third message", &room);
+    
+    // Test user iterator
+    std::cout << "\n--- User Iterator Test ---" << std::endl;
+    std::unique_ptr<myIterator<User*>> userIter(room.createUserIterator());
+    std::cout << "Users in room:" << std::endl;
+    while (userIter->hasNext()) {
+        User* user = userIter->next();
+        std::cout << "  - " << user->getName() << std::endl;
+    }
+    
+    // Test message iterator
+    std::cout << "\n--- Message Iterator Test ---" << std::endl;
+    std::unique_ptr<myIterator<std::string>> msgIter(room.createMessageIterator());
+    std::cout << "Message history:" << std::endl;
+    while (msgIter->hasNext()) {
+        std::string msg = msgIter->next();
+        std::cout << "  - " << msg << std::endl;
+    }
+}
+
+void testSpecialFeatures() {
+    std::cout << "\n\n=== TEST 3: Special User Features ===" << std::endl;
+    
+    CtrlCat room;
+    Name2 bob;
+    Name3 charlie;
+    
+    bob.joinRoom(&room);
+    charlie.joinRoom(&room);
+    
+    // Test Name3's message counting and formatting
+    std::cout << "\n--- Name3 Message Counting ---" << std::endl;
+    charlie.send("First message", &room);
+    charlie.send("Second message", &room);
+    charlie.sendFormattedMessage("Formatted message", &room);
+    std::cout << "Charlie has sent " << charlie.getMessageCount() << " messages" << std::endl;
+    
+    // Test Name2's delayed messaging (with shorter delay for testing)
+    std::cout << "\n--- Name2 Delayed Messaging ---" << std::endl;
+    std::cout << "Starting delayed message test (1 second delay)..." << std::endl;
+    bob.sendDelayedMessage("This was delayed!", &room, 1);
+}
+
+void testRoomManagement() {
+    std::cout << "\n\n=== TEST 4: Room Management ===" << std::endl;
+    
+    CtrlCat room;
+    Name1 alice;
+    Name2 bob;
+    
+    // Test joining and leaving
+    std::cout << "\n--- Room Membership Test ---" << std::endl;
+    alice.joinRoom(&room);
+    bob.joinRoom(&room);
+    
+    // Send message while both are in room
+    alice.send("Bob, are you there?", &room);
+    bob.send("Yes, I'm here!", &room);
+    
+    // Bob leaves
+    bob.leaveRoom(&room);
+    alice.send("Bob, can you hear me now?", &room); // Bob shouldn't receive this
+    
+    // Bob rejoins
+    bob.joinRoom(&room);
+    alice.send("Welcome back Bob!", &room);
+}
+
+void testErrorConditions() {
+    std::cout << "\n\n=== TEST 5: Error Conditions ===" << std::endl;
+    
+    CtrlCat room;
+    Name1 alice;
+    
+    // Test sending without joining room
+    std::cout << "\n--- Sending Without Joining ---" << std::endl;
+    alice.send("This should fail", &room);
+    
+    // Test empty message
+    std::cout << "\n--- Empty Message Test ---" << std::endl;
+    alice.joinRoom(&room);
+    alice.send("", &room);
+    
+    // Test null room
+    std::cout << "\n--- Null Room Test ---" << std::endl;
+    alice.send("Message to null room", nullptr);
+}
+
+void testAdminPrivileges() {
+    std::cout << "\n\n=== TEST 6: Admin User Features ===" << std::endl;
+    
+    CtrlCat room;
+    AdminUser admin("SuperAdmin");
+    RegularUser regular("RegularUser");
+    
+    admin.joinRoom(&room);
+    regular.joinRoom(&room);
+    
+    // Test admin messaging format
+    admin.send("Important announcement!", &room);
+    regular.send("Regular user message", &room);
+    
+    // Test admin receiving format
+    regular.send("Message to admin", &room);
+}
+
+void testChatHistory() {
+    std::cout << "\n\n=== TEST 7: Chat History ===" << std::endl;
+    
+    Dogorithm room;
+    Name1 alice;
+    Name2 bob;
+    
+    alice.joinRoom(&room);
+    bob.joinRoom(&room);
+    
+    // Send multiple messages
+    alice.send("Starting algorithm discussion", &room);
+    bob.send("I like bubble sort!", &room);
+    alice.send("Bubble sort is O(n²)!", &room);
+    bob.send("What about merge sort?", &room);
+    
+    // Display history using room's method
+    std::cout << "\n--- Chat History ---" << std::endl;
+    const auto& history = room.getChatHistory();
+    for (const auto& msg : history) {
+        std::cout << "  - " << msg << std::endl;
+    }
+}
+
+void testObserverPattern() {
+    std::cout << "\n\n=== TEST 8: Observer Pattern ===" << std::endl;
+    
+    CtrlCat room;
+    Notification notification;
+    
+    // Add observer to the room
+    room.addObserver(&notification);
+    
+    Name1 alice;
+    Name2 bob;
+    
+    alice.joinRoom(&room);
+    bob.joinRoom(&room);
+    
+    std::cout << "--- Testing Observer Notifications ---" << std::endl;
+    // These messages should trigger observer notifications
+    alice.send("This message should trigger notification", &room);
+    bob.send("This should also trigger notification", &room);
+    
+    // Remove observer and test that notifications stop
+    room.removeObserver(&notification);
+    std::cout << "--- Observer Removed ---" << std::endl;
+    alice.send("This should NOT trigger notification", &room);
+}
 
 int main() {
-    std::cout << "========================================" << std::endl;
-    std::cout << "    Chat Room System Test Suite        " << std::endl;
-    std::cout << "========================================" << std::endl;
-
+    std::cout << "=== CHAT SYSTEM COMPREHENSIVE TEST ===" << std::endl;
+    std::cout << "Testing all implemented features...\n" << std::endl;
+    
     try {
         testUserCreation();
         testChatRoomOperations();
@@ -43,21 +246,32 @@ int main() {
         testMediatorPattern();
         testSpecialUserFeatures();
         testIntegrationScenario();
-
-        std::cout << "\n========================================" << std::endl;
-        std::cout << "    ALL TESTS PASSED SUCCESSFULLY!     " << std::endl;
-        std::cout << "========================================" << std::endl;
-
+        testBasicChatFunctionality();
+        testIterators();
+        testSpecialFeatures();
+        testRoomManagement();
+        testErrorConditions();
+        testAdminPrivileges();
+        testChatHistory();
+        testObserverPattern2();
+        
+        std::cout << "\n\n=== ALL TESTS COMPLETED SUCCESSFULLY ===" << std::endl;
+        std::cout << "The chat system is working correctly with all design patterns implemented:" << std::endl;
+        std::cout << "✓ Command Pattern" << std::endl;
+        std::cout << "✓ Iterator Pattern" << std::endl;
+        std::cout << "✓ Observer Pattern" << std::endl;
+        std::cout << "✓ Polymorphic User Types" << std::endl;
+        std::cout << "✓ Room Management" << std::endl;
+        std::cout << "✓ Message History" << std::endl;
+        
     } catch (const std::exception& e) {
-        std::cerr << "\nTEST FAILED: " << e.what() << std::endl;
-        return 1;
-    } catch (...) {
-        std::cerr << "\n UNKNOWN ERROR OCCURRED" << std::endl;
+        std::cerr << "Test failed with exception: " << e.what() << std::endl;
         return 1;
     }
-
+    
     return 0;
 }
+
 
 void printTestHeader(const std::string& testName) {
     std::cout << "\n" << std::string(40, '-') << std::endl;
@@ -222,7 +436,7 @@ void testIteratorPattern() {
     std::cout << "Iterator pattern tests completed." << std::endl;
 }
 
-void testObserverPattern() {
+void testObserverPattern2() {
     printTestHeader("Testing Observer Pattern");
 
     CtrlCat room;
@@ -379,6 +593,7 @@ void testIntegrationScenario() {
 
     // Test special user features
     std::cout << "\n--- Testing Special Features ---" << std::endl;
+
     bob.sendDelayedMessage("Delayed: This message was scheduled", &programmingRoom, 0);
     charlie.sendFormattedMessage("This is a specially formatted message", &algorithmRoom);
 

@@ -2,7 +2,7 @@
 \hypertarget{class_command}{}\label{class_command}\index{Command@{Command}}
 
 
-Abstract \doxylink{class_command}{Command} class that defines the interface for command objects.  
+Abstract base class representing a command in the chat system.  
 
 
 
@@ -18,27 +18,68 @@ Inheritance diagram for Command\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_a3cdc004dfa26dd6ea9a107dbadc6ff4c}\label{class_command_a3cdc004dfa26dd6ea9a107dbadc6ff4c} 
-{\bfseries Command} (\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}user, const std\+::string message)
-\item 
+\mbox{\hyperlink{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8}{Command}} (\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_command_ac38d7713bb9660a23a752a2a2c938dd5}{room}}, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_command_a089ce52cd25f12842ae99692039ab6b9}{user}}, const std\+::string \mbox{\hyperlink{class_command_aefb89941a5b2b0b0648cf7b98bb37762}{message}})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_command}{Command} object with the given room, user, and message. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_command_aae19e5edcdcd17c91146454a5d26eb24}{execute}} ()=0
 \begin{DoxyCompactList}\small\item\em Executes the command. \end{DoxyCompactList}\item 
-\Hypertarget{class_command_a56d8c61caec795b26cdfa335b6d42102}\label{class_command_a56d8c61caec795b26cdfa335b6d42102} 
-\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Room} () const
+\Hypertarget{class_command_aa545a53d35818f9efb936daf3fa16c61}\label{class_command_aa545a53d35818f9efb936daf3fa16c61} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_command_af7888c01bd598574841dc452a5090741}\label{class_command_af7888c01bd598574841dc452a5090741} 
-\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} {\bfseries get\+User} () const
-\item 
-\Hypertarget{class_command_a30003a6eb9afea6ed31e78470499dd07}\label{class_command_a30003a6eb9afea6ed31e78470499dd07} 
-std\+::string {\bfseries get\+Message} () const
-\item 
-\Hypertarget{class_command_a641c23ef533dd6f77d0a4ef0311598b2}\label{class_command_a641c23ef533dd6f77d0a4ef0311598b2} 
-virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
-\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_command}{Command} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{class_command_ac38d7713bb9660a23a752a2a2c938dd5}\label{class_command_ac38d7713bb9660a23a752a2a2c938dd5} 
+\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*} {\bfseries room}
+\begin{DoxyCompactList}\small\item\em Pointer to the chat room where the command will be executed. \end{DoxyCompactList}\item 
+\Hypertarget{class_command_a089ce52cd25f12842ae99692039ab6b9}\label{class_command_a089ce52cd25f12842ae99692039ab6b9} 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} {\bfseries user}
+\begin{DoxyCompactList}\small\item\em Pointer to the user who issued the command. \end{DoxyCompactList}\item 
+\Hypertarget{class_command_aefb89941a5b2b0b0648cf7b98bb37762}\label{class_command_aefb89941a5b2b0b0648cf7b98bb37762} 
+std\+::string {\bfseries message}
+\begin{DoxyCompactList}\small\item\em The message content associated with the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Abstract \doxylink{class_command}{Command} class that defines the interface for command objects. 
+Abstract base class representing a command in the chat system. 
+
+Encapsulates a messaging action involving a user and a chat room. Derived classes should implement specific behaviors by overriding the execute method. 
+
+\label{doc-constructors}
+\Hypertarget{class_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8}\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{Command()}{Command()}}
+{\footnotesize\ttfamily \label{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8} 
+Command\+::\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{, }\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{user}{, }\item[{const std\+::string}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_command}{Command} object with the given room, user, and message. 
+
+Constructs a \doxylink{class_command}{Command} object with a target chat room, user, and message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Pointer to the target \doxylink{class_chat_room}{Chat\+Room}. \\
+\hline
+{\em user} & Pointer to the \doxylink{class_user}{User} issuing the command. \\
+\hline
+{\em message} & The message content to be processed by the command.\\
+\hline
+\end{DoxyParams}
+Initializes the command with the context needed to execute a messaging action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the command will be executed. \\
+\hline
+{\em user} & Pointer to the \doxylink{class_user}{User} who issued the command. \\
+\hline
+{\em message} & The message content associated with the command. \\
+\hline
+\end{DoxyParams}
+
 
 \label{doc-func-members}
 \Hypertarget{class_command_doc-func-members}
@@ -53,9 +94,11 @@ void Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hsp
 
 Executes the command. 
 
+This is a pure virtual method that must be implemented by derived classes.
 
+This base implementation does nothing. Derived classes should override this method to define specific command behavior (e.\+g., sending a message, saving history). 
 
-Implemented in \mbox{\hyperlink{class_save_message_command_a3e4c17c1151344f72453efff696a088a}{Save\+Message\+Command}}, and \mbox{\hyperlink{class_send_message_command_a1393dfb26e5e5c580c87fb1f0aa38276}{Send\+Message\+Command}}.
+Implemented in \mbox{\hyperlink{class_save_message_command_a3e4c17c1151344f72453efff696a088a}{Save\+Message\+Command}}, and \mbox{\hyperlink{classsend_message_command_a79a55414953a25001b392ba14d2c87b5}{send\+Message\+Command}}.
 
 
 

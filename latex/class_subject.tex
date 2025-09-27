@@ -1,0 +1,127 @@
+\doxysection{Subject Class Reference}
+\hypertarget{class_subject}{}\label{class_subject}\index{Subject@{Subject}}
+
+
+Abstract base class for managing observers in the chat system.  
+
+
+
+
+{\ttfamily \#include $<$subject.\+h$>$}
+
+Inheritance diagram for Subject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_subject_ab4f33719b83034be37c7f8223f1a5e63}\label{class_subject_ab4f33719b83034be37c7f8223f1a5e63} 
+{\bfseries Subject} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_subject_af9723476c61afcceeb91bee3211258c7}\label{class_subject_af9723476c61afcceeb91bee3211258c7} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Subject} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a0884bfe374d352c6488a1e40c84246c8}{attach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a752a7596d52ab986539232f8377ca92c}{detach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a2adb80fe6455540ed91e046cd55eb572}{notify}} (const std\+::string \&message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room)
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers of a new message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_subject_a39d24e695db0a792799b351dbebde992}\label{class_subject_a39d24e695db0a792799b351dbebde992} 
+std\+::vector$<$ \mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\begin{DoxyCompactList}\small\item\em List of observers subscribed to this subject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for managing observers in the chat system. 
+
+Implements the core logic of the \doxylink{class_observer}{Observer} design pattern, allowing observers to subscribe to updates and be notified when events occur (e.\+g., new messages). 
+
+\label{doc-func-members}
+\Hypertarget{class_subject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_subject_a0884bfe374d352c6488a1e40c84246c8}\index{Subject@{Subject}!attach@{attach}}
+\index{attach@{attach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{class_subject_a0884bfe374d352c6488a1e40c84246c8} 
+void Subject\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+
+
+Attaches an observer to the subject. 
+
+Adds the observer to the internal list so it can receive notifications.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \doxylink{class_observer}{Observer} to be attached.\\
+\hline
+\end{DoxyParams}
+Adds the observer to the internal list so it can receive future notifications.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \doxylink{class_observer}{Observer} to be attached. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_subject_a752a7596d52ab986539232f8377ca92c}\index{Subject@{Subject}!detach@{detach}}
+\index{detach@{detach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{class_subject_a752a7596d52ab986539232f8377ca92c} 
+void Subject\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+
+
+Detaches an observer from the subject. 
+
+Removes the observer from the internal list to stop receiving notifications.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \doxylink{class_observer}{Observer} to be detached. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_subject_a2adb80fe6455540ed91e046cd55eb572}\index{Subject@{Subject}!notify@{notify}}
+\index{notify@{notify}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily \label{class_subject_a2adb80fe6455540ed91e046cd55eb572} 
+void Subject\+::notify (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{from\+User}{, }\item[{\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{}\end{DoxyParamCaption})}
+
+
+
+Notifies all attached observers of a new message. 
+
+Calls the update method on each observer, passing the message, sender, and room.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content that triggered the notification. \\
+\hline
+{\em from\+User} & Pointer to the \doxylink{class_user}{User} who sent the message. \\
+\hline
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the message was sent.\\
+\hline
+\end{DoxyParams}
+Iterates through the observer list and calls their update method, passing along the message, sender, and chat room context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content that triggered the notification. \\
+\hline
+{\em from\+User} & Pointer to the \doxylink{class_user}{User} who sent the message. \\
+\hline
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the message was sent. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+subject.\+h\item 
+subject.\+cpp\end{DoxyCompactItemize}

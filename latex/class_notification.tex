@@ -1,5 +1,14 @@
 \doxysection{Notification Class Reference}
 \hypertarget{class_notification}{}\label{class_notification}\index{Notification@{Notification}}
+
+
+Concrete observer that reacts to chat room message updates.  
+
+
+
+
+{\ttfamily \#include $<$notification.\+h$>$}
+
 Inheritance diagram for Notification\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,25 +18,67 @@ Inheritance diagram for Notification\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_notification_abba72347285697ba95a1674953d1be03}{update}} (std\+::string message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
-\end{DoxyCompactItemize}
+\Hypertarget{class_notification_a7882fa37719a223d21c1bbf01134ccab}\label{class_notification_a7882fa37719a223d21c1bbf01134ccab} 
+{\bfseries Notification} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_notification}{Notification}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_notification_a3b3b5ddebc392e07a4c3051b0f942dbf}{update}} (const std\+::string \&message, \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}from\+User, \mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}room) override
+\begin{DoxyCompactList}\small\item\em Handles updates triggered by chat room activity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observer}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Observer} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Concrete observer that reacts to chat room message updates. 
+
+Implements the \doxylink{class_observer}{Observer} interface to receive notifications when a new message is sent in a chat room. Displays formatted output to the console. 
 
 \label{doc-func-members}
 \Hypertarget{class_notification_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_notification_abba72347285697ba95a1674953d1be03}\index{Notification@{Notification}!update@{update}}
+\Hypertarget{class_notification_a3b3b5ddebc392e07a4c3051b0f942dbf}\index{Notification@{Notification}!update@{update}}
 \index{update@{update}!Notification@{Notification}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily \label{class_notification_abba72347285697ba95a1674953d1be03} 
-void Notification\+::update (\begin{DoxyParamCaption}\item[{std\+::string}]{message}{, }\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{from\+User}{, }\item[{\mbox{\hyperlink{classchat_room}{chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_notification_a3b3b5ddebc392e07a4c3051b0f942dbf} 
+void Notification\+::update (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*}}]{from\+User}{, }\item[{\mbox{\hyperlink{class_chat_room}{Chat\+Room}} \texorpdfstring{$\ast$}{*}}]{room}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Implements \mbox{\hyperlink{classobserver}{observer}}.
+Handles updates triggered by chat room activity. 
+
+Handles notification updates when a new message is sent in a chat room.
+
+Displays a notification message including the room name, sender, and content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content that triggered the update. \\
+\hline
+{\em from\+User} & Pointer to the \doxylink{class_user}{User} who sent the message. \\
+\hline
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the message was sent.\\
+\hline
+\end{DoxyParams}
+Displays a formatted notification message indicating the room name, sender\textquotesingle{}s name, and message content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The content of the message sent. \\
+\hline
+{\em from\+User} & Pointer to the \doxylink{class_user}{User} who sent the message. \\
+\hline
+{\em room} & Pointer to the \doxylink{class_chat_room}{Chat\+Room} where the message was sent. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_observer_ab6ca103235b10ac51e7c9c2b4f8a146a}{Observer}}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-notification.\+h\end{DoxyCompactItemize}
+notification.\+h\item 
+notification.\+cpp\end{DoxyCompactItemize}

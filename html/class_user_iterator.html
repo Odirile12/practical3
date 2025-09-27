@@ -92,7 +92,7 @@ $(function(){initNavTree('class_user_iterator.html','','class_user_iterator-memb
 </div><!--header-->
 <div class="contents">
 
-<p>Iterator for iterating over users in the chat system.  
+<p>Concrete iterator for traversing a collection of <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> pointers.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="user_iterator_8h_source.html">userIterator.h</a>&gt;</code></p>
@@ -108,19 +108,60 @@ Inheritance diagram for UserIterator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2dc397bc82010a6bfca8297ba910ca29" id="r_a2dc397bc82010a6bfca8297ba910ca29"><td class="memItemLeft" align="right" valign="top"><a id="a2dc397bc82010a6bfca8297ba910ca29" name="a2dc397bc82010a6bfca8297ba910ca29"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>UserIterator</b> (std::list&lt; <a class="el" href="class_user.html">User</a> * &gt; users)</td></tr>
+<tr class="memitem:a83018d22cbb1065fba34ee162eac2aca" id="r_a83018d22cbb1065fba34ee162eac2aca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83018d22cbb1065fba34ee162eac2aca">UserIterator</a> (const std::vector&lt; <a class="el" href="class_user.html">User</a> * &gt; &amp;userList)</td></tr>
+<tr class="memdesc:a83018d22cbb1065fba34ee162eac2aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_user_iterator.html" title="Concrete iterator for traversing a collection of User pointers.">UserIterator</a> with a given list of users.  <br /></td></tr>
 <tr class="memitem:a45f9ba1340aa1c006e7535ca59fbeaba" id="r_a45f9ba1340aa1c006e7535ca59fbeaba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f9ba1340aa1c006e7535ca59fbeaba">hasNext</a> () override</td></tr>
-<tr class="memdesc:a45f9ba1340aa1c006e7535ca59fbeaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the iterator to the next user.  <br /></td></tr>
+<tr class="memdesc:a45f9ba1340aa1c006e7535ca59fbeaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there are more users to iterate over.  <br /></td></tr>
 <tr class="memitem:a19a509933877f5ee362c8ef5c10f1d05" id="r_a19a509933877f5ee362c8ef5c10f1d05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_user.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19a509933877f5ee362c8ef5c10f1d05">next</a> () override</td></tr>
-<tr class="memdesc:a19a509933877f5ee362c8ef5c10f1d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next user in the iteration.  <br /></td></tr>
+<tr class="memdesc:a19a509933877f5ee362c8ef5c10f1d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the next user in the sequence.  <br /></td></tr>
 <tr class="memitem:a2434f9f8d31fb5d37611893636dc16c6" id="r_a2434f9f8d31fb5d37611893636dc16c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2434f9f8d31fb5d37611893636dc16c6">reset</a> () override</td></tr>
-<tr class="memdesc:a2434f9f8d31fb5d37611893636dc16c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the iterator to the beginning.  <br /></td></tr>
+<tr class="memdesc:a2434f9f8d31fb5d37611893636dc16c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the iterator to the beginning of the user list.  <br /></td></tr>
+<tr class="memitem:a6c5228445a8ea9ed7710731aa8f9b116" id="r_a6c5228445a8ea9ed7710731aa8f9b116"><td class="memItemLeft" align="right" valign="top"><a id="a6c5228445a8ea9ed7710731aa8f9b116" name="a6c5228445a8ea9ed7710731aa8f9b116"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~UserIterator</b> ()=default</td></tr>
+<tr class="memdesc:a6c5228445a8ea9ed7710731aa8f9b116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for proper cleanup. <br /></td></tr>
+<tr class="inherit_header pub_methods_classmy_iterator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classmy_iterator')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classmy_iterator.html">myIterator&lt; User * &gt;</a></td></tr>
+<tr class="memitem:aa98c1f1e1eae7b3bc2e31cc2361c7e40 inherit pub_methods_classmy_iterator" id="r_aa98c1f1e1eae7b3bc2e31cc2361c7e40"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~myIterator</b> ()=default</td></tr>
+<tr class="memdesc:aa98c1f1e1eae7b3bc2e31cc2361c7e40 inherit pub_methods_classmy_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Iterator for iterating over users in the chat system. </p>
-<p>This class implements the Iterator interface to provide a way to access users in a sequential manner without exposing the underlying representation. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p>Concrete iterator for traversing a collection of <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> pointers. </p>
+<p>Implements the custom Iterator interface to provide sequential access to users in a chat system without exposing the underlying container. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a83018d22cbb1065fba34ee162eac2aca" name="a83018d22cbb1065fba34ee162eac2aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83018d22cbb1065fba34ee162eac2aca">&#9670;&#160;</a></span>UserIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UserIterator::UserIterator </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_user.html">User</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>userList</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_user_iterator.html" title="Concrete iterator for traversing a collection of User pointers.">UserIterator</a> with a given list of users. </p>
+<p>Constructs a <a class="el" href="class_user_iterator.html" title="Concrete iterator for traversing a collection of User pointers.">UserIterator</a> with a list of users.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userList</td><td>A vector of <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> pointers to iterate over.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initializes the internal user list and sets the iterator position to the beginning.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userList</td><td>A vector of <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> pointers to iterate over. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a45f9ba1340aa1c006e7535ca59fbeaba" name="a45f9ba1340aa1c006e7535ca59fbeaba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45f9ba1340aa1c006e7535ca59fbeaba">&#9670;&#160;</a></span>hasNext()</h2>
 
@@ -144,10 +185,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Advances the iterator to the next user. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if there is a next user, false otherwise. </dd></dl>
+<p>Checks if there are more users to iterate over. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if a next user exists, false otherwise.</dd>
+<dd>
+True if there are remaining users, false otherwise. </dd></dl>
 
-<p>Implements <a class="el" href="classmy_iterator.html">myIterator&lt; User * &gt;</a>.</p>
+<p>Implements <a class="el" href="classmy_iterator.html#ac932af48a3a5637b60edec88eb83f211">myIterator&lt; User * &gt;</a>.</p>
 
 </div>
 </div>
@@ -174,10 +217,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the next user in the iteration. </p>
-<dl class="section return"><dt>Returns</dt><dd>The next user. </dd></dl>
+<p>Retrieves the next user in the sequence. </p>
+<p>Retrieves the next user in the iteration.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the next <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a>, or nullptr if iteration is complete.</dd></dl>
+<p>Returns a pointer to the next <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> and advances the iterator. If no users remain, returns nullptr.</p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the next <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a>, or nullptr if iteration is complete. </dd></dl>
 
-<p>Implements <a class="el" href="classmy_iterator.html">myIterator&lt; User * &gt;</a>.</p>
+<p>Implements <a class="el" href="classmy_iterator.html#ab78ce47604ce6f8871b03533fd575255">myIterator&lt; User * &gt;</a>.</p>
 
 </div>
 </div>
@@ -204,14 +250,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Resets the iterator to the beginning. </p>
+<p>Resets the iterator to the beginning of the user list. </p>
 
-<p>Implements <a class="el" href="classmy_iterator.html">myIterator&lt; User * &gt;</a>.</p>
+<p>Implements <a class="el" href="classmy_iterator.html#a0f4ea31d933c4b6588be6c291ce2ad6b">myIterator&lt; User * &gt;</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="user_iterator_8h_source.html">userIterator.h</a></li>
+<li><b>userIterator.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

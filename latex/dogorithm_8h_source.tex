@@ -5,14 +5,37 @@
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DOGORITHM\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ChatRoom.h"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dogorithm}{Dogorithm}}\ :\ \textcolor{keyword}{public}\ ChatRoom\ \{}
-\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ rgisterUser(\mbox{\hyperlink{class_user}{User}}*\ u)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ removeUser(\mbox{\hyperlink{class_user}{User}}*\ u)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00019\ \};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOGORITHM\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}userIterator.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}messageIterator.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dogorithm_a75a033b9aaab1ab32dc56cbcc9531e60}{Dogorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_chat_room_a5bb9f56c76f242d135102fb2980ab100}{ChatRoom}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_dogorithm_a75a033b9aaab1ab32dc56cbcc9531e60}{Dogorithm}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dogorithm_ae8fc833e1f7a6f11d21c1b1526eb2587}{\string~Dogorithm}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dogorithm_af32650fc62212dd15e07cfef5ba4f8ef}{registerUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dogorithm_acb225404e4e8942b8d3e32d4b8dfa287}{removeUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dogorithm_a32c9623e9d2e530756a5ad3fdb570a93}{sendMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dogorithm_adebc1dd3701d8bcfdef976571dc36c78}{saveMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classmy_iterator}{myIterator<User*>}}*\ \mbox{\hyperlink{class_dogorithm_a8cdeac20efe8dd15216a8ddb13ae28f7}{createUserIterator}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classmy_iterator}{myIterator<std::string>}}*\ \mbox{\hyperlink{class_dogorithm_ae867b8a5b393998f37bbe07001ac061c}{createMessageIterator}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<User*>\&\ \mbox{\hyperlink{class_dogorithm_a1833e8ca572cf75088630a1f74d45127}{getUsers}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ std::list<std::string>\&\ \mbox{\hyperlink{class_dogorithm_a966403b3f45f888d3e8f7cf5aaf06c8c}{getChatHistory}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \ \ std::string\ algorithmFocus;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ std::vector<std::string>\ scheduledSessions;}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DOGORITHM\_H}}
 
 \end{DoxyCode}

@@ -4,16 +4,38 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CTRLCAT\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CTRLCAT\_H}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ChatRoom.h"{}}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ctrl_cat}{CtrlCat}}\ :\ \textcolor{keyword}{public}\ ChatRoom\ \{}
-\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ rgisterUser(\mbox{\hyperlink{class_user}{User}}*\ u)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ removeUser(\mbox{\hyperlink{class_user}{User}}*\ u)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CTRL\_CAT\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ChatRoom.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}userIterator.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}messageIterator.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ctrl_cat_a16e99f79549b50b234a7c7febf68c950}{CtrlCat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_chat_room_a5bb9f56c76f242d135102fb2980ab100}{ChatRoom}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_ctrl_cat_a16e99f79549b50b234a7c7febf68c950}{CtrlCat}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ctrl_cat_a8ec763e03a8e12fa8e5652c27508aa80}{\string~CtrlCat}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ctrl_cat_a43428ea63ace414c9d846b55646e621b}{registerUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ctrl_cat_a061a5c44a8d8984ed1b39c24caa2ee10}{removeUser}}(\mbox{\hyperlink{class_user}{User}}*\ user)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ctrl_cat_a112e641e37ce4f8847e86caae7430a24}{sendMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ctrl_cat_a6977915f1c9f4c6a3e40a02969f69a2a}{saveMessage}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_user}{User}}*\ fromUser)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classmy_iterator}{myIterator<User*>}}*\ \mbox{\hyperlink{class_ctrl_cat_a8bd5b616dc2fa59b532b989adef24cfb}{createUserIterator}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classmy_iterator}{myIterator<std::string>}}*\ \mbox{\hyperlink{class_ctrl_cat_ac06dd63242dd867f5761d8a32958a2da}{createMessageIterator}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<User*>\&\ \mbox{\hyperlink{class_ctrl_cat_a6ca11b321d471746200dac5d343993f7}{getUsers}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ std::list<std::string>\&\ \mbox{\hyperlink{class_ctrl_cat_a1a2c26b86159018a1bf589bfa9ae1453}{getChatHistory}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ moderationEnabled;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ std::string\ roomTopic;}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CTRLCAT\_H}}
 
 \end{DoxyCode}

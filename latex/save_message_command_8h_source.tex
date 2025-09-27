@@ -7,15 +7,16 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}command.h"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_save_message_command}{SaveMessageCommand}}\ :\ \textcolor{keyword}{public}\ Command\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_save_message_command_a8974fe28b6fafaa41ef49c8e9db00abc}{SaveMessageCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8}{Command}}\ \{}
 \DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_save_message_command}{\string~SaveMessageCommand}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_message_command_a3e4c17c1151344f72453efff696a088a}{execute}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_message_command_aa86a93fec1893044af2f1b8ccf60aa9d}{setMessage}}(\textcolor{keyword}{const}\ std::string\&\ message);}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_save_message_command_a8974fe28b6fafaa41ef49c8e9db00abc}{SaveMessageCommand}}(\mbox{\hyperlink{class_chat_room}{ChatRoom}}*\ \mbox{\hyperlink{class_command_ac38d7713bb9660a23a752a2a2c938dd5}{room}},\ \mbox{\hyperlink{class_user}{User}}*\ \mbox{\hyperlink{class_command_a089ce52cd25f12842ae99692039ab6b9}{user}},\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_command_aefb89941a5b2b0b0648cf7b98bb37762}{message}})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_command_aa071e9dd47e2c07cd5b6ba911147b3c8}{Command}}(\mbox{\hyperlink{class_command_ac38d7713bb9660a23a752a2a2c938dd5}{room}},\ \mbox{\hyperlink{class_command_a089ce52cd25f12842ae99692039ab6b9}{user}},\ \mbox{\hyperlink{class_command_aefb89941a5b2b0b0648cf7b98bb37762}{message}})\ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_save_message_command_a5e45f24527bdd4c93f695d820c17020e}{\string~SaveMessageCommand}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SAVE\_MESSAGE\_COMMAND\_H}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_message_command_a3e4c17c1151344f72453efff696a088a}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SAVE\_MESSAGE\_COMMAND\_H}}
 
 \end{DoxyCode}

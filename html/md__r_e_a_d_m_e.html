@@ -94,53 +94,19 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html','',''); });
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
 <p>This project implements a chat mediator system using the Mediator design pattern. The system allows users to communicate through a chat room, with commands to send and save messages. It also includes iterators for users and messages, and an observer for notifications.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
-Project Structure</h1>
-<div class="fragment"><div class="line">chat-mediator-app</div>
-<div class="line">├── src</div>
-<div class="line">│   ├── mediator</div>
-<div class="line">│   │   ├── chat_room.h</div>
-<div class="line">│   │   ├── chat_room.cpp</div>
-<div class="line">│   │   ├── ctrl_cat.h</div>
-<div class="line">│   │   ├── ctrl_cat.cpp</div>
-<div class="line">│   │   ├── dogorithm.h</div>
-<div class="line">│   │   └── dogorithm.cpp</div>
-<div class="line">│   ├── command</div>
-<div class="line">│   │   ├── command.h</div>
-<div class="line">│   │   ├── send_message_command.h</div>
-<div class="line">│   │   ├── send_message_command.cpp</div>
-<div class="line">│   │   ├── save_message_command.h</div>
-<div class="line">│   │   └── save_message_command.cpp</div>
-<div class="line">│   ├── iterator</div>
-<div class="line">│   │   ├── user_iterator.h</div>
-<div class="line">│   │   ├── user_iterator.cpp</div>
-<div class="line">│   │   ├── message_iterator.h</div>
-<div class="line">│   │   └── message_iterator.cpp</div>
-<div class="line">│   ├── observer</div>
-<div class="line">│   │   ├── notification_service.h</div>
-<div class="line">│   │   └── notification_service.cpp</div>
-<div class="line">│   ├── user</div>
-<div class="line">│   │   ├── User.h</div>
-<div class="line">│   │   ├── user.cpp</div>
-<div class="line">│   │   ├── normal_user.h</div>
-<div class="line">│   │   └── normal_user.cpp</div>
-<div class="line">│   ├── main.cpp</div>
-<div class="line">│   └── common.h</div>
-<div class="line">├── CMakeLists.txt</div>
-<div class="line">└── README.md</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Components</h1>
 <ul>
-<li><b>ChatRoom</b>: Abstract mediator interface for managing communication between users.</li>
-<li><b><a class="el" href="class_ctrl_cat.html" title="Concrete mediator that manages user interactions in the chat room.">CtrlCat</a></b>: Concrete mediator managing user interactions in the chat room.</li>
-<li><b><a class="el" href="class_dogorithm.html" title="Concrete mediator that facilitates communication between users.">Dogorithm</a></b>: Another concrete mediator facilitating communication between users.</li>
-<li><b><a class="el" href="class_send_message_command.html" title="Concrete command for sending messages in the chat system.">sendMessageCommand</a></b>: <a class="el" href="class_command.html" title="Abstract Command class that defines the interface for command objects.">Command</a> for sending messages.</li>
-<li><b><a class="el" href="class_save_message_command.html" title="Concrete command for saving messages.">SaveMessageCommand</a></b>: <a class="el" href="class_command.html" title="Abstract Command class that defines the interface for command objects.">Command</a> for saving messages.</li>
-<li><b><a class="el" href="class_normal_user.html" title="Represents a normal user in the chat system who can invoke commands.">NormalUser</a></b>: Invoker for commands.</li>
-<li><b><a class="el" href="class_user_iterator.html" title="Iterator for iterating over users in the chat system.">UserIterator</a></b>: Iterator for iterating over users.</li>
-<li><b><a class="el" href="class_message_iterator.html" title="An iterator for iterating over messages in the chat system.">MessageIterator</a></b>: Iterator for iterating over messages.</li>
-<li><b>NotificationService</b>: Observer for receiving notifications from the ChatRoom.</li>
+<li><b><a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a></b>: Abstract mediator interface for managing communication between users.</li>
+<li><b><a class="el" href="class_ctrl_cat.html" title="Concrete implementation of a ChatRoom named &quot;CtrlCat&quot;.">CtrlCat</a></b>: Concrete mediator managing user interactions in the chat room.</li>
+<li><b><a class="el" href="class_dogorithm.html" title="A specialized ChatRoom focused on algorithmic discussions and sessions.">Dogorithm</a></b>: Another concrete mediator facilitating communication between users.</li>
+<li><b><a class="el" href="classsend_message_command.html" title="Concrete command for sending messages in the chat system.">sendMessageCommand</a></b>: <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> for sending messages.</li>
+<li><b><a class="el" href="class_save_message_command.html" title="A concrete Command that saves a message to a chat room&#39;s history.">SaveMessageCommand</a></b>: <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> for saving messages.</li>
+<li><b>NormalUser</b>: Invoker for commands.</li>
+<li><b><a class="el" href="class_user_iterator.html" title="Concrete iterator for traversing a collection of User pointers.">UserIterator</a></b>: Iterator for iterating over users.</li>
+<li><b><a class="el" href="class_message_iterator.html" title="Concrete iterator for traversing a list of chat messages.">MessageIterator</a></b>: Iterator for iterating over messages.</li>
+<li><b>NotificationService</b>: <a class="el" href="class_observer.html" title="Abstract base class for implementing the Observer pattern in chat rooms.">Observer</a> for receiving notifications from the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a>.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Build Instructions</h1>
 <p>To build the project, use CMake:</p>
 <ol type="1">
@@ -148,7 +114,7 @@ Build Instructions</h1>
 <li>Run <span class="tt">cmake .</span> to configure the project.</li>
 <li>Run <span class="tt">make</span> to build the project.</li>
 </ol>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Usage</h1>
 <p>After building the project, run the executable to start the chat mediator application. Users can send and save messages through the provided commands. </p>
 </div></div><!-- contents -->

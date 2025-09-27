@@ -91,23 +91,39 @@ $(function(){initNavTree('class_notification.html','','class_notification-member
   <div class="headertitle"><div class="title">Notification Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Concrete observer that reacts to chat room message updates.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="notification_8h_source.html">notification.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Notification:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_notification.png" usemap="#Notification_map" alt=""/>
   <map id="Notification_map" name="Notification_map">
-<area href="classobserver.html" alt="observer" shape="rect" coords="0,0,75,24"/>
+<area href="class_observer.html" title="Abstract base class for implementing the Observer pattern in chat rooms." alt="Observer" shape="rect" coords="0,0,75,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abba72347285697ba95a1674953d1be03" id="r_abba72347285697ba95a1674953d1be03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abba72347285697ba95a1674953d1be03">update</a> (std::string message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="classchat_room.html">ChatRoom</a> *room) override</td></tr>
+<tr class="memitem:a7882fa37719a223d21c1bbf01134ccab" id="r_a7882fa37719a223d21c1bbf01134ccab"><td class="memItemLeft" align="right" valign="top"><a id="a7882fa37719a223d21c1bbf01134ccab" name="a7882fa37719a223d21c1bbf01134ccab"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Notification</b> ()=default</td></tr>
+<tr class="memdesc:a7882fa37719a223d21c1bbf01134ccab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_notification.html" title="Concrete observer that reacts to chat room message updates.">Notification</a>. <br /></td></tr>
+<tr class="memitem:a3b3b5ddebc392e07a4c3051b0f942dbf" id="r_a3b3b5ddebc392e07a4c3051b0f942dbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b3b5ddebc392e07a4c3051b0f942dbf">update</a> (const std::string &amp;message, <a class="el" href="class_user.html">User</a> *fromUser, <a class="el" href="class_chat_room.html">ChatRoom</a> *room) override</td></tr>
+<tr class="memdesc:a3b3b5ddebc392e07a4c3051b0f942dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles updates triggered by chat room activity.  <br /></td></tr>
+<tr class="inherit_header pub_methods_class_observer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_observer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_observer.html">Observer</a></td></tr>
+<tr class="memitem:a37824643eeaef086de17bba2717d865a inherit pub_methods_class_observer" id="r_a37824643eeaef086de17bba2717d865a"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Observer</b> ()=default</td></tr>
+<tr class="memdesc:a37824643eeaef086de17bba2717d865a inherit pub_methods_class_observer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="abba72347285697ba95a1674953d1be03" name="abba72347285697ba95a1674953d1be03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abba72347285697ba95a1674953d1be03">&#9670;&#160;</a></span>update()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Concrete observer that reacts to chat room message updates. </p>
+<p>Implements the <a class="el" href="class_observer.html" title="Abstract base class for implementing the Observer pattern in chat rooms.">Observer</a> interface to receive notifications when a new message is sent in a chat room. Displays formatted output to the console. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a3b3b5ddebc392e07a4c3051b0f942dbf" name="a3b3b5ddebc392e07a4c3051b0f942dbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b3b5ddebc392e07a4c3051b0f942dbf">&#9670;&#160;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +134,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Notification::update </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -128,7 +144,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classchat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -138,12 +154,34 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classobserver.html">observer</a>.</p>
+<p>Handles updates triggered by chat room activity. </p>
+<p>Handles notification updates when a new message is sent in a chat room.</p>
+<p>Displays a notification message including the room name, sender, and content.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message content that triggered the update. </td></tr>
+    <tr><td class="paramname">fromUser</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> who sent the message. </td></tr>
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> where the message was sent.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Displays a formatted notification message indicating the room name, sender's name, and message content.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The content of the message sent. </td></tr>
+    <tr><td class="paramname">fromUser</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> who sent the message. </td></tr>
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> where the message was sent. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_observer.html#ab6ca103235b10ac51e7c9c2b4f8a146a">Observer</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="notification_8h_source.html">notification.h</a></li>
+<li><b>notification.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

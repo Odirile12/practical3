@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryLo">44.4&nbsp;%</td>
+            <td class="headerCovTableEntryMed">88.9&nbsp;%</td>
             <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">8</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-09-26 14:37:53</td>
+            <td class="headerValue">2025-09-27 11:23:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntryLo">66.7&nbsp;%</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
             <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">3</td>
           </tr>
                   <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -63,18 +63,50 @@
 <span id="L1"><span class="lineNum">       1</span>              : #include &quot;AdminUser.h&quot;</span>
 <span id="L2"><span class="lineNum">       2</span>              : #include &quot;ChatRoom.h&quot;</span>
 <span id="L3"><span class="lineNum">       3</span>              : #include &lt;iostream&gt;</span>
-<span id="L4"><span class="lineNum">       4</span> <span class="tlaGNC tlaBgGNC">           3 : AdminUser::AdminUser(const std::string&amp; name) : User(name) {}</span></span>
-<span id="L5"><span class="lineNum">       5</span>              : </span>
-<span id="L6"><span class="lineNum">       6</span> <span class="tlaUNC tlaBgUNC">           0 : void AdminUser::send(const std::string&amp; message, ChatRoom* room) {</span></span>
-<span id="L7"><span class="lineNum">       7</span> <span class="tlaUNC">           0 :     if (room &amp;&amp; isInRoom(room)) {</span></span>
-<span id="L8"><span class="lineNum">       8</span> <span class="tlaUNC">           0 :         room-&gt;sendMessage(&quot;[ADMIN] &quot; + message, this);</span></span>
-<span id="L9"><span class="lineNum">       9</span>              :     }</span>
-<span id="L10"><span class="lineNum">      10</span> <span class="tlaUNC">           0 : }</span></span>
-<span id="L11"><span class="lineNum">      11</span>              : </span>
-<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC tlaBgGNC">           5 : void AdminUser::receive(const std::string&amp; message, User* fromUser, ChatRoom* room) {</span></span>
-<span id="L13"><span class="lineNum">      13</span> <span class="tlaUNC tlaBgUNC">           0 :     std::cout &lt;&lt; &quot;[ADMIN &quot; &lt;&lt; name &lt;&lt; &quot;] received in &quot; &lt;&lt; room-&gt;getName() </span></span>
-<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC tlaBgGNC">           5 :               &lt;&lt; &quot; from &quot; &lt;&lt; fromUser-&gt;getName() &lt;&lt; &quot;: &quot; &lt;&lt; message &lt;&lt; std::endl;</span></span>
-<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">           5 : }</span></span>
+<span id="L4"><span class="lineNum">       4</span>              : </span>
+<span id="L5"><span class="lineNum">       5</span>              : /**</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * @class AdminUser</span>
+<span id="L7"><span class="lineNum">       7</span>              :  * @brief Represents an administrative user with elevated privileges in a chat room.</span>
+<span id="L8"><span class="lineNum">       8</span>              :  * </span>
+<span id="L9"><span class="lineNum">       9</span>              :  * Inherits from the base User class and overrides messaging behavior to include</span>
+<span id="L10"><span class="lineNum">      10</span>              :  * administrative tags. AdminUser can send and receive messages with special formatting.</span>
+<span id="L11"><span class="lineNum">      11</span>              :  */</span>
+<span id="L12"><span class="lineNum">      12</span>              :  </span>
+<span id="L13"><span class="lineNum">      13</span>              : /**</span>
+<span id="L14"><span class="lineNum">      14</span>              :  * @brief Constructs an AdminUser with a given name.</span>
+<span id="L15"><span class="lineNum">      15</span>              :  * @param name The name of the admin user.</span>
+<span id="L16"><span class="lineNum">      16</span>              :  */</span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC tlaBgGNC">          10 : AdminUser::AdminUser(const std::string&amp; name) : User(name) {}</span></span>
+<span id="L18"><span class="lineNum">      18</span>              : </span>
+<span id="L19"><span class="lineNum">      19</span>              : /**</span>
+<span id="L20"><span class="lineNum">      20</span>              :  * @brief Sends a message to a chat room with an [ADMIN] tag.</span>
+<span id="L21"><span class="lineNum">      21</span>              :  * </span>
+<span id="L22"><span class="lineNum">      22</span>              :  * Checks if the admin is part of the room before sending. The message is prefixed</span>
+<span id="L23"><span class="lineNum">      23</span>              :  * with &quot;[ADMIN]&quot; to distinguish it from regular users.</span>
+<span id="L24"><span class="lineNum">      24</span>              :  * </span>
+<span id="L25"><span class="lineNum">      25</span>              :  * @param message The message content to send.</span>
+<span id="L26"><span class="lineNum">      26</span>              :  * @param room Pointer to the ChatRoom where the message should be sent.</span>
+<span id="L27"><span class="lineNum">      27</span>              :  */</span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           4 : void AdminUser::send(const std::string&amp; message, ChatRoom* room) {</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">           4 :     if (room &amp;&amp; isInRoom(room)) {</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">           4 :         room-&gt;sendMessage(&quot;[ADMIN] &quot; + message, this);</span></span>
+<span id="L31"><span class="lineNum">      31</span>              :     }</span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">           4 : }</span></span>
+<span id="L33"><span class="lineNum">      33</span>              : </span>
+<span id="L34"><span class="lineNum">      34</span>              : /**</span>
+<span id="L35"><span class="lineNum">      35</span>              :  * @brief Receives a message from another user in a chat room.</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * </span>
+<span id="L37"><span class="lineNum">      37</span>              :  * Displays the message in the console with admin-specific formatting, including</span>
+<span id="L38"><span class="lineNum">      38</span>              :  * the room name and sender's name.</span>
+<span id="L39"><span class="lineNum">      39</span>              :  * </span>
+<span id="L40"><span class="lineNum">      40</span>              :  * @param message The message content received.</span>
+<span id="L41"><span class="lineNum">      41</span>              :  * @param fromUser Pointer to the User who sent the message.</span>
+<span id="L42"><span class="lineNum">      42</span>              :  * @param room Pointer to the ChatRoom where the message was received.</span>
+<span id="L43"><span class="lineNum">      43</span>              :  */</span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">          20 : void AdminUser::receive(const std::string&amp; message, User* fromUser, ChatRoom* room) {</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaUNC tlaBgUNC">           0 :     std::cout &lt;&lt; &quot;[ADMIN &quot; &lt;&lt; name &lt;&lt; &quot;] received in &quot; &lt;&lt; room-&gt;getName() </span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC tlaBgGNC">          20 :               &lt;&lt; &quot; from &quot; &lt;&lt; fromUser-&gt;getName() &lt;&lt; &quot;: &quot; &lt;&lt; message &lt;&lt; std::endl;</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          20 : }</span></span>
         </pre>
               </td>
             </tr>

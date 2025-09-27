@@ -1,32 +1,29 @@
 \doxysection{message\+Iterator.\+h}
 \hypertarget{message_iterator_8h_source}{}\label{message_iterator_8h_source}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ MESSAGEITERATOR\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MESSAGEITERATOR\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}iterator.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <list>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_message_iterator_ab0ac87d923acf4fd62b324e488a12d7e}{MessageIterator}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_iterator}{myIterator}}<std::string>\ \{}
-\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00018\ \ \ \ \ std::list<std::string>*\ messages;\ \textcolor{comment}{//\ Pointer\ to\ the\ collection\ of\ messages}}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ position;}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_message_iterator_ab0ac87d923acf4fd62b324e488a12d7e}{MessageIterator}}(std::list<std::string>*\ messages);}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MESSAGEITERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MESSAGEITERATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}iterator.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_message_iterator_aad7d9860e1c0579d2739f40226721ab3}{MessageIterator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmy_iterator}{myIterator}}<std::string>\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::list<std::string>\ messages;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typename}\ std::list<std::string>::const\_iterator\ currentPosition;}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_message_iterator_a5f284cecaceb46e55bd223360a894801}{hasNext}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ reset()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{class_message_iterator_a752378f356d55c60353a6991cc0458fe}{next}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Add\ necessary\ private\ members\ for\ iteration}}
-\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_message_iterator_aad7d9860e1c0579d2739f40226721ab3}{MessageIterator}}(\textcolor{keyword}{const}\ std::list<std::string>\&\ messageList);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_message_iterator_a5f284cecaceb46e55bd223360a894801}{hasNext}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_iterator_a7f1f2e10fe0af3dd75ce208f35d860c1}{reset}}()\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MESSAGE\_ITERATOR\_H}}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{class_message_iterator_a752378f356d55c60353a6991cc0458fe}{next}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MESSAGE\_ITERATOR\_H}}
 
 \end{DoxyCode}

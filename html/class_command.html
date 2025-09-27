@@ -92,7 +92,7 @@ $(function(){initNavTree('class_command.html','','class_command-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract <a class="el" href="class_command.html" title="Abstract Command class that defines the interface for command objects.">Command</a> class that defines the interface for command objects.  
+<p>Abstract base class representing a command in the chat system.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="command_8h_source.html">command.h</a>&gt;</code></p>
@@ -102,30 +102,84 @@ Inheritance diagram for Command:</div>
  <div class="center">
   <img src="class_command.png" usemap="#Command_map" alt=""/>
   <map id="Command_map" name="Command_map">
-<area href="class_save_message_command.html" title="Concrete command for saving messages." alt="SaveMessageCommand" shape="rect" coords="0,56,147,80"/>
-<area href="class_send_message_command.html" title="Concrete command for sending messages in the chat system." alt="sendMessageCommand" shape="rect" coords="157,56,304,80"/>
+<area href="class_save_message_command.html" title="A concrete Command that saves a message to a chat room&#39;s history." alt="SaveMessageCommand" shape="rect" coords="0,56,147,80"/>
+<area href="classsend_message_command.html" title="Concrete command for sending messages in the chat system." alt="sendMessageCommand" shape="rect" coords="157,56,304,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3cdc004dfa26dd6ea9a107dbadc6ff4c" id="r_a3cdc004dfa26dd6ea9a107dbadc6ff4c"><td class="memItemLeft" align="right" valign="top"><a id="a3cdc004dfa26dd6ea9a107dbadc6ff4c" name="a3cdc004dfa26dd6ea9a107dbadc6ff4c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Command</b> (<a class="el" href="classchat_room.html">ChatRoom</a> *room, <a class="el" href="class_user.html">User</a> *user, const std::string message)</td></tr>
+<tr class="memitem:aa071e9dd47e2c07cd5b6ba911147b3c8" id="r_aa071e9dd47e2c07cd5b6ba911147b3c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa071e9dd47e2c07cd5b6ba911147b3c8">Command</a> (<a class="el" href="class_chat_room.html">ChatRoom</a> *<a class="el" href="#ac38d7713bb9660a23a752a2a2c938dd5">room</a>, <a class="el" href="class_user.html">User</a> *<a class="el" href="#a089ce52cd25f12842ae99692039ab6b9">user</a>, const std::string <a class="el" href="#aefb89941a5b2b0b0648cf7b98bb37762">message</a>)</td></tr>
+<tr class="memdesc:aa071e9dd47e2c07cd5b6ba911147b3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> object with the given room, user, and message.  <br /></td></tr>
 <tr class="memitem:aae19e5edcdcd17c91146454a5d26eb24" id="r_aae19e5edcdcd17c91146454a5d26eb24"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae19e5edcdcd17c91146454a5d26eb24">execute</a> ()=0</td></tr>
 <tr class="memdesc:aae19e5edcdcd17c91146454a5d26eb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command.  <br /></td></tr>
-<tr class="memitem:a56d8c61caec795b26cdfa335b6d42102" id="r_a56d8c61caec795b26cdfa335b6d42102"><td class="memItemLeft" align="right" valign="top"><a id="a56d8c61caec795b26cdfa335b6d42102" name="a56d8c61caec795b26cdfa335b6d42102"></a>
-<a class="el" href="classchat_room.html">ChatRoom</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRoom</b> () const</td></tr>
-<tr class="memitem:af7888c01bd598574841dc452a5090741" id="r_af7888c01bd598574841dc452a5090741"><td class="memItemLeft" align="right" valign="top"><a id="af7888c01bd598574841dc452a5090741" name="af7888c01bd598574841dc452a5090741"></a>
-<a class="el" href="class_user.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getUser</b> () const</td></tr>
-<tr class="memitem:a30003a6eb9afea6ed31e78470499dd07" id="r_a30003a6eb9afea6ed31e78470499dd07"><td class="memItemLeft" align="right" valign="top"><a id="a30003a6eb9afea6ed31e78470499dd07" name="a30003a6eb9afea6ed31e78470499dd07"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getMessage</b> () const</td></tr>
-<tr class="memitem:a641c23ef533dd6f77d0a4ef0311598b2" id="r_a641c23ef533dd6f77d0a4ef0311598b2"><td class="memItemLeft" align="right" valign="top"><a id="a641c23ef533dd6f77d0a4ef0311598b2" name="a641c23ef533dd6f77d0a4ef0311598b2"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Command</b> ()</td></tr>
-<tr class="memdesc:a641c23ef533dd6f77d0a4ef0311598b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="class_command.html" title="Abstract Command class that defines the interface for command objects.">Command</a> class. <br /></td></tr>
+<tr class="memitem:aa545a53d35818f9efb936daf3fa16c61" id="r_aa545a53d35818f9efb936daf3fa16c61"><td class="memItemLeft" align="right" valign="top"><a id="aa545a53d35818f9efb936daf3fa16c61" name="aa545a53d35818f9efb936daf3fa16c61"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Command</b> ()=default</td></tr>
+<tr class="memdesc:aa545a53d35818f9efb936daf3fa16c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac38d7713bb9660a23a752a2a2c938dd5" id="r_ac38d7713bb9660a23a752a2a2c938dd5"><td class="memItemLeft" align="right" valign="top"><a id="ac38d7713bb9660a23a752a2a2c938dd5" name="ac38d7713bb9660a23a752a2a2c938dd5"></a>
+<a class="el" href="class_chat_room.html">ChatRoom</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>room</b></td></tr>
+<tr class="memdesc:ac38d7713bb9660a23a752a2a2c938dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the chat room where the command will be executed. <br /></td></tr>
+<tr class="memitem:a089ce52cd25f12842ae99692039ab6b9" id="r_a089ce52cd25f12842ae99692039ab6b9"><td class="memItemLeft" align="right" valign="top"><a id="a089ce52cd25f12842ae99692039ab6b9" name="a089ce52cd25f12842ae99692039ab6b9"></a>
+<a class="el" href="class_user.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>user</b></td></tr>
+<tr class="memdesc:a089ce52cd25f12842ae99692039ab6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the user who issued the command. <br /></td></tr>
+<tr class="memitem:aefb89941a5b2b0b0648cf7b98bb37762" id="r_aefb89941a5b2b0b0648cf7b98bb37762"><td class="memItemLeft" align="right" valign="top"><a id="aefb89941a5b2b0b0648cf7b98bb37762" name="aefb89941a5b2b0b0648cf7b98bb37762"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>message</b></td></tr>
+<tr class="memdesc:aefb89941a5b2b0b0648cf7b98bb37762"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message content associated with the command. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract <a class="el" href="class_command.html" title="Abstract Command class that defines the interface for command objects.">Command</a> class that defines the interface for command objects. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p>Abstract base class representing a command in the chat system. </p>
+<p>Encapsulates a messaging action involving a user and a chat room. Derived classes should implement specific behaviors by overriding the execute method. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa071e9dd47e2c07cd5b6ba911147b3c8" name="aa071e9dd47e2c07cd5b6ba911147b3c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa071e9dd47e2c07cd5b6ba911147b3c8">&#9670;&#160;</a></span>Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Command::Command </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>user</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> object with the given room, user, and message. </p>
+<p>Constructs a <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> object with a target chat room, user, and message.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the target <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a>. </td></tr>
+    <tr><td class="paramname">user</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> issuing the command. </td></tr>
+    <tr><td class="paramname">message</td><td>The message content to be processed by the command.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initializes the command with the context needed to execute a messaging action.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> where the command will be executed. </td></tr>
+    <tr><td class="paramname">user</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> who issued the command. </td></tr>
+    <tr><td class="paramname">message</td><td>The message content associated with the command. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aae19e5edcdcd17c91146454a5d26eb24" name="aae19e5edcdcd17c91146454a5d26eb24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae19e5edcdcd17c91146454a5d26eb24">&#9670;&#160;</a></span>execute()</h2>
 
@@ -150,8 +204,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Command</b> ()</t
 </div><div class="memdoc">
 
 <p>Executes the command. </p>
+<p>This is a pure virtual method that must be implemented by derived classes.</p>
+<p>This base implementation does nothing. Derived classes should override this method to define specific command behavior (e.g., sending a message, saving history). </p>
 
-<p>Implemented in <a class="el" href="class_save_message_command.html#a3e4c17c1151344f72453efff696a088a">SaveMessageCommand</a>, and <a class="el" href="class_send_message_command.html#a1393dfb26e5e5c580c87fb1f0aa38276">sendMessageCommand</a>.</p>
+<p>Implemented in <a class="el" href="class_save_message_command.html#a3e4c17c1151344f72453efff696a088a">SaveMessageCommand</a>, and <a class="el" href="classsend_message_command.html#a79a55414953a25001b392ba14d2c87b5">sendMessageCommand</a>.</p>
 
 </div>
 </div>

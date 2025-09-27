@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['send_0',['send',['../class_user.html#a29caabba5c7e00de3780d11348eabef6',1,'User::send()'],['../class_user_name.html#a02aa85c51e8f8b6a18bc99401e6609fc',1,'UserName::send()']]],
-  ['setmessage_1',['setMessage',['../class_save_message_command.html#aa86a93fec1893044af2f1b8ccf60aa9d',1,'SaveMessageCommand']]]
+  ['hasnext_0',['hasNext',['../classmy_iterator.html#ac932af48a3a5637b60edec88eb83f211',1,'myIterator::hasNext()'],['../class_message_iterator.html#a5f284cecaceb46e55bd223360a894801',1,'MessageIterator::hasNext()'],['../class_user_iterator.html#a45f9ba1340aa1c006e7535ca59fbeaba',1,'UserIterator::hasNext()']]]
 ];

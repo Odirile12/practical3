@@ -92,7 +92,7 @@ $(function(){initNavTree('class_save_message_command.html','','class_save_messag
 </div><!--header-->
 <div class="contents">
 
-<p>Concrete command for saving messages.  
+<p>A concrete <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> that saves a message to a chat room's history.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="save_message_command_8h_source.html">saveMessageCommand.h</a>&gt;</code></p>
@@ -102,33 +102,88 @@ Inheritance diagram for SaveMessageCommand:</div>
  <div class="center">
   <img src="class_save_message_command.png" usemap="#SaveMessageCommand_map" alt=""/>
   <map id="SaveMessageCommand_map" name="SaveMessageCommand_map">
-<area href="class_command.html" title="Abstract Command class that defines the interface for command objects." alt="Command" shape="rect" coords="0,0,147,24"/>
+<area href="class_command.html" title="Abstract base class representing a command in the chat system." alt="Command" shape="rect" coords="0,0,147,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a8974fe28b6fafaa41ef49c8e9db00abc" id="r_a8974fe28b6fafaa41ef49c8e9db00abc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8974fe28b6fafaa41ef49c8e9db00abc">SaveMessageCommand</a> (<a class="el" href="class_chat_room.html">ChatRoom</a> *<a class="el" href="class_command.html#ac38d7713bb9660a23a752a2a2c938dd5">room</a>, <a class="el" href="class_user.html">User</a> *<a class="el" href="class_command.html#a089ce52cd25f12842ae99692039ab6b9">user</a>, const std::string <a class="el" href="class_command.html#aefb89941a5b2b0b0648cf7b98bb37762">message</a>)</td></tr>
+<tr class="memdesc:a8974fe28b6fafaa41ef49c8e9db00abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_save_message_command.html" title="A concrete Command that saves a message to a chat room&#39;s history.">SaveMessageCommand</a> with the target room, user, and message.  <br /></td></tr>
+<tr class="memitem:a5e45f24527bdd4c93f695d820c17020e" id="r_a5e45f24527bdd4c93f695d820c17020e"><td class="memItemLeft" align="right" valign="top"><a id="a5e45f24527bdd4c93f695d820c17020e" name="a5e45f24527bdd4c93f695d820c17020e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~SaveMessageCommand</b> ()=default</td></tr>
+<tr class="memdesc:a5e45f24527bdd4c93f695d820c17020e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
 <tr class="memitem:a3e4c17c1151344f72453efff696a088a" id="r_a3e4c17c1151344f72453efff696a088a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e4c17c1151344f72453efff696a088a">execute</a> () override</td></tr>
 <tr class="memdesc:a3e4c17c1151344f72453efff696a088a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command to save a message.  <br /></td></tr>
-<tr class="memitem:aa86a93fec1893044af2f1b8ccf60aa9d" id="r_aa86a93fec1893044af2f1b8ccf60aa9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa86a93fec1893044af2f1b8ccf60aa9d">setMessage</a> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:aa86a93fec1893044af2f1b8ccf60aa9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the message to be saved.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_command"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_command')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_command.html">Command</a></td></tr>
-<tr class="memitem:a3cdc004dfa26dd6ea9a107dbadc6ff4c inherit pub_methods_class_command" id="r_a3cdc004dfa26dd6ea9a107dbadc6ff4c"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><b>Command</b> (<a class="el" href="classchat_room.html">ChatRoom</a> *room, <a class="el" href="class_user.html">User</a> *user, const std::string message)</td></tr>
-<tr class="memitem:a56d8c61caec795b26cdfa335b6d42102 inherit pub_methods_class_command" id="r_a56d8c61caec795b26cdfa335b6d42102"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="classchat_room.html">ChatRoom</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getRoom</b> () const</td></tr>
-<tr class="memitem:af7888c01bd598574841dc452a5090741 inherit pub_methods_class_command" id="r_af7888c01bd598574841dc452a5090741"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="class_user.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getUser</b> () const</td></tr>
-<tr class="memitem:a30003a6eb9afea6ed31e78470499dd07 inherit pub_methods_class_command" id="r_a30003a6eb9afea6ed31e78470499dd07"><td class="memItemLeft" align="right" valign="top">
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getMessage</b> () const</td></tr>
-<tr class="memitem:a641c23ef533dd6f77d0a4ef0311598b2 inherit pub_methods_class_command" id="r_a641c23ef533dd6f77d0a4ef0311598b2"><td class="memItemLeft" align="right" valign="top">
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Command</b> ()</td></tr>
-<tr class="memdesc:a641c23ef533dd6f77d0a4ef0311598b2 inherit pub_methods_class_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="class_command.html" title="Abstract Command class that defines the interface for command objects.">Command</a> class. <br /></td></tr>
+<tr class="memitem:aa071e9dd47e2c07cd5b6ba911147b3c8 inherit pub_methods_class_command" id="r_aa071e9dd47e2c07cd5b6ba911147b3c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command.html#aa071e9dd47e2c07cd5b6ba911147b3c8">Command</a> (<a class="el" href="class_chat_room.html">ChatRoom</a> *<a class="el" href="class_command.html#ac38d7713bb9660a23a752a2a2c938dd5">room</a>, <a class="el" href="class_user.html">User</a> *<a class="el" href="class_command.html#a089ce52cd25f12842ae99692039ab6b9">user</a>, const std::string <a class="el" href="class_command.html#aefb89941a5b2b0b0648cf7b98bb37762">message</a>)</td></tr>
+<tr class="memdesc:aa071e9dd47e2c07cd5b6ba911147b3c8 inherit pub_methods_class_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> object with the given room, user, and message.  <br /></td></tr>
+<tr class="memitem:aa545a53d35818f9efb936daf3fa16c61 inherit pub_methods_class_command" id="r_aa545a53d35818f9efb936daf3fa16c61"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Command</b> ()=default</td></tr>
+<tr class="memdesc:aa545a53d35818f9efb936daf3fa16c61 inherit pub_methods_class_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_command"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_command')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_command.html">Command</a></td></tr>
+<tr class="memitem:ac38d7713bb9660a23a752a2a2c938dd5 inherit pro_attribs_class_command" id="r_ac38d7713bb9660a23a752a2a2c938dd5"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="class_chat_room.html">ChatRoom</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>room</b></td></tr>
+<tr class="memdesc:ac38d7713bb9660a23a752a2a2c938dd5 inherit pro_attribs_class_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the chat room where the command will be executed. <br /></td></tr>
+<tr class="memitem:a089ce52cd25f12842ae99692039ab6b9 inherit pro_attribs_class_command" id="r_a089ce52cd25f12842ae99692039ab6b9"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="class_user.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>user</b></td></tr>
+<tr class="memdesc:a089ce52cd25f12842ae99692039ab6b9 inherit pro_attribs_class_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the user who issued the command. <br /></td></tr>
+<tr class="memitem:aefb89941a5b2b0b0648cf7b98bb37762 inherit pro_attribs_class_command" id="r_aefb89941a5b2b0b0648cf7b98bb37762"><td class="memItemLeft" align="right" valign="top">
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>message</b></td></tr>
+<tr class="memdesc:aefb89941a5b2b0b0648cf7b98bb37762 inherit pro_attribs_class_command"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message content associated with the command. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Concrete command for saving messages. </p>
-<p>This class implements the <a class="el" href="class_command.html" title="Abstract Command class that defines the interface for command objects.">Command</a> interface to provide functionality for saving messages in the chat application. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p>A concrete <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> that saves a message to a chat room's history. </p>
+<p>Implements the <a class="el" href="class_command.html" title="Abstract base class representing a command in the chat system.">Command</a> interface to encapsulate the action of persisting a message sent by a user into the chat room's message log. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8974fe28b6fafaa41ef49c8e9db00abc" name="a8974fe28b6fafaa41ef49c8e9db00abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8974fe28b6fafaa41ef49c8e9db00abc">&#9670;&#160;</a></span>SaveMessageCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SaveMessageCommand::SaveMessageCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_chat_room.html">ChatRoom</a> *</td>          <td class="paramname"><span class="paramname"><em>room</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a> *</td>          <td class="paramname"><span class="paramname"><em>user</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_save_message_command.html" title="A concrete Command that saves a message to a chat room&#39;s history.">SaveMessageCommand</a> with the target room, user, and message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>Pointer to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a> where the message should be saved. </td></tr>
+    <tr><td class="paramname">user</td><td>Pointer to the <a class="el" href="class_user.html" title="Abstract base class representing a participant in the chat system.">User</a> who sent the message. </td></tr>
+    <tr><td class="paramname">message</td><td>The message content to be saved. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a3e4c17c1151344f72453efff696a088a" name="a3e4c17c1151344f72453efff696a088a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e4c17c1151344f72453efff696a088a">&#9670;&#160;</a></span>execute()</h2>
 
@@ -153,34 +208,11 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Command</b> ()</t
 </div><div class="memdoc">
 
 <p>Executes the command to save a message. </p>
-<p>Executes the command to save the message. </p>
+<p>Executes the command to save a message in the chat room.</p>
+<p>Delegates the saving operation to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a>'s saveMessage method.</p>
+<p>Performs a safety check to ensure both the room and user are valid. Then delegates the message saving to the <a class="el" href="class_chat_room.html" title="Abstract base class representing a chat room that manages users and message history.">ChatRoom</a>'s saveMessage method. </p>
 
 <p>Implements <a class="el" href="class_command.html#aae19e5edcdcd17c91146454a5d26eb24">Command</a>.</p>
-
-</div>
-</div>
-<a id="aa86a93fec1893044af2f1b8ccf60aa9d" name="aa86a93fec1893044af2f1b8ccf60aa9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa86a93fec1893044af2f1b8ccf60aa9d">&#9670;&#160;</a></span>setMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SaveMessageCommand::setMessage </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the message to be saved. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>The message to save. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

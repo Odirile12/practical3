@@ -91,39 +91,37 @@ $(function(){initNavTree('message_iterator_8h_source.html','',''); });
   <div class="headertitle"><div class="title">messageIterator.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef MESSAGEITERATOR_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define MESSAGEITERATOR_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;iterator.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_message_iterator.html">   16</a></span><span class="keyword">class </span><a class="code hl_function" href="class_message_iterator.html#ab0ac87d923acf4fd62b324e488a12d7e">MessageIterator</a>: <span class="keyword">public</span> <a class="code hl_class" href="classmy_iterator.html">myIterator</a>&lt;std::string&gt; {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::list&lt;std::string&gt;* messages; <span class="comment">// Pointer to the collection of messages</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> position;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_message_iterator.html#ab0ac87d923acf4fd62b324e488a12d7e">   25</a></span>    <a class="code hl_function" href="class_message_iterator.html#ab0ac87d923acf4fd62b324e488a12d7e">MessageIterator</a>(std::list&lt;std::string&gt;* messages);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_message_iterator.html#a5f284cecaceb46e55bd223360a894801">   31</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_message_iterator.html#a5f284cecaceb46e55bd223360a894801">hasNext</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> reset() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_message_iterator.html#a752378f356d55c60353a6991cc0458fe">   39</a></span>    std::string <a class="code hl_function" href="class_message_iterator.html#a752378f356d55c60353a6991cc0458fe">next</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// Add necessary private members for iteration</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MESSAGEITERATOR_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MESSAGEITERATOR_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;iterator.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_message_iterator.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="class_message_iterator.html#aad7d9860e1c0579d2739f40226721ab3">MessageIterator</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmy_iterator.html">myIterator</a>&lt;std::string&gt; {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::list&lt;std::string&gt; messages;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">typename</span> std::list&lt;std::string&gt;::const_iterator currentPosition;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_message_iterator.html#aad7d9860e1c0579d2739f40226721ab3">MessageIterator</a>(<span class="keyword">const</span> std::list&lt;std::string&gt;&amp; messageList);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_message_iterator.html#a5f284cecaceb46e55bd223360a894801">hasNext</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_message_iterator.html#a7f1f2e10fe0af3dd75ce208f35d860c1">reset</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::string <a class="code hl_function" href="class_message_iterator.html#a752378f356d55c60353a6991cc0458fe">next</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
 </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif </span><span class="comment">// MESSAGE_ITERATOR_H</span></div>
-<div class="ttc" id="aclass_message_iterator_html_a5f284cecaceb46e55bd223360a894801"><div class="ttname"><a href="class_message_iterator.html#a5f284cecaceb46e55bd223360a894801">MessageIterator::hasNext</a></div><div class="ttdeci">bool hasNext() override</div><div class="ttdoc">Moves to the next message in the collection.</div></div>
-<div class="ttc" id="aclass_message_iterator_html_a752378f356d55c60353a6991cc0458fe"><div class="ttname"><a href="class_message_iterator.html#a752378f356d55c60353a6991cc0458fe">MessageIterator::next</a></div><div class="ttdeci">std::string next() override</div><div class="ttdoc">Returns the current message.</div></div>
-<div class="ttc" id="aclass_message_iterator_html_ab0ac87d923acf4fd62b324e488a12d7e"><div class="ttname"><a href="class_message_iterator.html#ab0ac87d923acf4fd62b324e488a12d7e">MessageIterator::MessageIterator</a></div><div class="ttdeci">MessageIterator(std::list&lt; std::string &gt; *messages)</div><div class="ttdoc">Constructs a MessageIterator.</div></div>
-<div class="ttc" id="aclassmy_iterator_html"><div class="ttname"><a href="classmy_iterator.html">myIterator</a></div><div class="ttdef"><b>Definition</b> iterator.h:5</div></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">// MESSAGE_ITERATOR_H</span></div>
+<div class="ttc" id="aclass_message_iterator_html_a5f284cecaceb46e55bd223360a894801"><div class="ttname"><a href="class_message_iterator.html#a5f284cecaceb46e55bd223360a894801">MessageIterator::hasNext</a></div><div class="ttdeci">bool hasNext() override</div><div class="ttdoc">Checks if there are more messages to iterate over.</div><div class="ttdef"><b>Definition</b> messageIterator.cpp:19</div></div>
+<div class="ttc" id="aclass_message_iterator_html_a752378f356d55c60353a6991cc0458fe"><div class="ttname"><a href="class_message_iterator.html#a752378f356d55c60353a6991cc0458fe">MessageIterator::next</a></div><div class="ttdeci">std::string next() override</div><div class="ttdoc">Retrieves the next message in the list.</div><div class="ttdef"><b>Definition</b> messageIterator.cpp:30</div></div>
+<div class="ttc" id="aclass_message_iterator_html_a7f1f2e10fe0af3dd75ce208f35d860c1"><div class="ttname"><a href="class_message_iterator.html#a7f1f2e10fe0af3dd75ce208f35d860c1">MessageIterator::reset</a></div><div class="ttdeci">void reset() override</div><div class="ttdoc">Resets the iterator to the beginning of the message list.</div><div class="ttdef"><b>Definition</b> messageIterator.cpp:42</div></div>
+<div class="ttc" id="aclass_message_iterator_html_aad7d9860e1c0579d2739f40226721ab3"><div class="ttname"><a href="class_message_iterator.html#aad7d9860e1c0579d2739f40226721ab3">MessageIterator::MessageIterator</a></div><div class="ttdeci">MessageIterator(const std::list&lt; std::string &gt; &amp;messageList)</div><div class="ttdoc">Constructs a MessageIterator with a given list of messages.</div><div class="ttdef"><b>Definition</b> messageIterator.cpp:11</div></div>
+<div class="ttc" id="aclassmy_iterator_html"><div class="ttname"><a href="classmy_iterator.html">myIterator</a></div><div class="ttdoc">Generic iterator interface for traversing collections of type T.</div><div class="ttdef"><b>Definition</b> iterator.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

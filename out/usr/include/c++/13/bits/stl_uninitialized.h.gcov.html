@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-09-26 14:37:53</td>
+            <td class="headerValue">2025-09-27 11:23:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">57.1&nbsp;%</td>
@@ -172,15 +172,15 @@
 <span id="L110"><span class="lineNum">     110</span>              :   template&lt;typename _InputIterator, typename _ForwardIterator&gt;</span>
 <span id="L111"><span class="lineNum">     111</span>              :     _GLIBCXX20_CONSTEXPR</span>
 <span id="L112"><span class="lineNum">     112</span>              :     _ForwardIterator</span>
-<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC tlaBgGNC">           1 :     __do_uninit_copy(_InputIterator __first, _InputIterator __last,</span></span>
+<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC tlaBgGNC">           2 :     __do_uninit_copy(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L114"><span class="lineNum">     114</span>              :                      _ForwardIterator __result)</span>
 <span id="L115"><span class="lineNum">     115</span>              :     {</span>
-<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           1 :       _ForwardIterator __cur = __result;</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           2 :       _ForwardIterator __cur = __result;</span></span>
 <span id="L117"><span class="lineNum">     117</span>              :       __try</span>
 <span id="L118"><span class="lineNum">     118</span>              :         {</span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">           5 :           for (; __first != __last; ++__first, (void)++__cur)</span></span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">           4 :             std::_Construct(std::__addressof(*__cur), *__first);</span></span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">           1 :           return __cur;</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">          10 :           for (; __first != __last; ++__first, (void)++__cur)</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">           8 :             std::_Construct(std::__addressof(*__cur), *__first);</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">           2 :           return __cur;</span></span>
 <span id="L122"><span class="lineNum">     122</span>              :         }</span>
 <span id="L123"><span class="lineNum">     123</span> <span class="tlaUNC tlaBgUNC">           0 :       __catch(...)</span></span>
 <span id="L124"><span class="lineNum">     124</span>              :         {</span>
@@ -194,9 +194,9 @@
 <span id="L132"><span class="lineNum">     132</span>              :     {</span>
 <span id="L133"><span class="lineNum">     133</span>              :       template&lt;typename _InputIterator, typename _ForwardIterator&gt;</span>
 <span id="L134"><span class="lineNum">     134</span>              :         static _ForwardIterator</span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC tlaBgGNC">           1 :         __uninit_copy(_InputIterator __first, _InputIterator __last,</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC tlaBgGNC">           2 :         __uninit_copy(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L136"><span class="lineNum">     136</span>              :                       _ForwardIterator __result)</span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           1 :         { return std::__do_uninit_copy(__first, __last, __result); }</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">           2 :         { return std::__do_uninit_copy(__first, __last, __result); }</span></span>
 <span id="L138"><span class="lineNum">     138</span>              :     };</span>
 <span id="L139"><span class="lineNum">     139</span>              : </span>
 <span id="L140"><span class="lineNum">     140</span>              :   template&lt;&gt;</span>
@@ -204,9 +204,9 @@
 <span id="L142"><span class="lineNum">     142</span>              :     {</span>
 <span id="L143"><span class="lineNum">     143</span>              :       template&lt;typename _InputIterator, typename _ForwardIterator&gt;</span>
 <span id="L144"><span class="lineNum">     144</span>              :         static _ForwardIterator</span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">           4 :         __uninit_copy(_InputIterator __first, _InputIterator __last,</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          10 :         __uninit_copy(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L146"><span class="lineNum">     146</span>              :                       _ForwardIterator __result)</span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">           4 :         { return std::copy(__first, __last, __result); }</span></span>
+<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">          10 :         { return std::copy(__first, __last, __result); }</span></span>
 <span id="L148"><span class="lineNum">     148</span>              :     };</span>
 <span id="L149"><span class="lineNum">     149</span>              : </span>
 <span id="L150"><span class="lineNum">     150</span>              :   /// @endcond</span>
@@ -222,7 +222,7 @@
 <span id="L160"><span class="lineNum">     160</span>              :   */</span>
 <span id="L161"><span class="lineNum">     161</span>              :   template&lt;typename _InputIterator, typename _ForwardIterator&gt;</span>
 <span id="L162"><span class="lineNum">     162</span>              :     inline _ForwardIterator</span>
-<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">           5 :     uninitialized_copy(_InputIterator __first, _InputIterator __last,</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          12 :     uninitialized_copy(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L164"><span class="lineNum">     164</span>              :                        _ForwardIterator __result)</span>
 <span id="L165"><span class="lineNum">     165</span>              :     {</span>
 <span id="L166"><span class="lineNum">     166</span>              :       typedef typename iterator_traits&lt;_InputIterator&gt;::value_type</span>
@@ -233,18 +233,18 @@
 <span id="L171"><span class="lineNum">     171</span>              :       // _ValueType1 must be trivially-copyable to use memmove, so don't</span>
 <span id="L172"><span class="lineNum">     172</span>              :       // bother optimizing to std::copy if it isn't.</span>
 <span id="L173"><span class="lineNum">     173</span>              :       // XXX Unnecessary because std::copy would check it anyway?</span>
-<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">           5 :       const bool __can_memmove = __is_trivial(_ValueType1);</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">          12 :       const bool __can_memmove = __is_trivial(_ValueType1);</span></span>
 <span id="L175"><span class="lineNum">     175</span>              : </span>
 <span id="L176"><span class="lineNum">     176</span>              : #if __cplusplus &lt; 201103L</span>
 <span id="L177"><span class="lineNum">     177</span>              :       typedef typename iterator_traits&lt;_InputIterator&gt;::reference _From;</span>
 <span id="L178"><span class="lineNum">     178</span>              : #else</span>
 <span id="L179"><span class="lineNum">     179</span>              :       using _From = decltype(*__first);</span>
 <span id="L180"><span class="lineNum">     180</span>              : #endif</span>
-<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">           5 :       const bool __assignable</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          12 :       const bool __assignable</span></span>
 <span id="L182"><span class="lineNum">     182</span>              :         = _GLIBCXX_USE_ASSIGN_FOR_INIT(_ValueType2, _From);</span>
 <span id="L183"><span class="lineNum">     183</span>              : </span>
 <span id="L184"><span class="lineNum">     184</span>              :       return std::__uninitialized_copy&lt;__can_memmove &amp;&amp; __assignable&gt;::</span>
-<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">           5 :         __uninit_copy(__first, __last, __result);</span></span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">          12 :         __uninit_copy(__first, __last, __result);</span></span>
 <span id="L186"><span class="lineNum">     186</span>              :     }</span>
 <span id="L187"><span class="lineNum">     187</span>              : </span>
 <span id="L188"><span class="lineNum">     188</span>              :   /// @cond undocumented</span>
@@ -425,14 +425,14 @@
 <span id="L363"><span class="lineNum">     363</span>              :   template&lt;typename _InputIterator, typename _ForwardIterator, typename _Tp&gt;</span>
 <span id="L364"><span class="lineNum">     364</span>              :     _GLIBCXX20_CONSTEXPR</span>
 <span id="L365"><span class="lineNum">     365</span>              :     inline _ForwardIterator</span>
-<span id="L366"><span class="lineNum">     366</span> <span class="tlaGNC">           5 :     __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,</span></span>
+<span id="L366"><span class="lineNum">     366</span> <span class="tlaGNC">          12 :     __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L367"><span class="lineNum">     367</span>              :                            _ForwardIterator __result, allocator&lt;_Tp&gt;&amp;)</span>
 <span id="L368"><span class="lineNum">     368</span>              :     {</span>
 <span id="L369"><span class="lineNum">     369</span>              : #ifdef __cpp_lib_is_constant_evaluated</span>
 <span id="L370"><span class="lineNum">     370</span>              :       if (std::is_constant_evaluated())</span>
 <span id="L371"><span class="lineNum">     371</span>              :         return std::__do_uninit_copy(__first, __last, __result);</span>
 <span id="L372"><span class="lineNum">     372</span>              : #endif</span>
-<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">           5 :       return std::uninitialized_copy(__first, __last, __result);</span></span>
+<span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">          12 :       return std::uninitialized_copy(__first, __last, __result);</span></span>
 <span id="L374"><span class="lineNum">     374</span>              :     }</span>
 <span id="L375"><span class="lineNum">     375</span>              : #endif</span>
 <span id="L376"><span class="lineNum">     376</span>              : </span>
@@ -1173,12 +1173,12 @@
 <span id="L1111"><span class="lineNum">    1111</span>              :   template &lt;typename _Tp, typename _Up&gt;</span>
 <span id="L1112"><span class="lineNum">    1112</span>              :     _GLIBCXX20_CONSTEXPR</span>
 <span id="L1113"><span class="lineNum">    1113</span>              :     inline __enable_if_t&lt;std::__is_bitwise_relocatable&lt;_Tp&gt;::value, _Tp*&gt;</span>
-<span id="L1114"><span class="lineNum">    1114</span> <span class="tlaGNC tlaBgGNC">          98 :     __relocate_a_1(_Tp* __first, _Tp* __last,</span></span>
+<span id="L1114"><span class="lineNum">    1114</span> <span class="tlaGNC tlaBgGNC">         364 :     __relocate_a_1(_Tp* __first, _Tp* __last,</span></span>
 <span id="L1115"><span class="lineNum">    1115</span>              :                    _Tp* __result,</span>
 <span id="L1116"><span class="lineNum">    1116</span>              :                    [[__maybe_unused__]] allocator&lt;_Up&gt;&amp; __alloc) noexcept</span>
 <span id="L1117"><span class="lineNum">    1117</span>              :     {</span>
-<span id="L1118"><span class="lineNum">    1118</span> <span class="tlaGNC">          98 :       ptrdiff_t __count = __last - __first;</span></span>
-<span id="L1119"><span class="lineNum">    1119</span> <span class="tlaGNC">          98 :       if (__count &gt; 0)</span></span>
+<span id="L1118"><span class="lineNum">    1118</span> <span class="tlaGNC">         364 :       ptrdiff_t __count = __last - __first;</span></span>
+<span id="L1119"><span class="lineNum">    1119</span> <span class="tlaGNC">         364 :       if (__count &gt; 0)</span></span>
 <span id="L1120"><span class="lineNum">    1120</span>              :         {</span>
 <span id="L1121"><span class="lineNum">    1121</span>              : #ifdef __cpp_lib_is_constant_evaluated</span>
 <span id="L1122"><span class="lineNum">    1122</span>              :           if (std::is_constant_evaluated())</span>
@@ -1190,9 +1190,9 @@
 <span id="L1128"><span class="lineNum">    1128</span>              :               return __out.base();</span>
 <span id="L1129"><span class="lineNum">    1129</span>              :             }</span>
 <span id="L1130"><span class="lineNum">    1130</span>              : #endif</span>
-<span id="L1131"><span class="lineNum">    1131</span> <span class="tlaGNC">          18 :           __builtin_memmove(__result, __first, __count * sizeof(_Tp));</span></span>
+<span id="L1131"><span class="lineNum">    1131</span> <span class="tlaGNC">          60 :           __builtin_memmove(__result, __first, __count * sizeof(_Tp));</span></span>
 <span id="L1132"><span class="lineNum">    1132</span>              :         }</span>
-<span id="L1133"><span class="lineNum">    1133</span> <span class="tlaGNC">          98 :       return __result + __count;</span></span>
+<span id="L1133"><span class="lineNum">    1133</span> <span class="tlaGNC">         364 :       return __result + __count;</span></span>
 <span id="L1134"><span class="lineNum">    1134</span>              :     }</span>
 <span id="L1135"><span class="lineNum">    1135</span>              : #endif</span>
 <span id="L1136"><span class="lineNum">    1136</span>              : </span>
@@ -1200,15 +1200,15 @@
 <span id="L1138"><span class="lineNum">    1138</span>              :             typename _Allocator&gt;</span>
 <span id="L1139"><span class="lineNum">    1139</span>              :     _GLIBCXX20_CONSTEXPR</span>
 <span id="L1140"><span class="lineNum">    1140</span>              :     inline _ForwardIterator</span>
-<span id="L1141"><span class="lineNum">    1141</span> <span class="tlaGNC">          98 :     __relocate_a(_InputIterator __first, _InputIterator __last,</span></span>
+<span id="L1141"><span class="lineNum">    1141</span> <span class="tlaGNC">         364 :     __relocate_a(_InputIterator __first, _InputIterator __last,</span></span>
 <span id="L1142"><span class="lineNum">    1142</span>              :                  _ForwardIterator __result, _Allocator&amp; __alloc)</span>
 <span id="L1143"><span class="lineNum">    1143</span>              :     noexcept(noexcept(__relocate_a_1(std::__niter_base(__first),</span>
 <span id="L1144"><span class="lineNum">    1144</span>              :                                      std::__niter_base(__last),</span>
 <span id="L1145"><span class="lineNum">    1145</span>              :                                      std::__niter_base(__result), __alloc)))</span>
 <span id="L1146"><span class="lineNum">    1146</span>              :     {</span>
-<span id="L1147"><span class="lineNum">    1147</span> <span class="tlaGNC">          98 :       return std::__relocate_a_1(std::__niter_base(__first),</span></span>
+<span id="L1147"><span class="lineNum">    1147</span> <span class="tlaGNC">         364 :       return std::__relocate_a_1(std::__niter_base(__first),</span></span>
 <span id="L1148"><span class="lineNum">    1148</span>              :                                  std::__niter_base(__last),</span>
-<span id="L1149"><span class="lineNum">    1149</span> <span class="tlaGNC">          98 :                                  std::__niter_base(__result), __alloc);</span></span>
+<span id="L1149"><span class="lineNum">    1149</span> <span class="tlaGNC">         364 :                                  std::__niter_base(__result), __alloc);</span></span>
 <span id="L1150"><span class="lineNum">    1150</span>              :     }</span>
 <span id="L1151"><span class="lineNum">    1151</span>              : </span>
 <span id="L1152"><span class="lineNum">    1152</span>              :   /// @endcond</span>

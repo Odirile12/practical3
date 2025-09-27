@@ -95,35 +95,37 @@ $(function(){initNavTree('user_iterator_8h_source.html','',''); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define USERITERATOR_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;User.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;iterator.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_user.html">User</a>;</div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_user_iterator.html">   17</a></span><span class="keyword">class </span>UserIterator : <span class="keyword">public</span> <a class="code hl_class" href="classmy_iterator.html">myIterator</a>&lt;User*&gt; {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::list&lt;User*&gt; users;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> position;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    UserIterator(std::list&lt;User*&gt; users);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_user_iterator.html#a45f9ba1340aa1c006e7535ca59fbeaba">   28</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_user_iterator.html#a45f9ba1340aa1c006e7535ca59fbeaba">hasNext</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_user_iterator.html#a19a509933877f5ee362c8ef5c10f1d05">   34</a></span>    <a class="code hl_class" href="class_user.html">User</a>* <a class="code hl_function" href="class_user_iterator.html#a19a509933877f5ee362c8ef5c10f1d05">next</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_user_iterator.html#a2434f9f8d31fb5d37611893636dc16c6">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_user_iterator.html#a2434f9f8d31fb5d37611893636dc16c6">reset</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    ~UserIterator() = <span class="keywordflow">default</span>; <span class="comment">// Virtual destructor for proper cleanup</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_user_iterator.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="class_user_iterator.html#a83018d22cbb1065fba34ee162eac2aca">UserIterator</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmy_iterator.html">myIterator</a>&lt;User*&gt; {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector&lt;User*&gt; users;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">size_t</span> currentPosition;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_user_iterator.html#a83018d22cbb1065fba34ee162eac2aca">UserIterator</a>(<span class="keyword">const</span> std::vector&lt;User*&gt;&amp; userList);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_user_iterator.html#a45f9ba1340aa1c006e7535ca59fbeaba">hasNext</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_class" href="class_user.html">User</a>* <a class="code hl_function" href="class_user_iterator.html#a19a509933877f5ee362c8ef5c10f1d05">next</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_user_iterator.html#a2434f9f8d31fb5d37611893636dc16c6">reset</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_user_iterator.html#a6c5228445a8ea9ed7710731aa8f9b116">   54</a></span>    <a class="code hl_function" href="class_user_iterator.html#a6c5228445a8ea9ed7710731aa8f9b116">~UserIterator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// USER_ITERATOR_H</span></div>
-<div class="ttc" id="aclass_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdoc">Represents a user in the chat system.</div><div class="ttdef"><b>Definition</b> User.h:17</div></div>
-<div class="ttc" id="aclass_user_iterator_html_a19a509933877f5ee362c8ef5c10f1d05"><div class="ttname"><a href="class_user_iterator.html#a19a509933877f5ee362c8ef5c10f1d05">UserIterator::next</a></div><div class="ttdeci">User * next() override</div><div class="ttdoc">Returns the next user in the iteration.</div></div>
-<div class="ttc" id="aclass_user_iterator_html_a2434f9f8d31fb5d37611893636dc16c6"><div class="ttname"><a href="class_user_iterator.html#a2434f9f8d31fb5d37611893636dc16c6">UserIterator::reset</a></div><div class="ttdeci">void reset() override</div><div class="ttdoc">Resets the iterator to the beginning.</div></div>
-<div class="ttc" id="aclass_user_iterator_html_a45f9ba1340aa1c006e7535ca59fbeaba"><div class="ttname"><a href="class_user_iterator.html#a45f9ba1340aa1c006e7535ca59fbeaba">UserIterator::hasNext</a></div><div class="ttdeci">bool hasNext() override</div><div class="ttdoc">Advances the iterator to the next user.</div></div>
-<div class="ttc" id="aclassmy_iterator_html"><div class="ttname"><a href="classmy_iterator.html">myIterator</a></div><div class="ttdef"><b>Definition</b> iterator.h:5</div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif </span><span class="comment">// USER_ITERATOR_H</span></div>
+<div class="ttc" id="aclass_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdoc">Abstract base class representing a participant in the chat system.</div><div class="ttdef"><b>Definition</b> user.h:18</div></div>
+<div class="ttc" id="aclass_user_iterator_html_a19a509933877f5ee362c8ef5c10f1d05"><div class="ttname"><a href="class_user_iterator.html#a19a509933877f5ee362c8ef5c10f1d05">UserIterator::next</a></div><div class="ttdeci">User * next() override</div><div class="ttdoc">Retrieves the next user in the sequence.</div><div class="ttdef"><b>Definition</b> userIterator.cpp:29</div></div>
+<div class="ttc" id="aclass_user_iterator_html_a2434f9f8d31fb5d37611893636dc16c6"><div class="ttname"><a href="class_user_iterator.html#a2434f9f8d31fb5d37611893636dc16c6">UserIterator::reset</a></div><div class="ttdeci">void reset() override</div><div class="ttdoc">Resets the iterator to the beginning of the user list.</div><div class="ttdef"><b>Definition</b> userIterator.cpp:39</div></div>
+<div class="ttc" id="aclass_user_iterator_html_a45f9ba1340aa1c006e7535ca59fbeaba"><div class="ttname"><a href="class_user_iterator.html#a45f9ba1340aa1c006e7535ca59fbeaba">UserIterator::hasNext</a></div><div class="ttdeci">bool hasNext() override</div><div class="ttdoc">Checks if there are more users to iterate over.</div><div class="ttdef"><b>Definition</b> userIterator.cpp:17</div></div>
+<div class="ttc" id="aclass_user_iterator_html_a6c5228445a8ea9ed7710731aa8f9b116"><div class="ttname"><a href="class_user_iterator.html#a6c5228445a8ea9ed7710731aa8f9b116">UserIterator::~UserIterator</a></div><div class="ttdeci">~UserIterator()=default</div><div class="ttdoc">Virtual destructor for proper cleanup.</div></div>
+<div class="ttc" id="aclass_user_iterator_html_a83018d22cbb1065fba34ee162eac2aca"><div class="ttname"><a href="class_user_iterator.html#a83018d22cbb1065fba34ee162eac2aca">UserIterator::UserIterator</a></div><div class="ttdeci">UserIterator(const std::vector&lt; User * &gt; &amp;userList)</div><div class="ttdoc">Constructs a UserIterator with a given list of users.</div><div class="ttdef"><b>Definition</b> userIterator.cpp:10</div></div>
+<div class="ttc" id="aclassmy_iterator_html"><div class="ttname"><a href="classmy_iterator.html">myIterator</a></div><div class="ttdoc">Generic iterator interface for traversing collections of type T.</div><div class="ttdef"><b>Definition</b> iterator.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

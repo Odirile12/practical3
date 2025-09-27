@@ -91,16 +91,37 @@ $(function(){initNavTree('classmy_iterator.html','','classmy_iterator-members');
   <div class="headertitle"><div class="title">myIterator&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Generic iterator interface for traversing collections of type T.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="iterator_8h_source.html">iterator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a470a59fb2262254f2e18c39fa5ed0fc1" id="r_a470a59fb2262254f2e18c39fa5ed0fc1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a470a59fb2262254f2e18c39fa5ed0fc1">hasNext</a> ()=0</td></tr>
-<tr class="memitem:ab705b69df76a676a20bc4afc8a96f776" id="r_ab705b69df76a676a20bc4afc8a96f776"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab705b69df76a676a20bc4afc8a96f776">next</a> ()=0</td></tr>
-<tr class="memitem:a518aea1482e749cee456cdb34f100c67" id="r_a518aea1482e749cee456cdb34f100c67"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a518aea1482e749cee456cdb34f100c67">reset</a> ()=0</td></tr>
+<tr class="memitem:aa98c1f1e1eae7b3bc2e31cc2361c7e40" id="r_aa98c1f1e1eae7b3bc2e31cc2361c7e40"><td class="memItemLeft" align="right" valign="top"><a id="aa98c1f1e1eae7b3bc2e31cc2361c7e40" name="aa98c1f1e1eae7b3bc2e31cc2361c7e40"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~myIterator</b> ()=default</td></tr>
+<tr class="memdesc:aa98c1f1e1eae7b3bc2e31cc2361c7e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup. <br /></td></tr>
+<tr class="memitem:ac932af48a3a5637b60edec88eb83f211" id="r_ac932af48a3a5637b60edec88eb83f211"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac932af48a3a5637b60edec88eb83f211">hasNext</a> ()=0</td></tr>
+<tr class="memdesc:ac932af48a3a5637b60edec88eb83f211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there are more elements to iterate over.  <br /></td></tr>
+<tr class="memitem:ab78ce47604ce6f8871b03533fd575255" id="r_ab78ce47604ce6f8871b03533fd575255"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab78ce47604ce6f8871b03533fd575255">next</a> ()=0</td></tr>
+<tr class="memdesc:ab78ce47604ce6f8871b03533fd575255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the next element in the iteration.  <br /></td></tr>
+<tr class="memitem:a0f4ea31d933c4b6588be6c291ce2ad6b" id="r_a0f4ea31d933c4b6588be6c291ce2ad6b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f4ea31d933c4b6588be6c291ce2ad6b">reset</a> ()=0</td></tr>
+<tr class="memdesc:a0f4ea31d933c4b6588be6c291ce2ad6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the iterator to the beginning of the collection.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a470a59fb2262254f2e18c39fa5ed0fc1" name="a470a59fb2262254f2e18c39fa5ed0fc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a470a59fb2262254f2e18c39fa5ed0fc1">&#9670;&#160;</a></span>hasNext()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class myIterator&lt; T &gt;</div><p>Generic iterator interface for traversing collections of type T. </p>
+<p>This abstract class defines the core operations for iteration: checking for remaining elements, retrieving the next element, and resetting the iterator. Concrete subclasses must implement these methods to provide actual traversal logic.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements to iterate over. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ac932af48a3a5637b60edec88eb83f211" name="ac932af48a3a5637b60edec88eb83f211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac932af48a3a5637b60edec88eb83f211">&#9670;&#160;</a></span>hasNext()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -111,7 +132,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="classmy_iterator.html">myIterator</a>&lt; T &gt;::hasNext </td>
+          <td class="memname">bool <a class="el" href="classmy_iterator.html">myIterator</a>&lt; T &gt;::hasNext </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -123,13 +144,24 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if there are more elements to iterate over. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if more elements are available, false otherwise.</dd></dl>
+<p>This default implementation always returns false. Derived classes should override this method with actual logic.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements being iterated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false Always returns false in the base implementation. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_message_iterator.html#a5f284cecaceb46e55bd223360a894801">MessageIterator</a>, and <a class="el" href="class_user_iterator.html#a45f9ba1340aa1c006e7535ca59fbeaba">UserIterator</a>.</p>
 
 </div>
 </div>
-<a id="ab705b69df76a676a20bc4afc8a96f776" name="ab705b69df76a676a20bc4afc8a96f776"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab705b69df76a676a20bc4afc8a96f776">&#9670;&#160;</a></span>next()</h2>
+<a id="ab78ce47604ce6f8871b03533fd575255" name="ab78ce47604ce6f8871b03533fd575255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab78ce47604ce6f8871b03533fd575255">&#9670;&#160;</a></span>next()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +172,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual T <a class="el" href="classmy_iterator.html">myIterator</a>&lt; T &gt;::next </td>
+          <td class="memname">T <a class="el" href="classmy_iterator.html">myIterator</a>&lt; T &gt;::next </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -152,13 +184,24 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Retrieves the next element in the iteration. </p>
+<dl class="section return"><dt>Returns</dt><dd>The next element of type T.</dd></dl>
+<p>This default implementation returns a default-constructed object. Derived classes should override this method to return actual elements.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements being iterated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A default-constructed object of type T. </dd></dl>
 
 <p>Implemented in <a class="el" href="class_message_iterator.html#a752378f356d55c60353a6991cc0458fe">MessageIterator</a>, and <a class="el" href="class_user_iterator.html#a19a509933877f5ee362c8ef5c10f1d05">UserIterator</a>.</p>
 
 </div>
 </div>
-<a id="a518aea1482e749cee456cdb34f100c67" name="a518aea1482e749cee456cdb34f100c67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a518aea1482e749cee456cdb34f100c67">&#9670;&#160;</a></span>reset()</h2>
+<a id="a0f4ea31d933c4b6588be6c291ce2ad6b" name="a0f4ea31d933c4b6588be6c291ce2ad6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4ea31d933c4b6588be6c291ce2ad6b">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +212,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classmy_iterator.html">myIterator</a>&lt; T &gt;::reset </td>
+          <td class="memname">void <a class="el" href="classmy_iterator.html">myIterator</a>&lt; T &gt;::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -182,12 +225,24 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_user_iterator.html#a2434f9f8d31fb5d37611893636dc16c6">UserIterator</a>.</p>
+<p>Resets the iterator to the beginning of the collection. </p>
+<p>Resets the iterator to the beginning.</p>
+<p>This default implementation does nothing. Derived classes should override this method to reset internal state.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of elements being iterated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_message_iterator.html#a7f1f2e10fe0af3dd75ce208f35d860c1">MessageIterator</a>, and <a class="el" href="class_user_iterator.html#a2434f9f8d31fb5d37611893636dc16c6">UserIterator</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="chat_room_8h_source.html">chatRoom.h</a></li>
 <li><a class="el" href="iterator_8h_source.html">iterator.h</a></li>
+<li><b>iterator.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
