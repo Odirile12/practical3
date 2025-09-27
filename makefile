@@ -1,23 +1,23 @@
 all:
-	rm -f TestingMain
-	g++ -std=c++11 -g *.cpp -o TestingMain
-	./TestingMain
+	rm -f Main
+	g++ -std=c++11 -g *.cpp -o Main
+	./Main
 
 build:
-	rm -f TestingMain
-	g++ -std=c++11 -g *.cpp -o TestingMain
+	rm -f Main
+	g++ -std=c++11 -g *.cpp -o Main
 
 clean:
-	rm -f TestingMain
+	rm -f Main
 
 run:
-	./TestingMain
+	./Main
 
 debug:
-	gdb ./TestingMain
+	gdb ./Main
 
 valgrind: build
-	valgrind --leak-check=full --show-leak-kinds=all ./TestingMain
+	valgrind --leak-check=full --show-leak-kinds=all ./Main
 
 #  clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping *.cpp -o TestingMain
 # LLVM_PROFILE_FILE="TestingMain.profraw" ./TestingMain
